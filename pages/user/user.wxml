@@ -1,0 +1,102 @@
+<view class="top bg1">
+	<image src="../../image/about-img1.png" style="width: 100%; height: 200rpx;"></image>
+	<view class="top_top" style="line-height: 100rpx;">
+		<view class="flo-right color5 font12" 
+		style="height: 100%; margin-right: 60rpx;"bindtap="show">
+		<image src="../../image/about-icon7.png" style="width: 30rpx; height: 26rpx;margin-right: 16rpx;"></image>	
+			<text style="position: relative;top: -6rpx;">编辑</text>
+		</view>
+	</view>
+	<view class="head radiu50 hiden">
+		<view class="user_img">
+		  <open-data type="userAvatarUrl"></open-data>
+		</view>
+	</view>
+	<view style="line-height: 40rpx;">
+		<view class="color1 font14" style="text-align: center;"><open-data type="userNickName"></open-data></view>
+		<view class="color3 font8" style="text-align: center;margin-top:10rpx; line-height:24rpx ;">
+			<view class="ilblock radiu40" style="background: #FBECEE;width:60rpx;height: 24rpx; margin-right: 14rpx;">刺激</view>
+			<view class="ilblock radiu40" style="background: #E8FAF7;width:60rpx;height: 24rpx;">刺激</view>
+		</view>
+	</view>
+</view>
+
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon1.png"></image>
+	</view>
+	<view class="ilblock color3 font13">锦绣券</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon2.png"></image>
+	</view>
+	<view class="ilblock color3 font13">我的电影</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon3.png"></image>
+	</view>
+	<view class="ilblock color3 font13">电影评论</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon4.png"></image>
+	</view>
+	<view class="ilblock color3 font13">锦绣券兑换</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon5.png"></image>
+	</view>
+	<view class="ilblock color3 font13">扫一扫进场</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon6.png"></image>
+	</view>
+	<view class="ilblock color3 font13">管理员登录</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+
+<view style="width: 100%; height: 90rpx;"></view>
+
+
+
+<view class="navbar">
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
+			<view class="nav_img">
+				<image src="../../image/nabar1.png"></image>
+			</view>
+			<view class="text">首页</view>
+		</view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/square/square">
+			<view class="nav_img">
+				<image src="../../image/nabar2.png" style="width: 50rpx;"></image>
+			</view>
+			<view class="text">广场</view>
+		</view>
+		<view class="navbar_item">
+			<view class="nav_img">
+				<image src="../../image/nabar3-a.png" style="width: 40rpx;"></image>
+			</view>
+			<view class="text this-text">我的</view>
+		</view>
+	</view>

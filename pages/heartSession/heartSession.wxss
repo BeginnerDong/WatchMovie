@@ -1,0 +1,44 @@
+
+.list-one{
+	width: 100%;
+	box-sizing: border-box;
+	padding:4%;
+	border-bottom:solid 1rpx #F0F0F0 ;
+}
+.one-img{
+	width: 22%;
+	height: 170rpx;
+}
+.one-img image{
+	width: 100%;
+	height: 100%;
+}
+.one-center{
+	width: 58%;
+	margin-left: 20rpx;
+	position: relative;
+	top: -8rpx;
+}
+.one-color{
+	margin: 30rpx 0rpx;
+	line-height:36rpx ;
+}
+.one-color view{
+	width:82rpx;
+	height: 36rpx;
+	margin-right: 20rpx;
+	text-align: center;
+}
+.one-right{
+	width: 13%;
+	text-align: center;
+}
+.one-heart{
+	width: 46rpx;
+	height:42rpx;
+	margin: 50rpx 23% 20rpx;
+}
+.one-heart image{
+	width: 100%;
+	height: 100%;
+}

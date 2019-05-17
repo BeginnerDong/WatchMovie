@@ -1,0 +1,115 @@
+<view class="top-img">
+	<image src="../../image/details-img1.png"></image>
+</view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">影片介绍</view>
+	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
+		<view>
+			<view class="font14 color1 fat-font ilblock">惊奇队长</view>
+			<view class="color3 font10 one-color ilblock">
+				<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+				<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+			</view>
+			<view class="ilblock color4 font14 flo-right" style="margin-top: 10rpx;">￥56.00</view>
+		</view>
+		<view class="font12 color2 textone">内容内容内容内容内容内容内容内容内容容内容内容内容
+		内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">场次时间</view>
+	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
+		<view class="one-tabe radiu15 font13">
+			<view style="height: 50%; width: 100%; border-bottom: solid 1rpx #E3E3E3; padding: 30rpx 0rpx;box-sizing: border-box;">
+				<view class="ilblock" style="border-right: solid 1rpx #E1E1E1;width: 50%; text-align: center;">5号厅08场</view>
+				<view class="ilblock" style="width: 49%; text-align: center;">长安奥斯卡影院
+				<image src="../../image/details-icon2.png"></image></view>
+			</view>
+			<view style="height: 50%; line-height: 100rpx;text-align: center;">
+				2019-04-12<text style="margin-left: 20rpx;">13:00-15:00</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce" style="padding-right: 0rpx;">
+	<view class="color1 font15 line-red fat-font">心动人员</view>
+	<view style="box-sizing: border-box;padding: 30rpx 0rpx 0rpx 40rpx;flex-wrap: nowrap; width: 100%;">
+		<view class="head radiu50 ilblock">
+			<image src="../../image/about-img2.png"></image>
+		</view>
+		<view class="head radiu50 ilblock">
+			<image src="../../image/about-img2.png"></image>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">观影须知</view>
+	<view class="font12 color2 textone" style="padding: 0rpx 30rpx;">
+		<view>
+			1、内容内容内容内容内容内容
+		</view>
+		<view>
+			2、内容内容内容内容内容内容
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce"style="padding-bottom: 0rpx;">
+	<view>
+		<view class="color1 font15 line-red fat-font ilblock">影评</view>
+		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;">更多
+		<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 20rpx;"></image> </view>
+	</view>
+	<view class="boxleft">
+		<view>
+			<view class="head-two ilblock">
+				<image src="../../image/about-img2.png"></image>
+			</view>
+			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
+			<view class="font9 color3 ilblock flo-right" style="margin-top: 12rpx;">2019.02.23 15:09</view>
+		</view>
+		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+		<view style="margin: 30rpx 0rpx 0rpx;">
+			<view class="font10 color2 ilblock boxnum-img">
+				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
+				156
+			</view>
+			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
+				<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+				256
+			</view>
+		</view>
+	</view>
+	<view class="boxleft">
+		<view>
+			<view class="head-two ilblock">
+				<image src="../../image/about-img2.png"></image>
+			</view>
+			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
+			<view class="font9 color3 ilblock flo-right" style="margin-top: 12rpx;">2019.02.23 15:09</view>
+		</view>
+		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+		<view style="margin: 30rpx 0rpx 0rpx;">
+			<view class="font10 color2 ilblock boxnum-img">
+				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
+				156
+			</view>
+			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
+				<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+				256
+			</view>
+		</view>
+	</view>
+</view>
+<view style="width: 100%;height: 100rpx;"></view>
+<view class="btm font15 color5">
+	立即购票
+</view>

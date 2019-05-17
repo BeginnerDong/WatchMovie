@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+		"pages/test/test",
+		"pages/square/square",
+		"pages/user/user",
+		"pages/heartSession/heartSession",
+		"pages/heartFilmDetails/heartFilmDetails",
+		"pages/FilmDetails/FilmDetails",
+		"pages/informationDetails/informationDetails"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor":"#FF5BA0",
+    "navigationBarTitleText": "首页",
+		"navigationBarTextStyle":"#fff"
+  }
+}

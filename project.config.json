@@ -1,0 +1,623 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wxdd868581ee40a421",
+	"projectname": "WatchMovie",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 96,
+			"list": [
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/index1/index1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布图文",
+					"pathName": "pages/sendGraphic/sendGraphic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布视频",
+					"pathName": "pages/sendVideo/sendVideo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "回答问题",
+					"pathName": "pages/indexAnswer/indexAnswer",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "他的主页",
+					"pathName": "pages/indexPage/indexPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态详情",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的关注",
+					"pathName": "pages/userFocus/userFocus",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/userAbout/userAbout",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/userInfor/userInfor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态评论",
+					"pathName": "pages/indexStateDetail/indexStateDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息通知哦",
+					"pathName": "pages/userMessage/userMessage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态发布图文",
+					"pathName": "pages/sendGraphic/sendGraphic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态发布视频",
+					"pathName": "pages/sendVideo/sendVideo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布吐槽",
+					"pathName": "pages/sendTeasing/sendTeasing",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布小视频",
+					"pathName": "pages/sendSmallVideo/sendSmallVideo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问答详情",
+					"pathName": "pages/indexAnswerDetail/indexAnswerDetail",
+					"query": "id=4"
+				},
+				{
+					"id": -1,
+					"name": "完善信息",
+					"pathName": "pages/userInfor/userInfor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "鲜花包",
+					"pathName": "pages/flower_bag_buy/flower_bag_buy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "鲜花包2",
+					"pathName": "pages/flower_bag/flower_bag",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "鲜花预订",
+					"pathName": "pages/subscribe_a/subscribe_a",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index_store_details/index_store_details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/oder-true/oder-true",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/address_Add/address_Add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分商城",
+					"pathName": "pages/integral_store/integral_store",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的鲜花包",
+					"pathName": "pages/myflowerbag/myflowerbag",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/myscore/myscore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/myscore/myscore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见",
+					"pathName": "pages/suggestion/suggestion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/allOder/allOder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index_store_details/index_store_details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团详情",
+					"pathName": "pages/logs_store_details/logs_store_details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/allOder/allOder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "维权",
+					"pathName": "pages/right/right",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址+",
+					"pathName": "pages/address_Add/address_Add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/myscore/myscore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的购物订单",
+					"pathName": "pages/car-true/car-true",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "客服",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录a",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "合伙人",
+					"pathName": "pages/suggestion/suggestion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/team_a/team_a",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收益1",
+					"pathName": "pages/income_a/income_a",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/money/money",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定银行卡",
+					"pathName": "pages/bind_card/bind_card",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现2",
+					"pathName": "pages/money_b/money_b",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "推广",
+					"pathName": "pages/two_code/two_code",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的团队2",
+					"pathName": "pages/team_floor/team_floor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "二维码",
+					"pathName": "pages/two_code_floor/two_code_floor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "司机",
+					"pathName": "pages/driver/driver",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "接单",
+					"pathName": "pages/driver_oder/driver_oder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "司机订单",
+					"pathName": "pages/drive_allOder/drive_allOder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "司机消息",
+					"pathName": "pages/driver_mesag/driver_mesag",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请",
+					"pathName": "pages/requisition/requisition",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/store_details/store_details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预约订单",
+					"pathName": "pages/make_oder/make_oder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址+",
+					"pathName": "pages/address_Add/address_Add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预约",
+					"pathName": "pages/make/make",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查看",
+					"pathName": "pages/allOder/allOder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领券中新",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领券中新2",
+					"pathName": "pages/coupon_a/coupon_a",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "佣金",
+					"pathName": "pages/myscore/myscore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的尺码",
+					"pathName": "pages/mysize/mysize",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "售后",
+					"pathName": "pages/service/service",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/car/car",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index_store_details/index_store_details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确定商品",
+					"pathName": "pages/oder-true/oder-true",
+					"query": ""
+				},
+				{
+					"id": 85,
+					"name": "网点管理",
+					"pathName": "pages/branchManage/branchManage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/allOder/allOder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "售后",
+					"pathName": "pages/afterSale/afterSale",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/evaluate/evaluate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/set/set",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/orderInfo/orderInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "广场",
+					"pathName": "pages/square/square",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "心动场次",
+					"pathName": "pages/heartSession/heartSession",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "心动电影详情",
+					"pathName": "pages/heartFilmDetails/heartFilmDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电影详情",
+					"pathName": "pages/FilmDetails/FilmDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "资讯详情",
+					"pathName": "pages/informationDetails/informationDetails"
+				}
+			]
+		}
+	}
+}

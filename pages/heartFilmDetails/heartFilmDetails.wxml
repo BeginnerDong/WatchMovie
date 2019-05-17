@@ -1,0 +1,76 @@
+<view class="color1 font15 top">提前预约，开场领礼品</view>
+<view class="top-img">
+	<image src="../../image/details-img1.png"></image>
+</view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">影片介绍</view>
+	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
+		<view>
+			<view class="font14 color1 fat-font ilblock">惊奇队长</view>
+			<view class="color3 font10 one-color ilblock">
+				<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+				<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+			</view>
+			<view class="ilblock color4 font14 flo-right" style="margin-top: 10rpx;">￥56.00</view>
+		</view>
+		<view class="font12 color2 textone">内容内容内容内容内容内容内容内容内容容内容内容内容
+		内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">演职人员</view>
+	<view style="margin: 30rpx 0rpx 0rpx;width: 100%; flex-wrap: nowrap;">
+		<view class="img-one">
+			<image src="../../image/details-img2.png"></image>
+		</view>
+		<view class="img-one">
+			<image src="../../image/details-img2.png"></image>
+		</view>
+		<view class="img-one">
+			<image src="../../image/details-img2.png"></image>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">适合人群</view>
+	<view style="box-sizing: border-box;padding: 0rpx 30rpx;">
+		<view class="font12 color2 textone">内容内容内容内容内容内容内容内容内容容内容内容内容
+		内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">往期观影活动照片</view>
+	<view style="margin: 30rpx 0rpx 0rpx;width: 200%; flex-wrap: nowrap;">
+		<view class="img-two">
+			<image src="../../image/details-img3.png"></image>
+		</view>
+		<view class="img-two">
+			<image src="../../image/details-img3.png"></image>
+		</view>
+		<view class="img-two">
+			<image src="../../image/details-img3.png"></image>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="introduce">
+	<view class="color1 font15 line-red fat-font">心动说明</view>
+	<view class="font12 color2 textone" style="padding: 0rpx 30rpx;">
+		<view>
+			1、内容内容内容内容内容内容
+		</view>
+		<view>
+			2、内容内容内容内容内容内容
+		</view>
+	</view>
+</view>
+<view style="width: 100%;height: 100rpx;"></view>
+<view class="btm">
+	<view class="ilblock font13 color5">心动值</view>
+	<!-- <progress percent="80" active /> -->
+	<image class="flo-right" src="../../image/details-icon1.png" style="width: 38rpx; height: 46rpx;margin-top: 16rpx;"></image>
+</view>

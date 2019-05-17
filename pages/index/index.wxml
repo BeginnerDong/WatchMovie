@@ -1,0 +1,187 @@
+
+<view class="info-box" wx:if="{{is_show}}">
+	<view class="info bg1">
+		<view class="color1 font14">个人信息</view>
+		<view>
+			<view class="ilblock font11 color3">提供这些信息，我们会更懂你哦~</view>
+			<view class="color6 ilblock flo-right font15 fat-font">
+				<image class="newImg" src="../../image/home-icon04.png"></image>公历
+			</view>
+		</view>
+		<view style="padding:50rpx 10%;">
+			<view class="ilblock head">
+				<image src="../../image/home-img01.png"></image>
+			</view>
+			<view class="ilblock head">
+				<image src="../../image/home-img02.png"></image>
+			</view>
+		</view>
+		<view class="info-list bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+			<view class="ilblock listimg">
+				<image src="../../image/home-icon01.png" style="width: 32rpx;"></image>
+			</view>
+			<view class="ilblock color1 font13">出生日期</view>
+			<view class="color2 font12 flo-right" style="margin-top: 10rpx;">1990-01-02
+			 <image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
+			 </view>
+		</view>
+		<view class="info-list bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+			<view class="ilblock listimg">
+				<image src="../../image/home-icon02.png" style="width: 26rpx;"></image>
+			</view>
+			<view class="ilblock color1 font13">出生地址</view>
+			<view class="color2 font12 flo-right" style="margin-top: 10rpx;">
+			 <image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
+			 </view>
+		</view>
+		<view class="info-list bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+			<view class="ilblock listimg">
+				<image src="../../image/home-icon03.png"></image>
+			</view>
+			<view class="ilblock color1 font13">现居地</view>
+			<view class="color2 font12 flo-right" style="margin-top: 10rpx;">
+			 <image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
+			 </view>
+		</view>
+		<button class="bg3 color5 font15 radiu15" style="width: 80%; height: 80rpx; margin-top: 50rpx;" bindtap="show">确定</button>
+	</view>
+</view>
+
+ <view class="top bg1"> 
+	 <view class="top-top bg3">
+		 <view class="topImg">
+			 <image src="../../image/home-banner%20.png"></image>
+		 </view>
+	 </view>
+ </view>
+ <view class="back-logo">
+	<image src="../../image/home-icon1.png" style="margin-left: 36%;"></image>
+	<view class="font10 color3 flo-right ilblock" style="margin-right: 30rpx;line-height: 156rpx;" bindtap="intoPath" data-path="/pages/heartSession/heartSession">
+		查看更多<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 30rpx;"></image>
+	</view>
+ </view>
+ <view class="one bg1 radiu15">
+	 <view class="list-one" bindtap="intoPath" data-path="/pages/heartFilmDetails/heartFilmDetails">
+		 <view class="one-img ilblock">
+			 <image src="../../image/details-img2.png"></image>
+		 </view>
+		  <view class="one-center ilblock">
+		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+				<view class="color3 font10 one-color">
+					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+				</view>
+				<view class="one-time color2 font11">
+					下架时间：2019.03.10
+				</view>
+		 </view>
+		 <view class="one-right flo-right">
+			 <view class="one-heart">
+				 <image src="../../image/home-icon5.png"></image>
+			 </view>
+			 <view class="font10 color6">心动值</view>
+		 </view>
+	 </view>
+	 <view class="list-one" bindtap="intoPath" data-path="/pages/heartFilmDetails/heartFilmDetails">
+	 		 <view class="one-img ilblock">
+	 			 <image src="../../image/details-img2.png"></image>
+	 		 </view>
+	 		  <view class="one-center ilblock">
+	 		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+	 				<view class="color3 font10 one-color">
+	 					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+	 					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+	 					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+	 				</view>
+	 				<view class="one-time color2 font11">
+	 					下架时间：2019.03.10
+	 				</view>
+	 		 </view>
+	 		 <view class="one-right flo-right">
+	 			 <view class="one-heart">
+	 				 <image src="../../image/home-icon5.png"></image>
+	 			 </view>
+	 			 <view class="font10 color6">心动值</view>
+	 		 </view>
+	 </view>
+</view>
+<view class="back-logo">
+	<image src="../../image/home-icon2.png" style="height: 50%; width: 32%;"></image>
+	<view class="font10 color3 flo-right ilblock" style="margin-right: 30rpx;line-height: 130rpx;">
+		查看更多<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 30rpx;"></image>
+	</view>
+ </view>
+ <view class='banner'>
+  <swiper autoplay="{{false}}" previous-margin="{{'160rpx'}}" next-margin="{{'160rpx'}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails"/>
+		<view class="move">
+			
+		</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="bg1" style="width: 100%;padding: 30rpx 0rpx;">
+	<view class="back-logo">
+		<image src="../../image/home-icon3.png" style="height: 50%; width: 32%;"></image>
+		<view class="font10 color3 flo-right ilblock" style="line-height: 124rpx; margin-right: 30rpx;">
+			查看更多<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 30rpx;"></image>
+		</view>
+	 </view>
+	 <view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
+	 	<view class="boxleft ilblock">
+	 		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+	 		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+	 		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+	 		<view style="margin: 30rpx 0rpx 0rpx;">
+	 			<view class="font10 color3">2019.02.23 15:09</view>
+	 		</view>
+	 	</view>
+	 	<view class="boxright ilblock">
+			<view class="boxright-img">
+				<image src="../../image/home-img2.png"></image>
+			</view>
+	 	</view>
+	 </view>
+	 <view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
+	 	<view class="boxleft ilblock">
+	 		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+	 		<view class="color2 font12 overflow3" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+	 		内容内容内容内容内容内容内容内容容内容</view>
+	 		<view style="margin: 30rpx 0rpx 0rpx;">
+	 			<view class="font10 color3">2019.02.23 15:09</view>
+	 		</view>
+	 	</view>
+	 	<view class="boxright ilblock">
+	 			<view class="boxright-img">
+	 				<image src="../../image/home-img2.png"></image>
+	 			</view>
+	 	</view>
+	 </view>
+</view>
+
+ <view style="width: 100%; height: 80rpx;"></view>
+<view class="navbar">
+		<view class="navbar_item">
+			<view class="nav_img">
+				<image src="../../image/nabar1-a.png"></image>
+			</view>
+			<view class="text this-text">首页</view>
+		</view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/square/square">
+			<view class="nav_img">
+				<image src="../../image/nabar2.png" style="width: 50rpx;"></image>
+			</view>
+			<view class="text">广场</view>
+		</view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
+			<view class="nav_img">
+				<image src="../../image/nabar3.png" style="width: 40rpx;"></image>
+			</view>
+			<view class="text">我的</view>
+		</view>
+	</view>
+
