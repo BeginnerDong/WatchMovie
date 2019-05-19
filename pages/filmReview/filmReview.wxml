@@ -1,0 +1,47 @@
+
+<view class="introduce"style="padding-bottom: 0rpx;">
+	<view class="boxleft">
+		<view>
+			<view class="head-two ilblock">
+				<image src="../../image/about-img2.png"></image>
+			</view>
+			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
+			<view class="font9 color3 ilblock flo-right" style="margin-top: 12rpx;">2019.02.23 15:09</view>
+		</view>
+		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+		<view style="margin: 30rpx 0rpx 0rpx;">
+			<view class="font10 color2 ilblock boxnum-img">
+				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
+				156
+			</view>
+			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
+				<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+				256
+			</view>
+		</view>
+	</view>
+	<view class="boxleft">
+		<view>
+			<view class="head-two ilblock">
+				<image src="../../image/about-img2.png"></image>
+			</view>
+			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
+			<view class="font9 color3 ilblock flo-right" style="margin-top: 12rpx;">2019.02.23 15:09</view>
+		</view>
+		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
+		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+		<view style="margin: 30rpx 0rpx 0rpx;">
+			<view class="font10 color2 ilblock boxnum-img">
+				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
+				156
+			</view>
+			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
+				<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+				256
+			</view>
+		</view>
+	</view>
+</view>

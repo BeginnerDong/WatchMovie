@@ -1,0 +1,87 @@
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			成就勋章
+			<image src="../../image/medal-icon4.png" style="width: 32rpx; height: 34rpx; position: relative;top: 8rpx;"></image>
+		</view>
+	</view>
+	<view class="list-info" style="border: none; padding-bottom: 0rpx;">
+		<view class="ilblock meadbox">
+			<view>
+				<image src="../../image/medal-icon1.png"></image>
+			</view>
+			<view class="text">
+				一级
+			</view>
+		</view><view class="ilblock meadbox">
+			<view>
+				<image src="../../image/medal-icon2.png"></image>
+			</view>
+			<view class="text">
+				二级
+			</view>
+		</view>
+		<view class="ilblock meadbox">
+			<view>
+				<image src="../../image/medal-icon3.png"></image>
+			</view>
+			<view class="text">
+				三级
+			</view>
+		</view>
+		<view class="ilblock meadbox">
+			<view>
+				<image src="../../image/medal-icon4.png"></image>
+			</view>
+			<view class="text">
+				四级
+			</view>
+		</view>
+		<view class="ilblock meadbox">
+			<view>
+				<image src="../../image/medal-icon5.png"></image>
+			</view>
+			<view class="text">
+				五级
+			</view>
+		</view>
+		<view style="clear: both;"></view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="font13 color1">被翻牌子次数</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">1、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">2、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="font13 color1">购买桃花卡数量（累积的）</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">1、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">2、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="font13 color1">购票观影次数</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">1、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">2、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="font13 color1">编写影评次数</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">1、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">2、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="font13 color1">影评被赞次数</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">1、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+	<view class="color2 font12" style="margin-top: 30rpx;">2、内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</view>
+<view class="bg2"></view>
+<view class="box" style="text-align: center; padding: 50rpx;">
+	<view class="font10 color6">注：没完成一个任务，等级就会高一级</view>
+</view>
+
+
+

@@ -1,0 +1,69 @@
+
+.bigbox{
+	width: 92%;
+	margin: 4%;
+	box-shadow: 0rpx 0rpx 14rpx #C4BCBF;
+	border-radius: 20rpx;
+}
+.itemimg{
+	width: 70rpx;
+	height:70rpx;
+}
+.itemimg image{
+	width: 100%;
+	height: 100%;
+}
+.boxleft{
+	box-sizing: border-box;
+	padding: 4%;
+	width: 75%;
+}
+.boxnum-img{
+	margin-right: 50rpx;
+}
+.boxright{
+	width: 25%;
+	position: relative;
+	top: -62rpx;
+}
+.boxright-box{
+	box-sizing: border-box;
+	padding:0rpx 19%;
+	margin-bottom: 20rpx; 
+	border-left: solid 1rpx #DEDEDE;
+}
+.boxright-img{
+	width: 100%;
+	height: 122rpx;
+}
+.boxright-img image{
+	width: 100%;
+	height: 100%;
+}
+.boxtext{
+	text-align: center;
+}
+.head-box{
+	position: absolute;
+	bottom: -50rpx;
+	right: 4%;
+}
+.head{
+	width: 120rpx;
+	height: 120rpx;
+}
+.head image{
+	width: 100%;
+	height: 100%;
+}
+.name{
+	margin-top: 80rpx;
+}
+.time{
+	clear: both;
+	padding-left: 4%;
+	padding-top: 20rpx;
+}
+
+
+

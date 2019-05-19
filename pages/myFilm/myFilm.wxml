@@ -1,0 +1,99 @@
+ <view class="top bg1">
+	 <view class="top-item ilblock top-itemstar">
+		 <view class="font15">
+			 未看电影
+		 </view>
+	 </view><view class="top-item ilblock">
+		 <view class="font15">
+			 已看电影
+		 </view>
+	 </view>
+ </view>
+ <view class="one bg1 radiu15">
+	 <view class="list-one">
+		 <view class="one-img ilblock">
+			 <image src="../../image/details-img2.png"></image>
+		 </view>
+		  <view class="one-center ilblock">
+		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+				<view class="color3 font10 one-color">
+					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+				</view>
+				<view class="one-time color2 font11">
+					2019.03.10 13:40 8排8号
+				</view>
+				<view class="font11 color2" style="margin-top: 24rpx;">
+					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
+					西安市长安区韦曲街道奥斯卡影院
+				</view>
+		 </view>
+	 </view>
+</view>
+<view class="one bg1 radiu15">
+	 <view class="list-one">
+		 <view class="one-img ilblock">
+			 <image src="../../image/details-img2.png"></image>
+		 </view>
+		  <view class="one-center ilblock">
+		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+				<view class="color3 font10 one-color">
+					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+				</view>
+				<view class="one-time color2 font11">
+					2019.03.10 13:40 8排8号
+				</view>
+				<view class="font11 color2" style="margin-top: 24rpx;">
+					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
+					西安市长安区韦曲街道奥斯卡影院
+				</view>
+		 </view>
+		 <view class="one-right flo-right">
+			<view class="shear bg3 color5 font10">
+				<image src="../../image/icon3.png" style="width: 26rpx;height: 28rpx; position: relative; top: 8rpx;left: -10rpx;"></image>分享
+			</view>
+			<view class="color1 font11" style="margin-top: 24rpx;">
+				未绑定
+			</view>
+		 </view>
+	 </view>
+</view>
+<view class="one bg1 radiu15">
+	 <view class="list-one">
+		 <view class="one-img ilblock">
+			 <image src="../../image/details-img2.png"></image>
+		 </view>
+		  <view class="one-center ilblock">
+		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+				<view class="color3 font10 one-color">
+					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+				</view>
+				<view class="one-time color2 font11">
+					2019.03.10 13:40 8排8号
+				</view>
+				<view class="font11 color2" style="margin-top: 24rpx;">
+					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
+					西安市长安区韦曲街道奥斯卡影院
+				</view>
+		 </view>
+		 <view class="one-right flo-right">
+			<view class="color6 font10">
+				已绑定
+			</view>
+		 </view>
+	 </view>
+</view>
+
+<view class="fixd" wx:if="{{is_show}}">
+	<view class="fixd-box">
+		<image src="../../image/img2.png"></image>
+	</view>
+	<view style="text-align: center;">
+		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="show"></image>
+	</view>
+</view>

@@ -1,10 +1,5 @@
 <!--logs.wxml-->
-<view class="bg1" style="box-sizing: border-box; width: 100%;padding:30rpx;">
-	<view class="bg2 radiu40 search font12">
-		瞅一眼Ta的影评
-		<image class="flo-right" src="../../image/comments-icon3.png"></image>
-	</view>
-</view>
+
 <view class="bigbox bg1">
 	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
 		<view>
@@ -84,30 +79,3 @@
 	</view>
 </view>
 
-<view class="comment" bindtap="intoPath" data-path="/pages/sendFilmReview/sendFilmReview">
-	<image src="../../image/comments-icon2.png"></image>
-</view>
-
-
-
-
-<view class="navbar">
-		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
-			<view class="nav_img">
-				<image src="../../image/nabar1.png"></image>
-			</view>
-			<view class="text">首页</view>
-		</view>
-		<view class="navbar_item">
-			<view class="nav_img">
-				<image src="../../image/nabar2-a.png" style="width: 50rpx;"></image>
-			</view>
-			<view class="text this-text">广场</view>
-		</view>
-		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
-			<view class="nav_img">
-				<image src="../../image/nabar3.png" style="width: 40rpx;"></image>
-			</view>
-			<view class="text">我的</view>
-		</view>
-	</view>

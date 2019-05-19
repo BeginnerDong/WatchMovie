@@ -1,0 +1,14 @@
+.box{
+	box-sizing: border-box;
+	padding: 0rpx 4%;
+}
+
+.list-info{
+	padding: 20rpx 0rpx;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #E9E9E9;
+	position: relative;
+}
+.list-left{
+	width: 25%;
+}

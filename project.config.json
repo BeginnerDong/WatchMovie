@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 96,
+			"current": 114,
 			"list": [
 				{
 					"id": -1,
@@ -615,7 +615,115 @@
 				{
 					"id": -1,
 					"name": "资讯详情",
-					"pathName": "pages/informationDetails/informationDetails"
+					"pathName": "pages/informationDetails/informationDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "热映",
+					"pathName": "pages/hotShow/hotShow",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "影评",
+					"pathName": "pages/filmReview/filmReview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "他的主页",
+					"pathName": "pages/hisPage/hisPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "他的动态",
+					"pathName": "pages/hisState/hisState",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "清平",
+					"pathName": "pages/sendFilmReview/sendFilmReview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电影评论",
+					"pathName": "pages/filmName/filmName",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评论详情",
+					"pathName": "pages/commentDetails/commentDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "基本信息",
+					"pathName": "pages/info/info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的勋章",
+					"pathName": "pages/medal/medal",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "d登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "核销",
+					"pathName": "pages/cancel/cancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫一扫1",
+					"pathName": "pages/picketScan/picketScan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "结果1",
+					"pathName": "pages/picket/picket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫一扫2",
+					"pathName": "pages/Scan/Scan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的影评",
+					"pathName": "pages/myFilmReview/myFilmReview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的电影",
+					"pathName": "pages/myFilm/myFilm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的电影",
+					"pathName": "pages/myFilm/myFilm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "锦秀全",
+					"pathName": "pages/jinxuiStamps/jinxuiStamps"
 				}
 			]
 		}

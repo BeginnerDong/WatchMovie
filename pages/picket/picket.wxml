@@ -1,0 +1,34 @@
+<view class="box">
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			影院
+		</view>
+		<view class="ilblock color1 font14">
+			长安奥斯卡影院
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			电影名称
+		</view>
+		<view class="ilblock color1 font14">
+			惊奇队长
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			时间
+		</view>
+		<view class="ilblock color1 font14">
+			2019.02.23 13:00-15:00
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			场次
+		</view>
+		<view class="ilblock color1 font14">
+			08场
+		</view>
+	</view>
+</view>

@@ -1,0 +1,41 @@
+.box{
+	box-sizing: border-box;
+	padding: 0rpx 4%;
+}
+.flo-right image{
+	width: 12rpx;
+	height: 20rpx;
+	margin-left: 20rpx;
+}
+.list-info{
+	padding: 30rpx 0rpx;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #E9E9E9;
+	position: relative;
+}
+.list-left{
+	margin-right: 50rpx;
+}
+.star image{
+	width: 28rpx;
+	height:28rpx;
+	margin-right: 20rpx;
+	
+}
+.list-info input{
+	display: inline-block;
+	width: 80%;
+	height: 100%;
+	position: absolute;
+	top: 0rpx;
+}
+.photo{
+	width: 140rpx;
+	height: 140rpx;
+	overflow: hidden;
+	margin-top: 30rpx;
+}
+.photo image{
+	width: 100%;
+	height: 100%;
+}

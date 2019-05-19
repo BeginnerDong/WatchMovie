@@ -1,0 +1,15 @@
+<view class="box">
+	<view class="box-img ilblock flo-left">
+		<view class="color1 font14">电影票</view>
+		<view>
+			<image src="../../image/scan-icon1.png" bindtap="intoPath" data-path="/pages/picketScan/picketScan"></image>
+		</view>
+	</view>
+	<view class="box-img ilblock flo-right">
+		<view class="color1 font14">小吃</view>
+		<view>
+			<image src="../../image/scan-icon1.png" bindtap="intoPath" data-path="/pages/snackScan/snackScan"></image>
+		</view>
+	</view>
+	<view style="clear: both;"></view>
+</view>

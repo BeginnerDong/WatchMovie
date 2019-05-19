@@ -1,0 +1,127 @@
+<view style="box-sizing: border-box; padding: 30rpx;">
+	<view class="color1 font14">
+		<image class="list-img" src="../../image/basic-icon1.png"></image>
+		相册<text class="font10" style="color: rgb(184,184,184);margin-left: 10rpx;">(至少上传一张真人照片)</text>
+	</view>
+	<view class="photo" style="background: url(../../image/basic-icon6.png) no-repeat 50% center;background-size: 10%;">
+		
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			<image class="list-img" src="../../image/basic-icon2.png" style="width: 24rpx;height: 34rpx;top: 8rpx;"></image>
+			成就勋章
+		</view>
+		<view class="ilblock flo-right color3 font12"style="margin-top: 8rpx;" bindtap="intoPath" data-path="/pages/medal/medal">
+			<image src="../../image/medal-icon4.png" style="width: 32rpx; height: 34rpx;"></image>
+			<image src="../../image/home-icon6.png" style="top: -8rpx;"></image>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			<image class="list-img" src="../../image/basic-icon3.png"></image>
+			基本信息
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">出生日期</view>
+			<view class="ilblock font11 flo-right">点击选择</view>
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">星座</view>
+			<view class="ilblock font11 flo-right">点击选择</view>
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">学历</view>
+			<view class="ilblock font11 flo-right">点击选择</view>
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">学院</view>
+			<view class="ilblock font11 flo-right">点击选择</view>
+		</view>
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			<image class="list-img" src="../../image/basic-icon3.png"></image>
+			观影标签
+		</view>
+	</view>
+</view>
+<view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			<image class="list-img" src="../../image/basic-icon4.png" style="width: 32rpx; height: 32rpx;top: 6rpx;"></image>
+			爱好标签
+		</view>
+	</view>
+</view>
+<view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+	<view class="libe">
+		恐怖
+	</view>
+</view>
+<view class="bg2"></view>
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			<image class="list-img" src="../../image/basic-icon5.png" style="height: 32rpx;top: 8rpx;"></image>
+			个人介绍
+		</view>
+	</view>
+</view>
+<view class="box">
+	<textarea class="font11" value="请简单的介绍一下你自己吧">
+		
+	</textarea>
+</view>
+	
+<button class="color5 font13 bg3 radiu15" style="width: 80%; margin: 80rpx auto;">完成</button>

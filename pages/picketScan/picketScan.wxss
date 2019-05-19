@@ -1,0 +1,19 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+page{
+	background:#999999;
+	overflow:hidden;
+}
+.box{
+	width:50%;
+	height: 360rpx;
+	background: #fff;
+	margin: 300rpx auto 80rpx;
+	
+}
+.text{
+	text-align: center;
+	color: #fff;
+	font-size: 24rpx;
+}

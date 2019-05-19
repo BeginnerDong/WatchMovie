@@ -10,12 +10,13 @@ const token = new Token();
 
 Page({
   data: {
-		 is_show:false
+		 is_show:true
+		 
    },
 		
 	show(e){
 		const self=this;
-		self.data.is_show= !self.data.is_show;
+		self.data.is_show=false;
 		self.setData({
 			is_show:self.data.is_show
 		})

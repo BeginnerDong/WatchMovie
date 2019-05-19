@@ -1,0 +1,27 @@
+.box{
+	box-sizing: border-box;
+	padding: 30rpx 4%;
+}
+.list-info{
+	padding: 30rpx 0rpx;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #E9E9E9;
+	position: relative;
+	text-align: center;
+}
+.meadbox{
+	width: 20%;
+	float: left;
+}
+.meadbox image{
+	width: 50rpx;
+	height: 54rpx;
+}
+.meadbox .text{
+	font-size: 24rpx;
+	color: rgb(123,123,123);
+	margin-top: 18rpx;
+}
+.bg2{
+	height: 10rpx;
+}

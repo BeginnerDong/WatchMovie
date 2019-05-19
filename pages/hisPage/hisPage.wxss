@@ -1,0 +1,97 @@
+page{
+	/* background: #F2F2F2; */
+}
+.top{
+	width: 100%;
+	height: 500rpx;
+	position: relative;
+}
+.top image{
+	width: 100%;
+	height: 100%;
+}
+.share{
+	width: 130rpx;
+	height: 50rpx;
+	text-align: center;
+	color: #FFD7E8;
+	line-height: 50rpx;
+	position: absolute;
+	right: 0rpx;
+	top: 50rpx;
+	border-radius: 36rpx 0rpx 0rpx 36rpx;
+	}
+.share image{
+	width: 30rpx;
+	height: 32rpx;
+	position: relative;
+	top: 6rpx;
+	left: -6rpx;
+}
+.info-one{
+	box-sizing: border-box;
+	padding: 40rpx 30rpx;
+	
+}
+.head{
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 20rpx;
+}
+.head image{
+	height: 100%;
+	width: 100%;
+	
+}
+.head-right{
+	height: 120rpx;
+	width: 78%;
+}
+.info-text{
+	margin: 20rpx 0rpx;
+	
+}
+.info-text text{
+	margin-right: 20rpx;
+	flex-wrap: nowrap;
+}
+.info-box{
+	width: 100%;
+	height:198rpx;
+	background: #FAFAFA;
+	border: solid 1rpx #F2F2F2;
+	box-sizing: border-box;
+	padding: 0rpx 40rpx;
+}
+.info-list{
+	margin-top: 30rpx;
+}
+.info-boxtwo{
+	width: 100%;
+	height: 198rpx;
+	overflow: hidden;
+	flex-wrap: nowrap;
+	margin-top: 30rpx;
+}
+.info-img{
+	width: 152rpx;
+	height: 188rpx;
+	margin-right: 30rpx;
+}
+.info-img image{
+	width: 100%;
+	height: 100%;
+}
+.info-text{
+	text-align: justify;
+	line-height: 36rpx;
+}
+.listtwo .ilblock{
+	margin-left: 20rpx;
+	font-size: 26rpx;
+}
+.listtwo image{
+	position: relative;
+	top: 4rpx;
+}
+

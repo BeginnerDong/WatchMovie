@@ -1,0 +1,87 @@
+<view class="top">
+	<image src="../../image/information-img.png"></image>
+	<view class="share bg3 font12">
+		<image src="../../image/icon3.png"></image>分享
+	</view>
+</view>
+<view class="info-one">
+	<view class="head ilblock">
+		<image src="../../image/about-img2.png"></image>
+	</view>
+	<view class="head-right ilblock flo-right">
+		<view class="font14 color1 overflow1" style="margin-top: 14rpx;">昵称昵称昵称</view>
+		<view class="color3 font10 info-text hiden overflow1">
+			<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<text>北京</text><text>93n年水瓶座</text><text>175cm</text><text>本科</text><text>西安电子科技大学</text>
+		</view>
+	</view>
+</view>
+<view class="bg2" style="height: 10rpx;"></view>
+<view class="info-one">
+	<view class="info-box radiu15">
+		<view class="info-list">
+			<view class="ilblock color3 font12 ilblock" style="width: 30%;">姓名·手机号</view>
+			<view class="font13 color1 ilblock">张丹·15956252135</view>
+		</view>
+		<view class="info-list">
+			<view class="ilblock color3 font12 ilblock" style="width: 30%;">微信号</view>
+			<view class="font13 color1 ilblock">456846153sdrv</view>
+		</view>
+	</view>
+</view>
+<view class="bg2" style="height: 10rpx;"></view>
+<view class="info-one">
+	<view class="font12" style="color: rgb(139,139,139);">Ta的个人动态</view>
+	<view class="info-boxtwo">
+		<view class="info-img ilblock">
+			<image src="../../image/details-img5.png"></image>
+		</view>
+		<view class="info-img ilblock">
+			<image src="../../image/details-img5.png"></image>
+		</view>
+		<view class="info-img ilblock">
+			<image src="../../image/details-img5.png"></image>
+		</view>
+		
+		<view class="ilblock flo-right" style="width: 3%;height: 188rpx;line-height: 188rpx;">
+			<image src="../../image/home-icon6.png" style="width: 14rpx; height: 20rpx;"   bindtap="intoPath" data-path="/pages/hisState/hisState"></image>
+		</view>
+	</view>
+</view>
+<view class="bg2" style="height: 10rpx;"></view>
+<view class="info-one">
+	<view class="font12" style="color: rgb(139,139,139);">Ta的个人介绍</view>
+	<view class="font12 color2 info-text">
+		内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	</view>
+</view>
+<view class="bg2" style="height: 10rpx;"></view>
+<view class="info-one">
+	<view class="font12" style="color: rgb(139,139,139);">Ta的标签</view>
+	<view class="color1">
+		<view class="info-list listtwo">
+			<image src="../../image/page-icon1.png" style="width: 30rpx;height: 22rpx; margin-right: 20rpx;"></image>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+		</view>
+		<view class="info-list listtwo">
+			<image src="../../image/page-icon2.png" style="width: 28rpx;height: 28rpx; margin-right: 20rpx;"></image>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+			<view class="ilblock font13">
+				恐怖
+			</view>
+		</view>
+	</view>
+</view>

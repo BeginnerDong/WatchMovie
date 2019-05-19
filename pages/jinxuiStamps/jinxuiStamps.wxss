@@ -1,0 +1,5 @@
+.top-text{
+	color: #fff;
+	font-size:90rpx;
+	text-align: center;
+}

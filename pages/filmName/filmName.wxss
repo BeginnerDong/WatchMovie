@@ -1,0 +1,86 @@
+page{
+	background: #F2F2F2;
+}
+.film-img{
+	width: 32%;
+	height: 266rpx;
+}
+.film-img image{
+	width: 100%;
+	height: 100%;
+}
+.film-right{
+	padding-left: 30rpx;
+	position: relative;
+	top: -16rpx;
+	
+}
+.star{
+	margin: 30rpx 0rpx;
+}
+.star image{
+	width: 28rpx;
+	height:28rpx;
+	margin-right: 20rpx;
+	
+}
+.one-color{
+	margin: 30rpx 0rpx;
+	line-height:36rpx ;
+}
+.one-color view{
+	width:82rpx;
+	height: 36rpx;
+	margin-right: 20rpx;
+	text-align: center;
+}
+
+.bigbox{
+	width: 92%;
+	margin: 4%;
+	box-shadow: 0rpx 0rpx 14rpx #C4BCBF;
+	border-radius: 20rpx;
+}
+.itemimg{
+	width: 70rpx;
+	height:70rpx;
+}
+.itemimg image{
+	width: 100%;
+	height: 100%;
+}
+.boxleft{
+	box-sizing: border-box;
+	padding: 4%;
+	width: 75%;
+}
+.boxnum-img{
+	margin-right: 50rpx;
+}
+.boxright{
+	width: 25%;
+	position: relative;
+	top: -62rpx;
+}
+.boxright-box{
+	box-sizing: border-box;
+	padding:0rpx 19%;
+	margin-bottom: 20rpx; 
+	border-left: solid 1rpx #DEDEDE;
+}
+.boxright-img{
+	width: 100%;
+	height: 122rpx;
+}
+.boxright-img image{
+	width: 100%;
+	height: 100%;
+}
+.boxtext{
+	text-align: center;
+}
+
+
+
+
+

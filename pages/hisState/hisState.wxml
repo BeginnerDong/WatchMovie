@@ -1,12 +1,17 @@
 <!--logs.wxml-->
-<view class="bg1" style="box-sizing: border-box; width: 100%;padding:30rpx;">
-	<view class="bg2 radiu40 search font12">
-		瞅一眼Ta的影评
-		<image class="flo-right" src="../../image/comments-icon3.png"></image>
+<view class="bg1" style="width: 100%;height: 500rpx;position: relative;">
+	<image src="../../image/page-img1.png" style="width: 100%; height: 100%;"></image>
+	<view class="head-box">
+		<view class="ilblock head flo-right">
+			<image src="../../image/about-img2.png"></image>
+		</view>
+		<view class="name color1 font14 flo-right">昵称昵称</view>
+		<view style="clear: both;"></view>
 	</view>
 </view>
-<view class="bigbox bg1">
-	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
+<view class="time font13 color2" style="padding-top: 80rpx;"><text class="color1" style="font-size: 50rpx;">02</text>/12月</view>
+<view class="bigbox bg1" style="clear: both;">
+	<view class="boxleft ilblock">
 		<view>
 			<view class="ilblock itemimg radiu50 hiden">
 				<image src="../../image/about-img2.png"></image>
@@ -28,7 +33,7 @@
 		</view>
 	</view>
 	<view class="boxright ilblock">
-		<view class="boxright-box" bindtap="intoPath" data-path="/pages/filmName/filmName">
+		<view class="boxright-box">
 			<view class="boxright-img">
 				<image src="../../image/details-img2.png"></image>
 			</view>
@@ -45,7 +50,7 @@
 	</view>
 </view>
 <view class="bigbox bg1">
-	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
+	<view class="boxleft ilblock">
 		<view>
 			<view class="ilblock itemimg radiu50 hiden">
 				<image src="../../image/about-img2.png"></image>
@@ -67,7 +72,47 @@
 		</view>
 	</view>
 	<view class="boxright ilblock">
-		<view class="boxright-box" bindtap="intoPath" data-path="/pages/filmName/filmName">
+		<view class="boxright-box">
+			<view class="boxright-img">
+				<image src="../../image/details-img2.png"></image>
+			</view>
+			<view class="font10 color3 boxtext" style="line-height:20rpx;">
+				<view style="margin:12rpx 0rpx;">惊喜队长</view>
+				<view>2019.02.22</view>
+				<view>20:00</view>
+			</view>
+		</view>
+		<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
+			<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+			256
+		</view>
+	</view>
+</view>
+<view class="time font13 color2"><text class="color1" style="font-size: 50rpx;">02</text>/12月</view>
+<view class="bigbox bg1">
+	<view class="boxleft ilblock">
+		<view>
+			<view class="ilblock itemimg radiu50 hiden">
+				<image src="../../image/about-img2.png"></image>
+			</view>
+			<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -6rpx;">
+				<view class="color2 font12">昵称昵称昵称</view>
+				<view class="color3 font10">哇！Ta的评分是10分耶！</view>
+			</view>
+		</view>
+		<view class="color1 font13" style="margin: 18rpx 0rpx;">标题标题标题标题标题</view>
+		<view class="color2 font11 overflow3" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
+		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+		<view style="margin: 20rpx 0rpx 10rpx;">
+			<view class="font10 color3 ilblock">2019.02.23 15:09</view>
+			<view class="font10 color2 flo-right ilblock boxnum-img">
+				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
+				156
+			</view>
+		</view>
+	</view>
+	<view class="boxright ilblock">
+		<view class="boxright-box">
 			<view class="boxright-img">
 				<image src="../../image/details-img2.png"></image>
 			</view>
@@ -84,30 +129,7 @@
 	</view>
 </view>
 
-<view class="comment" bindtap="intoPath" data-path="/pages/sendFilmReview/sendFilmReview">
-	<image src="../../image/comments-icon2.png"></image>
-</view>
 
 
 
 
-<view class="navbar">
-		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
-			<view class="nav_img">
-				<image src="../../image/nabar1.png"></image>
-			</view>
-			<view class="text">首页</view>
-		</view>
-		<view class="navbar_item">
-			<view class="nav_img">
-				<image src="../../image/nabar2-a.png" style="width: 50rpx;"></image>
-			</view>
-			<view class="text this-text">广场</view>
-		</view>
-		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
-			<view class="nav_img">
-				<image src="../../image/nabar3.png" style="width: 40rpx;"></image>
-			</view>
-			<view class="text">我的</view>
-		</view>
-	</view>

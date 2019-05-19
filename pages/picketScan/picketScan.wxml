@@ -1,0 +1,2 @@
+<view class="box" bindtap="intoPath" data-path="/pages/picket/picket"></view>
+<view class="text">将二维码放入框内，即可自动扫描</view>

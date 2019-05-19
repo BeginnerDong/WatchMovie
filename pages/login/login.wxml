@@ -1,0 +1,24 @@
+<view class="top">
+	<image src="../../image/login-img1.png"></image>
+</view>
+<view class="mess">
+	<view class="iput">
+		<view class="ilblock img">
+			<image src="../../image/login-icon1.png"></image>
+		</view>
+		<view class="ilblock text color3 font13">
+			<input placeholder="请输入用户名/手机号" style="height: 100%;"/>
+		</view>
+	</view>
+	<view class="iput">
+		<view class="ilblock img">
+			<image src="../../image/login-icon2.png"></image>
+		</view>
+		<view class="ilblock text color3 font13">
+			<input placeholder="请输入登录密码" style="height: 100%;"/>
+		</view>
+	</view>
+	
+	<button class="bg3 color5 radiu40 font14" style="height: 70rpx;margin-top: 180rpx;"
+		bindtap="intoPath" data-path="/pages/cancel/cancel">登录</button>
+</view>

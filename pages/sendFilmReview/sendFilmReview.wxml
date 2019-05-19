@@ -1,0 +1,43 @@
+<view class="box">
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			选择电影
+		</view>
+		<view class="ilblock flo-right color3 font12"style="margin-top: 8rpx;">请选择
+			<image src="../../image/home-icon6.png"></image>
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			评分
+		</view>
+		<view class="ilblock star">
+			<image src="../../image/release-icon1.png"></image>
+			<image src="../../image/release-icon1.png"></image>
+			<image src="../../image/release-icon1.png"></image>
+			<image src="../../image/release-icon1.png"></image>
+			<image src="../../image/release-icon1.png"></image>
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			标题
+		</view>
+		<input class="font12 color3" placeholder="请输入标题" />
+	</view>
+	<view class="list-info">
+		<view class="ilblock list-left color1 font14">
+			内容
+		</view>
+		<input class="font12 color3" placeholder="请输入内容" />
+	</view>
+	<view class="list-info">
+		<view class="color1 font14">
+			上传图片
+		</view>
+		<view class="photo">
+			<image src="../../image/release-icon2.png"></image>
+		</view>
+	</view>
+	<button class="color5 font13 bg3" style="width: 80%; margin-top: 200rpx;">确认</button>
+</view>

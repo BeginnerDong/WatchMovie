@@ -18,7 +18,6 @@ Page({
 		 ],
 		 swiperIndex: 0
    },
-		
 	show(e){
 		const self=this;
 		self.data.is_show=false;

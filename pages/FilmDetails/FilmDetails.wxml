@@ -61,12 +61,12 @@
 <view class="introduce"style="padding-bottom: 0rpx;">
 	<view>
 		<view class="color1 font15 line-red fat-font ilblock">影评</view>
-		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;">更多
+		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;"  bindtap="intoPath" data-path="/pages/filmReview/filmReview">更多
 		<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 20rpx;"></image> </view>
 	</view>
 	<view class="boxleft">
 		<view>
-			<view class="head-two ilblock">
+			<view class="head-two ilblock" bindtap="show">
 				<image src="../../image/about-img2.png"></image>
 			</view>
 			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
@@ -88,7 +88,7 @@
 	</view>
 	<view class="boxleft">
 		<view>
-			<view class="head-two ilblock">
+			<view class="head-two ilblock" bindtap="show">
 				<image src="../../image/about-img2.png"></image>
 			</view>
 			<view class="font11 color2 ilblock name overflow1">昵称昵称</view>
@@ -112,4 +112,17 @@
 <view style="width: 100%;height: 100rpx;"></view>
 <view class="btm font15 color5">
 	立即购票
+</view>
+
+<view class="fixd" wx:if="{{is_show}}">
+	<view class="bg1 fixd-box radiu15">
+		<view>
+			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx" bindtap="show"></image>
+		</view>
+		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将取消一个锦秀券</view>
+		<view class="font13">
+			<button class="star"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">是</button>
+			<button >否</button>
+		</view>
+	</view>
 </view>

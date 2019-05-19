@@ -1,0 +1,19 @@
+<view class="box">
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			商品名称
+		</view>
+		<view class="ilblock color1 font14">
+			爆米花
+		</view>
+	</view>
+	<view class="list-info">
+		<view class="font12 list-left color2 ilblock">
+			数量
+		</view>
+		<view class="ilblock color1 font14">
+			x1
+		</view>
+	</view>
+	
+</view>

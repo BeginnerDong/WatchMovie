@@ -1,0 +1,60 @@
+<view class="box ilblock">
+	<image src="../../image/home-img1.png"></image>
+	<view class="btm-box">
+		<view>
+			<view class="color5 font10 ilblock flo-left">惊奇队长</view>
+			<view class="color4 font9 ilblock flo-right">￥56</view>
+		</view>
+		<view class="color3 font7 one-color">
+			<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+			<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+			<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+		</view>
+		<view class="color5 font7">下架时间：2019.03.10</view>
+	</view>
+</view>
+<view class="box ilblock">
+	<image src="../../image/home-img1.png"></image>
+	<view class="btm-box">
+		<view>
+			<view class="color5 font10 ilblock flo-left">惊奇队长</view>
+			<view class="color4 font9 ilblock flo-right">￥56</view>
+		</view>
+		<view class="color3 font7 one-color">
+			<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+			<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+			<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+		</view>
+		<view class="color5 font7">下架时间：2019.03.10</view>
+	</view>
+</view>
+<view class="box ilblock">
+	<image src="../../image/home-img1.png"></image>
+	<view class="btm-box">
+		<view>
+			<view class="color5 font10 ilblock flo-left">惊奇队长</view>
+			<view class="color4 font9 ilblock flo-right">￥56</view>
+		</view>
+		<view class="color3 font7 one-color">
+			<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+			<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+			<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+		</view>
+		<view class="color5 font7">下架时间：2019.03.10</view>
+	</view>
+</view>
+<view class="box ilblock">
+	<image src="../../image/home-img1.png"></image>
+	<view class="btm-box">
+		<view>
+			<view class="color5 font10 ilblock flo-left">惊奇队长</view>
+			<view class="color4 font9 ilblock flo-right">￥56</view>
+		</view>
+		<view class="color3 font7 one-color">
+			<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+			<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+			<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+		</view>
+		<view class="color5 font7">下架时间：2019.03.10</view>
+	</view>
+</view>
