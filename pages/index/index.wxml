@@ -113,10 +113,10 @@
 	</view>
  </view>
  <view class='banner'>
-  <swiper autoplay="{{false}}" previous-margin="{{'160rpx'}}" next-margin="{{'160rpx'}}" bindchange="swiperChange">
+  <swiper autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" bindchange="swiperChange">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails"/>
+        <image mode="aspectFit" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails"/>
 		<view class="btm-box">
 			<view>
 				<view class="color5 font12 ilblock flo-left">惊奇队长</view>

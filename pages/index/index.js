@@ -16,7 +16,15 @@ Page({
 		   '../../image/home-img1.png',
 		   '../../image/home-img1.png'
 		 ],
-		 swiperIndex: 0
+		 indicatorDots: false,
+		 vertical: false,
+		 autoplay: false,
+		 circular: true,
+		 interval: 2000,
+		 duration: 1000,
+		 previousMargin: 60,
+		 nextMargin: 60,
+		 swiperIndex:0,
    },
 	show(e){
 		const self=this;
