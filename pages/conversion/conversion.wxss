@@ -1,0 +1,100 @@
+page{
+	background: #F5F5F5;
+}
+.top{
+	width: 100%;
+	height: 90rpx;
+	border-bottom: solid 1rpx #EAEAEA;
+}
+.top-item{
+	width: 50%;
+	text-align: center;
+	line-height: 90rpx;
+	color: rgb(33,33,33);
+	box-sizing: border-box;
+	height:84rpx ;
+}
+.top-item view{
+	height: 100%;
+	display: inline-block;
+	height:84rpx ;
+}
+.top-itemstar view{
+	color: rgb(255,92,161);
+	border-bottom: solid 4rpx #FF5CA1;
+}
+
+
+
+
+
+
+.list{
+	width: 44%;
+	margin: 20rpx 0rpx 0rpx 4%;
+	background: #fff;
+	border-radius: 12rpx;
+}
+.list-img{
+	width: 100%;
+	height: 400rpx;
+}
+.list-img image{
+	width: 100%;
+	height: 100%;
+}
+.list-btm{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0rpx 20rpx 30rpx;
+}
+.list-btm image{
+	width: 22rpx;
+	height:22rpx;
+}
+.list-btm .flo-left view{
+	margin-left: 10rpx;
+	margin-right: 10rpx;
+}
+.list-btm button{
+	widows: 80rpx;
+	height: 34rpx;
+	line-height: 34rpx;
+}
+
+
+
+.list-two{
+	box-sizing: border-box;
+	padding:20rpx 30rpx;
+	border-bottom: solid 1rpx #EAEAEA;
+}
+.list-two .flo-right{
+	width: 64rpx;
+	height:64rpx;
+}
+.list-two .flo-right image{
+	width: 100%;
+	height: 100%;
+}
+
+
+.fixd{
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0rpx;
+}
+.fixd-box{
+	width: 50%;
+	height: 31%;
+	margin: 25%;
+}
+.fixd-box image{
+	width: 100%;
+	height: 100%;
+}
+
+
+

@@ -117,8 +117,17 @@
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails"/>
-		<view class="move">
-			
+		<view class="btm-box">
+			<view>
+				<view class="color5 font12 ilblock flo-left">惊奇队长</view>
+				<view class="color4 font12 ilblock flo-right">￥56</view>
+			</view>
+			<view class="color3 font9 two-color">
+				<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
+				<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+			</view>
+			<view class="color5 font10" style="margin-top: 10rpx;">下架时间：2019.03.10</view>
 		</view>
       </swiper-item>
     </block>

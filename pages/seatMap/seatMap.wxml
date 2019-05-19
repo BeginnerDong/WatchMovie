@@ -1,0 +1,435 @@
+<view class="top color1 font14 bg1">
+	本场次将有机会偷瞄那个Ta
+</view>
+<view style="text-align: center; margin: 40rpx 0rpx;">
+	<view class="sex color3 font10 ilblock">
+		<image src="../../image/home-img01.png"></image>男
+	</view>
+	<view class="sex color3 font10 ilblock" style="margin-left: 100rpx;">
+		<image src="../../image/home-img04.png"></image>女
+	</view>
+</view>
+<view style="position: relative;" bindtap="show">
+	<!-- 第一排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第二排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第三排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第四排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第五排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<!-- 第六排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第七排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<!-- 第八排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第九排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img04.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set man">
+		<image src="../../image/home-img01.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	
+	<!-- 第十排 -->
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="set">
+		<image src="../../image/seat-icon%20.png"></image>
+	</view>
+	<view class="long">
+		<view>1</view>
+		<view>2</view>
+		<view>3</view>
+		<view>4</view>
+		<view>5</view>
+		<view>6</view>
+		<view>7</view>
+		<view>8</view>
+		<view>9</view>
+		<view>10</view>
+	</view>
+</view>
+<view class="color1 font15" style="text-align: center; margin: 100rpx 0rpx;">我的座位8排8号</view>
+
+<view class="fixd" wx:if="{{is_show}}">
+	<view class="bg1 fixd-boxtwo radiu15">
+		<view>
+			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 40rpx;height: 40rpx" bindtap="show"></image>
+		</view>
+		<view class="font15 color1 fat-font" style="margin: 60rpx 0rpx 0rpx;">请补全您的信息</view>
+		<view style="margin-top: 40rpx;">
+			<view class="ilblock color1 font14">手机号</view>
+			<input class="ilblock color3 font12" placeholder="请输入您的手机号"/>
+		</view>
+		<view style="margin-top: 40rpx;">
+			<view class="ilblock color1 font14">微信号</view>
+			<input class="ilblock color3 font12" placeholder="请输入您的微信号"/>
+		</view>
+		<view class="font13">
+			<button class="star" style="width: 85%; height: 70rpx; margin-top: 80rpx;"  bindtap="play">确认</button>
+		</view>
+	</view>
+</view>
+<view class="fixd" wx:if="{{is_play}}">
+	<view class="bg1 fixd-box radiu15">
+		<view>
+			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx" bindtap="play"></image>
+		</view>
+		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将取消一个锦秀券</view>
+		<view class="font13">
+			<button class="star"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">是</button>
+			<button bindtap="play">否</button>
+		</view>
+	</view>
+</view>

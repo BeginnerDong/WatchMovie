@@ -32,7 +32,7 @@
 	 </view>
 </view>
 <view class="one bg1 radiu15">
-	 <view class="list-one">
+	 <view class="list-one" bindtap="show">
 		 <view class="one-img ilblock">
 			 <image src="../../image/details-img2.png"></image>
 		 </view>
@@ -62,7 +62,7 @@
 	 </view>
 </view>
 <view class="one bg1 radiu15">
-	 <view class="list-one">
+	 <view class="list-one" bindtap="intoPath" data-path="/pages/seatMap/seatMap">
 		 <view class="one-img ilblock">
 			 <image src="../../image/details-img2.png"></image>
 		 </view>
@@ -90,10 +90,14 @@
 </view>
 
 <view class="fixd" wx:if="{{is_show}}">
-	<view class="fixd-box">
-		<image src="../../image/img2.png"></image>
-	</view>
-	<view style="text-align: center;">
-		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="show"></image>
+	<view class="fixd-box bg1 radiu15">
+		<view class="color1 font15" style="margin-top: 70rpx;">
+			请确认是否与<text class="color6">张三</text>共同购买兄弟场的电影票
+		</view>
+		<view class="color1 font15" style="margin-top: 40rpx;">购买成功后，一起观影</view>
+		<view style="width: 60%;margin: 100rpx 20%; height: 300rpx;">
+			<image src="../../image/img.png"></image>
+		</view>
+		<button class="bg3 font15" bindtap="show" bindtap="intoPathRedirect" data-path="/pages/index/index">确认</button>
 	</view>
 </view>

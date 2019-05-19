@@ -1,0 +1,99 @@
+page{
+	background: #E1E1E1;
+}
+.top{
+	width: 100%;
+	height: 92rpx;
+	text-align: center;
+	line-height: 92rpx;
+}
+.sex image{
+	width: 30rpx;
+	height:30rpx;
+	margin-right: 16rpx;
+	position: relative;
+	top: 8rpx;
+}
+.set{
+	display: inline-block;
+	width: 5%;
+	height: 36rpx;
+	margin: 20rpx 0rpx 0rpx 3%;
+}
+.set image{
+	width: 100%;
+	height: 100%;
+}
+.man image{
+	width: 100%;
+	height: 40rpx;
+}
+.long{
+	width: 5%;
+	background:#000;
+	opacity: 0.3;
+	color: #fff;
+	font-size: 30rpx;
+	text-align: center;
+	border-radius: 40rpx;
+	position: absolute;
+	top: -6rpx;
+	padding-bottom: 30rpx;
+	left: 3%;
+}
+.long view{
+	margin-top: 30rpx;
+}
+
+
+.fixd{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	top: 0rpx;
+}
+.fixd-box{
+	width:90%;
+	height: 400rpx;
+	margin: 40% 5%;
+	box-sizing: border-box;
+	padding: 30rpx;
+}
+.fixd-box button{
+	display: inline-block;
+	border: solid 1rpx #FF5CA1;
+	width: 120rpx;
+	height: 50rpx;
+	background: #fff;
+	color: rgb(102,102,102);
+	line-height: 50rpx;
+	margin-left: 21%;
+	margin-top: 80rpx;
+}
+.star{
+	background: #FF5CA1 !important;
+	color: #fff !important;
+}
+
+
+
+
+
+.fixd-boxtwo{
+	width:%;
+	margin: 40% 5%;
+	box-sizing: border-box;
+	padding: 34rpx;
+	padding-bottom: 80rpx;
+}
+.fixd-boxtwo input{
+	margin-left: 50rpx;
+	position: relative;
+	top: 12rpx;
+	
+}
+
+
+
+

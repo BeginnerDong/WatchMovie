@@ -1,0 +1,80 @@
+<view class="top bg3">
+	<view class="top-box">
+		<view class="top-img" bindtap="show">
+			<image src="../../image/sign-icon1.png"></image>
+			<view>签到</view>
+		</view>
+	</view>
+	<view class="color5 font12" style="text-align: center;">连续签到0天，已获得0个锦绣券</view>
+</view>
+<view class="box-two bg1">
+	<view class="ilblock" style="width: 50%; text-align: center; border-right: solid 1rpx #F4F4F4;">
+		<view class="font15 color1">0<image src="../../image/sign-icon2.png"></image> </view>
+		<view class="color3 font12" style="margin-top: 20rpx;">今日获得</view>
+	</view>
+	<view class="ilblock" style="width: 49%; text-align: center;">
+		<view class="font15 color1">0<image src="../../image/sign-icon2.png"></image> </view>
+		<view class="color3 font12" style="margin-top: 20rpx;">我的锦秀券</view>
+	</view>
+</view>
+<view class="bg1 line-box">
+	<view class="line-red color2 font15">新手任务</view>
+</view>
+<view class="bg1 list-info">
+	<view class="ilblock font15 color1">
+		完善个人资料
+	</view>
+	<view class="ilblock list-color color6 font9 radiu40">
+		<image src="../../image/sign-icon2.png"></image>+3
+	</view>
+	<view class="flo-right radiu40 font12" bindtap="intoPath" data-path="/pages/info/info">
+		去完善
+	</view>
+</view>
+<view class="bg1 list-info">
+	<view class="ilblock font15 color1">
+		发布影评
+	</view>
+	<view class="ilblock list-color color6 font9 radiu40">
+		<image src="../../image/sign-icon2.png"></image>+3
+	</view>
+	<view class="flo-right radiu40 font12" bindtap="intoPath" data-path="/pages/sendFilmReview/sendFilmReview">
+		去发布
+	</view>
+</view>
+<view class="bg1 line-box" style="margin-top: 10rpx;">
+	<view class="line-red color2 font15">日常任务</view>
+</view>
+<view class="bg1 list-info">
+	<view class="ilblock font15 color1">
+		分享好友
+	</view>
+	<view class="ilblock list-color color6 font9 radiu40">
+		<image src="../../image/sign-icon2.png"></image>+3
+	</view>
+	<view class="flo-right radiu40 font12">
+		分享
+	</view>
+</view>
+<view class="bg1 list-info">
+	<view class="ilblock font15 color1">
+		签到
+	</view>
+	<view class="ilblock list-color color6 font9 radiu40">
+		<image src="../../image/sign-icon2.png"></image>+3
+	</view>
+	<view class="flo-right radiu40 font12" bindtap="show">
+		签到
+	</view>
+</view>
+
+<view class="secceed" wx:if="{{is_show}}">
+	<view class="secceed-box" style="width: 80%;margin:30% 10%;height: 40%;">
+		<image src="../../image/about-img2%20(2).png"></image>
+		<view class="font14 color6 text">您已连续签到5天啦！</view>
+	</view>
+	<view style="text-align: center;">
+		<image src="../../image/icon1.png" style="width: 40rpx; height: 40rpx;" bindtap="show"></image>
+	</view>
+	
+</view>

@@ -2,4 +2,49 @@
 	color: #fff;
 	font-size:90rpx;
 	text-align: center;
+	position: absolute;
+	top: 100rpx;
+	width: 100%;
+}
+.box{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6% 10%;
+	height:670rpx;
+	position: relative;
+}
+.box image{
+	width: 100%;
+	height: 100%;
+}
+.box-box{
+	display: inline-block;
+	width: 180rpx;
+	height:180rpx;
+	position: absolute;
+	text-align: center;
+	
+}
+.box-one{
+	top: 21%;
+	left: 20%;
+}
+.box-two{
+	top: 20%;
+	right: 20%;
+}
+.box-three{
+	bottom: 15%;
+	left: 20%;
+}
+.box-fore{
+	bottom: 15%;
+	right: 20%;
+}
+.box-box image{
+	width: 70rpx;
+	height:60rpx;
+}
+.box-box view{
+	margin-top: 30rpx;
 }

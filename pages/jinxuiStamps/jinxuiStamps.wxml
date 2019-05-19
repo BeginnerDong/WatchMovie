@@ -1,3 +1,26 @@
 <view style="width: 100%;height: 400rpx;">
 	<image src="../../image/微信图片_20190516192652.png" style="width: 100%; height: 100%;"></image>
+	<view class="top-text">
+		<view>200</view>
+		<view class="font13" style="margin-top: 30rpx;">锦绣券（张）</view>
+	</view>
+</view>
+<view class="box">
+	<image src="../../image/mareiage-icon5.png"></image>
+	<view class="box-box box-one" bindtap="intoPath" data-path="/pages/meDraw/meDraw">
+		<image src="../../image/mareiage-icon1.png"></image>
+		<view class="color1 font12">我翻了谁</view>
+	</view>
+	<view class="box-box box-two" bindtap="intoPath" data-path="/pages/whoDraw/whoDraw">
+		<image src="../../image/mareiage-icon2.png"></image>
+		<view class="color1 font12">谁翻了我</view>
+	</view>
+	<view class="box-box box-three" bindtap="intoPath" data-path="/pages/tasks/tasks">
+		<image src="../../image/mareiage-icon3.png"></image>
+		<view class="color1 font12">领锦绣券</view>
+	</view>
+	<view class="box-box box-fore" bindtap="intoPath" data-path="/pages/buy/buy">
+		<image src="../../image/mareiage-icon4.png"></image>
+		<view class="color1 font12">购买锦绣券</view>
+	</view>
 </view>

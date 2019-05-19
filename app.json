@@ -27,7 +27,14 @@
 		"pages/Scan/Scan",
 		"pages/myFilmReview/myFilmReview",
 		"pages/myFilm/myFilm",
-		"pages/jinxuiStamps/jinxuiStamps"
+		"pages/jinxuiStamps/jinxuiStamps",
+		"pages/meDraw/meDraw",
+		"pages/whoDraw/whoDraw",
+		"pages/whoDrawTwo/whoDrawTwo",
+		"pages/tasks/tasks",
+		"pages/buy/buy",
+		"pages/conversion/conversion",
+		"pages/seatMap/seatMap"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -2,7 +2,7 @@
 	<image src="../../image/about-img1.png" style="width: 100%; height: 200rpx;"></image>
 	<view class="top_top" style="line-height: 100rpx;">
 		<view class="flo-right color5 font12"style="height: 100%; margin-right: 60rpx;"
-		 bindtap="show"  bindtap="intoPath" data-path="/pages/info/info">
+		bindtap="intoPath" data-path="/pages/info/info">
 		<image src="../../image/about-icon7.png" style="width: 30rpx; height: 26rpx;margin-right: 16rpx;"></image>	
 			<text style="position: relative;top: -6rpx;">编辑</text>
 		</view>
@@ -48,7 +48,7 @@
 	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
 	 </view>
 </view>
-<view class="info bg1" bindtap="intoPath" data-path="/pages/myflowerbag/myflowerbag">
+<view class="info bg1" bindtap="intoPath" data-path="/pages/conversion/conversion">
 	<view class="ilblock listimg">
 		<image src="../../image/about-icon4.png"></image>
 	</view>

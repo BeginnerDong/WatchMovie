@@ -11,7 +11,7 @@
 </view>
 <view class="time font13 color2" style="padding-top: 80rpx;"><text class="color1" style="font-size: 50rpx;">02</text>/12月</view>
 <view class="bigbox bg1" style="clear: both;">
-	<view class="boxleft ilblock">
+	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
 		<view>
 			<view class="ilblock itemimg radiu50 hiden">
 				<image src="../../image/about-img2.png"></image>
@@ -32,7 +32,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="boxright ilblock">
+	<view class="boxright ilblock" bindtap="intoPath" data-path="/pages/filmName/filmName">
 		<view class="boxright-box">
 			<view class="boxright-img">
 				<image src="../../image/details-img2.png"></image>
@@ -50,7 +50,7 @@
 	</view>
 </view>
 <view class="bigbox bg1">
-	<view class="boxleft ilblock">
+	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
 		<view>
 			<view class="ilblock itemimg radiu50 hiden">
 				<image src="../../image/about-img2.png"></image>
@@ -71,7 +71,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="boxright ilblock">
+	<view class="boxright ilblock" bindtap="intoPath" data-path="/pages/filmName/filmName">
 		<view class="boxright-box">
 			<view class="boxright-img">
 				<image src="../../image/details-img2.png"></image>
@@ -90,7 +90,7 @@
 </view>
 <view class="time font13 color2"><text class="color1" style="font-size: 50rpx;">02</text>/12月</view>
 <view class="bigbox bg1">
-	<view class="boxleft ilblock">
+	<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
 		<view>
 			<view class="ilblock itemimg radiu50 hiden">
 				<image src="../../image/about-img2.png"></image>
@@ -111,7 +111,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="boxright ilblock">
+	<view class="boxright ilblock" bindtap="intoPath" data-path="/pages/filmName/filmName">
 		<view class="boxright-box">
 			<view class="boxright-img">
 				<image src="../../image/details-img2.png"></image>

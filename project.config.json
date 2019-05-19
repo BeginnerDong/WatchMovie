@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 114,
+			"current": 122,
 			"list": [
 				{
 					"id": -1,
@@ -723,7 +723,55 @@
 				{
 					"id": -1,
 					"name": "锦秀全",
-					"pathName": "pages/jinxuiStamps/jinxuiStamps"
+					"pathName": "pages/jinxuiStamps/jinxuiStamps",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我翻了谁",
+					"pathName": "pages/meDraw/meDraw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "谁翻了谁",
+					"pathName": "pages/meDraw/meDraw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "谁翻了我",
+					"pathName": "pages/whoDraw/whoDraw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "做任务",
+					"pathName": "pages/tasks/tasks",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购买",
+					"pathName": "pages/buy/buy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "兑换",
+					"pathName": "pages/conversion/conversion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的电影",
+					"pathName": "pages/myFilm/myFilm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "座位图",
+					"pathName": "pages/seatMap/seatMap"
 				}
 			]
 		}

@@ -1,0 +1,39 @@
+<view class="top bg1">
+	<button class="font15 color5 bg3">新增0人翻了我</button>
+</view>
+<view class="info-one bg1" bindtap="intoPath" data-path="/pages/hisPage/hisPage">
+	<view class="head ilblock">
+		<image src="../../image/about-img2.png"></image>
+	</view>
+	<view class="head-right ilblock flo-right">
+		<view class="font14 color1 overflow1" style="margin-top:20rpx;">昵称昵称昵称</view>
+		<view class="color3 font10 info-text hiden">
+			<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<text>北京</text><text>93n年水瓶座</text><text>175cm</text><text>本科</text><text>西安电子科技大学</text>
+		</view>
+	</view>
+</view>
+<view class="info-one bg1"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">
+	<view class="head ilblock">
+		<image src="../../image/about-img2.png"></image>
+	</view>
+	<view class="head-right ilblock flo-right">
+		<view class="font14 color1 overflow1" style="margin-top:20rpx;">昵称昵称昵称</view>
+		<view class="color3 font10 info-text hiden">
+			<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<text>北京</text><text>93n年水瓶座</text><text>175cm</text><text>本科</text><text>西安电子科技大学</text>
+		</view>
+	</view>
+</view>
+<view class="info-one bg1"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">
+	<view class="head ilblock">
+		<image src="../../image/about-img2.png"></image>
+	</view>
+	<view class="head-right ilblock flo-right">
+		<view class="font14 color1 overflow1" style="margin-top:20rpx;">昵称昵称昵称</view>
+		<view class="color3 font10 info-text hiden">
+			<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<text>北京</text><text>93n年水瓶座</text><text>175cm</text><text>本科</text><text>西安电子科技大学</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,41 @@
+page{
+	background: #F2F2F2;
+}
+.top{
+	padding-top: 50rpx;
+	
+}
+.top button{
+	width: 40%;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+
+.info-one{
+	box-sizing: border-box;
+	padding:30rpx 4%;
+	border-bottom: solid 1rpx #EEEEEE;
+}
+.head{
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 20rpx;
+}
+.head image{
+	height: 100%;
+	width: 100%;
+	
+}
+.head-right{
+	height: 120rpx;
+	width: 78%;
+}
+.info-text{
+	margin: 20rpx 0rpx;
+	
+}
+.info-text text{
+	margin-right: 20rpx;
+	flex-wrap: nowrap;
+}
+
