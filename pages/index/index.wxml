@@ -117,7 +117,7 @@
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
         <image mode="aspectFit" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails"/>
-		<view class="btm-box">
+		<view class="btm-box {{swiperIndex == index ? 'active1' : ''}}">
 			<view>
 				<view class="color5 font12 ilblock flo-left">惊奇队长</view>
 				<view class="color4 font12 ilblock flo-right">￥56</view>
