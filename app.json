@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-		"pages/test/test",
 		"pages/square/square",
 		"pages/user/user",
 		"pages/heartSession/heartSession",
