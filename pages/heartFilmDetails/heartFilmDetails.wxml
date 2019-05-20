@@ -71,6 +71,6 @@
 <view style="width: 100%;height: 100rpx;"></view>
 <view class="btm">
 	<view class="ilblock font13 color5">心动值</view>
-	<!-- <progress percent="80" active /> -->
+	<!-- <progress class="ilblock" backgroundColor="#fff" percent="40" stroke-width="12"/> -->
 	<image class="flo-right" src="../../image/details-icon1.png" style="width: 38rpx; height: 46rpx;margin-top: 16rpx;"></image>
 </view>

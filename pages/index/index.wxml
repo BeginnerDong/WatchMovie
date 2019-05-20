@@ -136,9 +136,6 @@
 <view class="bg1" style="width: 100%;padding: 30rpx 0rpx;">
 	<view class="back-logo">
 		<image src="../../image/home-icon3.png" style="height: 50%; width: 32%;"></image>
-		<view class="font10 color3 flo-right ilblock" style="line-height: 124rpx; margin-right: 30rpx;">
-			查看更多<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 30rpx;"></image>
-		</view>
 	 </view>
 	 <view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
 	 	<view class="boxleft ilblock">

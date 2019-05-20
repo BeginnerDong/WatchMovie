@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 122,
+			"current": 123,
 			"list": [
 				{
 					"id": -1,
@@ -771,7 +771,13 @@
 				{
 					"id": -1,
 					"name": "座位图",
-					"pathName": "pages/seatMap/seatMap"
+					"pathName": "pages/seatMap/seatMap",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "xiang ",
+					"pathName": "pages/heartFilmDetails/heartFilmDetails"
 				}
 			]
 		}
