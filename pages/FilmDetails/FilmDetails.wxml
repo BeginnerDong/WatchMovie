@@ -1,20 +1,32 @@
 <view class="top-img">
-	<image src="../../image/details-img1.png"></image>
+	<swiper style="width:100%;height:400rpx" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+	 interval="{{interval}}" indicator-color="pink" indicator-dots="{{indicatorDots}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"
+	 bindchange="swiperChange">
+		<block wx:for="{{web_mainData.product.bannerImg}}" wx:key="{{index}}">
+			<swiper-item>
+				<image mode="aspectFit" src="{{item.url}}" class="slide-image {{swiperIndex == index? 'active' : ''}}" />
+			</swiper-item>
+		</block>
+	</swiper>
 </view>
 <view class="introduce">
 	<view class="color1 font15 line-red fat-font">影片介绍</view>
 	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
 		<view>
-			<view class="font14 color1 fat-font ilblock">惊奇队长</view>
+			<view class="font14 color1 fat-font ilblock">{{web_mainData.title}}</view>
 			<view class="color3 font10 one-color ilblock">
-				<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-				<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-				<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+				<block wx:for="{{web_mainData.product.description}}">
+					<view class="ilblock radiu40" style="{{index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{item}}</view>
+				</block>
 			</view>
-			<view class="ilblock color4 font14 flo-right" style="margin-top: 10rpx;">￥56.00</view>
+			<view class="ilblock color4 font14 flo-right" style="margin-top: 10rpx;">￥{{web_mainData.price}}</view>
 		</view>
-		<view class="font12 color2 textone">内容内容内容内容内容内容内容内容内容容内容内容内容
-		内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+		<view class="font12 color2 textone">
+			<view class="content ql-editor">
+				<import src="../../wxParse/wxParse.wxml" />
+				<template is="wxParse" data="{{wxParseData:web_mainData.product.content}}" />
+			</view>
+		</view>
 	</view>
 </view>
 <view class="bg2"></view>
@@ -23,12 +35,13 @@
 	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
 		<view class="one-tabe radiu15 font13">
 			<view style="height: 50%; width: 100%; border-bottom: solid 1rpx #E3E3E3; padding: 30rpx 0rpx;box-sizing: border-box;">
-				<view class="ilblock" style="border-right: solid 1rpx #E1E1E1;width: 50%; text-align: center;">5号厅08场</view>
-				<view class="ilblock" style="width: 49%; text-align: center;">长安奥斯卡影院
-				<image src="../../image/details-icon2.png"></image></view>
+				<view class="ilblock" style="border-right: solid 1rpx #E1E1E1;width: 50%; text-align: center;">{{web_mainData.passage2}}</view>
+				<view class="ilblock" style="width: 49%; text-align: center;">{{web_mainData.passage1}}
+					<image src="../../image/details-icon2.png"></image>
+				</view>
 			</view>
 			<view style="height: 50%; line-height: 100rpx;text-align: center;">
-				2019-04-12<text style="margin-left: 20rpx;">13:00-15:00</text>
+				<text>{{web_mainData.passage3}}</text>
 			</view>
 		</view>
 	</view>
@@ -50,19 +63,20 @@
 	<view class="color1 font15 line-red fat-font">观影须知</view>
 	<view class="font12 color2 textone" style="padding: 0rpx 30rpx;">
 		<view>
-			1、内容内容内容内容内容内容
-		</view>
-		<view>
-			2、内容内容内容内容内容内容
+			<view class="content ql-editor">
+				<import src="../../wxParse/wxParse.wxml" />
+				<template is="wxParse" data="{{wxParseData:web_mainData.content}}" />
+			</view>
 		</view>
 	</view>
 </view>
 <view class="bg2"></view>
-<view class="introduce"style="padding-bottom: 0rpx;">
+<view class="introduce" style="padding-bottom: 0rpx;">
 	<view>
 		<view class="color1 font15 line-red fat-font ilblock">影评</view>
-		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;"  bindtap="intoPath" data-path="/pages/filmReview/filmReview">更多
-		<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 20rpx;"></image> </view>
+		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;" bindtap="intoPath" data-path="/pages/filmReview/filmReview">更多
+			<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 20rpx;"></image>
+		</view>
 	</view>
 	<view class="boxleft">
 		<view>
@@ -74,7 +88,7 @@
 		</view>
 		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
 		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+			内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
 		<view style="margin: 30rpx 0rpx 0rpx;">
 			<view class="font10 color2 ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
@@ -96,7 +110,7 @@
 		</view>
 		<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
 		<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
+			内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
 		<view style="margin: 30rpx 0rpx 0rpx;">
 			<view class="font10 color2 ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
@@ -121,8 +135,8 @@
 		</view>
 		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将取消一个锦秀券</view>
 		<view class="font13">
-			<button class="star"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">是</button>
-			<button >否</button>
+			<button class="star" bindtap="intoPath" data-path="/pages/hisPage/hisPage">是</button>
+			<button>否</button>
 		</view>
 	</view>
 </view>

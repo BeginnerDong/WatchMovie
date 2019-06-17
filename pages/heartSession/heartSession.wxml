@@ -1,38 +1,17 @@
- <view class="list-one" bindtap="intoPath" data-path="/pages/heartFilmDetails/heartFilmDetails">
-	 <view class="one-img ilblock">
-		 <image src="../../image/details-img2.png"></image>
-	 </view>
-	  <view class="one-center ilblock">
-			<view class="one-title overflow1 color1 font14">惊奇队长</view> 
-			<view class="color3 font10 one-color">
-				<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-				<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-				<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
-			</view>
-			<view class="one-time color2 font11">
-				下架时间：2019.03.10
-			</view>
-	 </view>
-	 <view class="one-right flo-right">
-		 <view class="one-heart">
-			 <image src="../../image/home-icon5.png"></image>
-		 </view>
-		 <view class="font10 color6">心动值</view>
-	 </view>
- </view>
- <view class="list-one" bindtap="intoPath" data-path="/pages/heartFilmDetails/heartFilmDetails">
+ <block wx:for="{{web_mainData}}" wx:key="id">
+	 <view class="list-one" bindtap="intoPath" data-path="/pages/heartFilmDetails/heartFilmDetails?id={{item.id}}">
 		 <view class="one-img ilblock">
-			 <image src="../../image/details-img2.png"></image>
+			 <image src="{{item.mainImg[0].url}}"></image>
 		 </view>
 		  <view class="one-center ilblock">
-				<view class="one-title overflow1 color1 font14">惊奇队长</view> 
+				<view class="one-title overflow1 color1 font14">{{item.title}}</view> 
 				<view class="color3 font10 one-color">
-					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
+					<block wx:for="{{item.description}}" wx:for-item="c_item" wx:for-index="c_index">
+						<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
+					</block>
 				</view>
 				<view class="one-time color2 font11">
-					下架时间：2019.03.10
+					下架时间：{{item.end_time}}
 				</view>
 		 </view>
 		 <view class="one-right flo-right">
@@ -41,4 +20,5 @@
 			 </view>
 			 <view class="font10 color6">心动值</view>
 		 </view>
- </view>
+	 </view>
+</block>

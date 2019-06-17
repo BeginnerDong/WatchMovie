@@ -1,43 +1,53 @@
 <view class="box">
-	<view class="list-info">
-		<view class="ilblock list-left color1 font14">
+	<view class="list-info" style="display: flex;">
+		<view class="ilblock list-left color1 font14" style="display:flex;align-items:center;width:23%">
 			选择电影
 		</view>
-		<view class="ilblock flo-right color3 font12"style="margin-top: 8rpx;">请选择
-			<image src="../../image/home-icon6.png"></image>
-		</view>
+		 <picker class="ilblock flo-right color3 font12" bindchange="filmChange" value="{{index}}"  range="{{web_mainData}}" range-key ="title" 
+		 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+			<view style="margin-top: 8rpx;">{{web_mainData[web_index].title?web_mainData[web_index].title:'请选择'}}
+				<image src="../../image/home-icon6.png"></image>
+			</view>
+		</picker>
 	</view>
 	<view class="list-info">
 		<view class="ilblock list-left color1 font14">
 			评分
 		</view>
 		<view class="ilblock star">
-			<image src="../../image/release-icon1.png"></image>
-			<image src="../../image/release-icon1.png"></image>
-			<image src="../../image/release-icon1.png"></image>
-			<image src="../../image/release-icon1.png"></image>
-			<image src="../../image/release-icon1.png"></image>
+			<block wx:for="{{web_stars}}" wx:key="id">
+				<image src="{{web_submitData.class>=item?'/image/release-icon3.png':'../../image/release-icon1.png'}}" data-key="class" bindtap="changeBind" data-value="{{item}}">></image>
+			</block>
+			<image src=""></image>
 		</view>
 	</view>
 	<view class="list-info">
 		<view class="ilblock list-left color1 font14">
 			标题
 		</view>
-		<input class="font12 color3" placeholder="请输入标题" />
+		<input class="font12 color3" placeholder="请输入标题" data-key="title" bindblur="changeBind"  value="{{web_submitData.title}}"/>
 	</view>
 	<view class="list-info">
 		<view class="ilblock list-left color1 font14">
 			内容
 		</view>
-		<input class="font12 color3" placeholder="请输入内容" />
+		<input class="font12 color3" placeholder="请输入内容" data-key="content" bindblur="changeBind"  value="{{web_submitData.content}}"/>
 	</view>
 	<view class="list-info">
 		<view class="color1 font14">
 			上传图片
 		</view>
-		<view class="photo">
-			<image src="../../image/release-icon2.png"></image>
+		<view style="display: flex;">
+			 <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
+				<view class="photo"  style="position:relative">
+					<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}" style="margin: 0 20%;"/>   
+					<image src="/image/details-icon1%20(2).png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
+				</view>
+			</block>
+			<view class="photo" bindtap="upLoadImg">
+				<image src="../../image/release-icon2.png" style="margin: 0 5%;"></image>
+			</view>
 		</view>
 	</view>
-	<button class="color5 font13 bg3" style="width: 80%; margin-top: 200rpx;">确认</button>
+	<button class="color5 font13 bg3" style="width: 80%; margin-top: 200rpx;" bindtap="{{web_buttonCanClick?'submit':''}}">确认</button>
 </view>

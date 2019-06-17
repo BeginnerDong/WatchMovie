@@ -1,3 +1,4 @@
+@import "../../wxParse/wxParse.wxss";
 .top{
 	text-align: center;
 	width: 100%;
