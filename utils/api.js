@@ -77,6 +77,18 @@ class Api extends Base {
 		this.request(allParams);
 	}
 
+	SeatTableGet(param, callback) {
+		var allParams = {
+			url: 'Common/SeatTable/get',
+			type: 'post',
+			data: param,
+			sCallback: function(data) {
+				callback && callback(data);
+			}
+		};
+		this.request(allParams);
+	}
+
 	rankGet(param, callback) {
 		var allParams = {
 			url: 'Common/Rank/get',
@@ -391,6 +403,18 @@ class Api extends Base {
 	logGet(param, callback) {
 		var allParams = {
 			url: 'Common/Log/get',
+			type: 'post',
+			data: param,
+			sCallback: function(data) {
+				callback && callback(data);
+			}
+		};
+		this.request(allParams);
+	}
+
+	orderItemGet(param, callback) {
+		var allParams = {
+			url: 'Common/OrderItem/get',
 			type: 'post',
 			data: param,
 			sCallback: function(data) {

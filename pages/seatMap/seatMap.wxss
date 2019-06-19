@@ -16,9 +16,9 @@ page{
 }
 .set{
 	display: inline-block;
-	width: 5%;
+	width: 32rpx;
 	height: 36rpx;
-	margin: 20rpx 0rpx 0rpx 3%;
+	margin: 20rpx 0rpx 0rpx 18rpx;
 }
 .set image{
 	width: 100%;
@@ -37,7 +37,7 @@ page{
 	text-align: center;
 	border-radius: 40rpx;
 	position: absolute;
-	top: -6rpx;
+	top: 45rpx;
 	padding-bottom: 30rpx;
 	left: 3%;
 }
