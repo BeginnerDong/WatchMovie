@@ -1,67 +1,45 @@
  <view class="top">
-	 <view class="top-item ilblock top-itemstar">
+	 <view class="top-item ilblock {{web_num==1?'top-itemstar':''}}" bindtap="{{web_buttonCanClick?'changeType':''}}" data-num='1'>
 		 <view class="font15">
 			 可兑换
 		 </view>
-	 </view><view class="top-item ilblock">
+	 </view>
+	 <view class="top-item ilblock {{web_num==2?'top-itemstar':''}}" bindtap="{{web_buttonCanClick?'changeType':''}}" data-num='2'>
 		 <view class="font15">
 			 已兑换
 		 </view>
 	 </view>
  </view>
- <view class="list ilblock">
- 	<view class="list-img">
- 		<image src="../../image/exchange-img1.png"></image>
- 	</view>
- 	<view class="list-btm">
-		<view class="color1 font14" style="margin: 20rpx 0rpx;">可乐<text class="color2 font10">（2张兑换一杯）</text></view>
- 		<view class="ilblock flo-left">
- 			<image src="../../image/exchange-icon1.png"></image>
-			<view class="ilblock color2 font12">1</view>
-			<image src="../../image/exchange-icon2.png"></image>
- 		</view>
- 		<button class="flo-right color5 font10 bg3">
- 			兑换
- 		</button>
-		<view style="clear: both;"></view>
- 	</view>
- </view>
- <view class="list ilblock">
- 	<view class="list-img">
- 		<image src="../../image/exchange-img1.png"></image>
- 	</view>
- 	<view class="list-btm">
- 		<view class="color1 font14" style="margin: 20rpx 0rpx;">爆米花<text class="color2 font10">（2张兑换一杯）</text></view>
- 		<view class="ilblock flo-left">
- 			<image src="../../image/exchange-icon1.png"></image>
- 			<view class="ilblock color2 font12">1</view>
- 			<image src="../../image/exchange-icon2.png"></image>
- 		</view>
- 		<button class="flo-right color5 font10 bg3">
- 			兑换
- 		</button>
- 		<view style="clear: both;"></view>
- 	</view>
- </view>
- 
- <view class="list-two">
-	 <view class="ilblock">
-		 <view class="color1 font14">爆米花</view>
-		  <view class="color2 font12" style="margin-top: 16rpx;">x 1</view>
+ <block wx:for="{{web_mainData}}" wx:key="id">
+	 <view class="list ilblock" wx:if="{{web_num==1}}">
+		<view class="list-img">
+			<image src="{{item.mainImg[0].url}}"></image>
+		</view>
+		<view class="list-btm">
+			<view class="color1 font14" style="margin: 20rpx 0rpx;">{{item.title}}<text class="color2 font10">（{{item.price}}张兑换）</text></view>
+			<view class="ilblock flo-left">
+				<image src="../../image/exchange-icon1.png" bindtap="counter" data-index="{{index}}" data-type="-"></image>
+				<view class="ilblock color2 font12">{{item.count}}</view>
+				<image src="../../image/exchange-icon2.png" bindtap="counter" data-index="{{index}}" data-type="+"></image>
+			</view>
+			<button class="flo-right color5 font10 bg3"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" data-index="{{index}}">
+				兑换
+			</button>
+			<view style="clear: both;"></view>
+		</view>
 	 </view>
-	 <view class="ilblock flo-right">
-		 <image src="../../image/img2.png" bindtap="show"></image>
+	 
+
+	 <view class="list-two" wx:if="{{web_num==2}}">
+		 <view class="ilblock">
+			 <view class="color1 font14">{{item.products[0].snap_product.title}}</view>
+			  <view class="color2 font12" style="margin-top: 16rpx;">x{{item.products[0].count}}</view>
+		 </view>
+		 <view class="ilblock flo-right">
+			 <image src="{{item.url}}" bindtap="show" data-index="{{index}}"></image>
+		 </view>
 	 </view>
- </view>
- <view class="list-two">
- 	 <view class="ilblock">
- 		 <view class="color1 font14">爆米花</view>
- 		  <view class="color2 font12" style="margin-top: 16rpx;">x 1</view>
- 	 </view>
- 	 <view class="ilblock flo-right">
- 		 <image src="../../image/img2.png" bindtap="show"></image>
- 	 </view>
- </view>
+</block>
  
  
  
@@ -69,9 +47,9 @@
  
 <view class="fixd" wx:if="{{is_show}}">
 	<view class="fixd-box">
-		<image src="../../image/img2.png"></image>
+		<image src="{{web_url}}"></image>
 	</view>
 	<view style="text-align: center;">
-		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="show"></image>
+		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="close"></image>
 	</view>
 </view>

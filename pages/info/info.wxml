@@ -1,10 +1,19 @@
+<wxs module="func" src="../../utils/func.wxs" />
 <view style="box-sizing: border-box; padding: 30rpx;">
 	<view class="color1 font14">
 		<image class="list-img" src="../../image/basic-icon1.png"></image>
 		相册<text class="font10" style="color: rgb(184,184,184);margin-left: 10rpx;">(至少上传一张真人照片)</text>
 	</view>
-	<view class="photo" style="background: url(../../image/basic-icon6.png) no-repeat 50% center;background-size: 10%;">
-		
+	<view style="display: flex;">
+		 <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
+			<view class="photo"  style="position:relative">
+				<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}" style="margin: 0 20%;"/>   
+				<image src="/image/details-icon1%20(2).png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
+			</view>
+		</block>
+		<view class="photo" bindtap="upLoadImg">
+			<image src="../../image/release-icon2.png" style="margin: 0 5%;"></image>
+		</view>
 	</view>
 </view>
 <view class="bg2"></view>
@@ -27,21 +36,42 @@
 			<image class="list-img" src="../../image/basic-icon3.png"></image>
 			基本信息
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">出生日期</view>
-			<view class="ilblock font11 flo-right">点击选择</view>
+		<view class="info-info" style="display: flex;">
+			<view class="ilblock color2 font13" style="width:30%;display: flex;align-items: center;">出生日期</view>
+			<picker class="ilblock flo-right color3 font12" mode="date" start="1970-01-01" end="2019-01-01" bindchange="bindDateChange"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+				<view class="color2 font12 flo-right" style="margin-top: 10rpx;">{{web_submitData.birthday?web_submitData.birthday:'请选择'}}
+				</view>
+			</picker>
+			 
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">星座</view>
-			<view class="ilblock font11 flo-right">点击选择</view>
+		<view class="info-info"  style="display: flex;">
+			<view class="ilblock color2 font13" style="width:30%;display: flex;align-items: center;">星座</view>
+			<picker class="ilblock flo-right color3 font12" bindchange="constellationDataChange" value="{{index}}"  range="{{constellationData}}"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+				<view style="margin-top: 8rpx;">{{constellationData[web_indexC]?constellationData[web_indexC]:'请选择'}}
+				</view>
+			</picker>
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">学历</view>
-			<view class="ilblock font11 flo-right">点击选择</view>
+		<view class="info-info"  style="display: flex;">
+			<view class="ilblock color2 font13" style="width:30%;display: flex;align-items: center;">学历</view>
+			<picker class="ilblock flo-right color3 font12" bindchange="educationDataChange" value="{{index}}"  range="{{educationData}}"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+				<view style="margin-top: 8rpx;">{{educationData[web_indexE]?educationData[web_indexE]:'请选择'}}
+				</view>
+			</picker>
 		</view>
 		<view class="info-info">
 			<view class="ilblock color2 font13">学院</view>
-			<view class="ilblock font11 flo-right">点击选择</view>
+			<input class="ilblock font11" style="height:20px;position: initial;" data-key="school" bindblur="changeBind"  value="{{web_submitData.school}}"></input>
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">出生地</view>
+			<input class="ilblock font11" style="height:20px;position: initial;" data-key="birth_address" bindblur="changeBind"  value="{{web_submitData.birth_address}}"></input>
+		</view>
+		<view class="info-info">
+			<view class="ilblock color2 font13">现居地</view>
+			<input class="ilblock font11" style="height:20px;position: initial;" data-key="address" bindblur="changeBind"  value="{{web_submitData.address}}"></input>
 		</view>
 	</view>
 </view>
@@ -55,27 +85,11 @@
 	</view>
 </view>
 <view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
+	<block wx:for="{{web_movieTipData.description}}" wx:key="index">
+		<view class="libe" style="{{func.inArray(item,web_submitData.movie_label)!=-1?'border:1px solid #FF5BA0':''}}" bindtap="selectMovie" data-index="{{index}}">
+			{{item}}
+		</view>
+	</block>
 </view>
 <view class="bg2"></view>
 <view class="box">
@@ -87,27 +101,11 @@
 	</view>
 </view>
 <view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
-	<view class="libe">
-		恐怖
-	</view>
+	<block wx:for="{{web_hobbyData.description}}" wx:key="index">
+		<view class="libe" style="{{func.inArray(item,web_submitData.hobby_label)!=-1?'border:1px solid #FF5BA0':''}}" bindtap="selectHobby" data-index="{{index}}">
+			{{item}}
+		</view>
+	</block>
 </view>
 <view class="bg2"></view>
 <view class="box">
@@ -119,9 +117,9 @@
 	</view>
 </view>
 <view class="box">
-	<textarea class="font11" value="请简单的介绍一下你自己吧">
+	<textarea class="font11" placeholder="请简单的介绍一下你自己吧" data-key="passage1" bindblur="changeBind"  value="{{web_submitData.passage1}}">
 		
 	</textarea>
 </view>
 	
-<button class="color5 font13 bg3 radiu15" style="width: 80%; margin: 80rpx auto;">完成</button>
+<button class="color5 font13 bg3 radiu15" style="width: 80%; margin: 80rpx auto;" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">完成</button>

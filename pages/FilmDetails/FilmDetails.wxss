@@ -97,6 +97,11 @@
 	text-align: center;
 }
 
+
+.star{
+	background: #FF5CA1 !important;
+	color: #fff !important;
+}
 .fixd{
 	position: fixed;
 	width: 100%;
@@ -125,6 +130,24 @@
 .star{
 	background: #FF5CA1 !important;
 	color: #fff !important;
+}
+
+
+
+
+
+.fixd-boxtwo{
+	width:%;
+	margin: 40% 5%;
+	box-sizing: border-box;
+	padding: 34rpx;
+	padding-bottom: 80rpx;
+}
+.fixd-boxtwo input{
+	margin-left: 50rpx;
+	position: relative;
+	top: 12rpx;
+	
 }
 
 

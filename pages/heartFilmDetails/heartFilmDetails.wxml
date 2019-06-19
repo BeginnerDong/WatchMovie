@@ -71,6 +71,6 @@
 <view style="width: 100%;height: 100rpx;"></view>
 <view class="btm">
 	<view class="ilblock font13 color5" style="width: 15%;">心动值</view>
-	<progress class="ilblock" backgroundColor="#fff" color="pink" percent="40" stroke-width="10" border-radius="5" style="width: 75%;"/>
-	<image class="flo-right" src="../../image/details-icon1.png" style="width: 38rpx; height: 46rpx;margin-top: 16rpx;"></image>
+	<progress class="ilblock" backgroundColor="#fff" color="pink" percent="{{web_mainData.percent}}" stroke-width="10" border-radius="5" style="width: 75%;"/>
+	<image class="flo-right" src="../../image/details-icon1.png" style="width: 38rpx; height: 46rpx;margin-top: 16rpx;" bindtap="{{web_buttonCanClick?'submit':''}}"></image>
 </view>

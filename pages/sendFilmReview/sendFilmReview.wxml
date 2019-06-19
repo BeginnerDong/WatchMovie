@@ -16,7 +16,7 @@
 		</view>
 		<view class="ilblock star">
 			<block wx:for="{{web_stars}}" wx:key="id">
-				<image src="{{web_submitData.class>=item?'/image/release-icon3.png':'../../image/release-icon1.png'}}" data-key="class" bindtap="changeBind" data-value="{{item}}">></image>
+				<image src="{{web_submitData.class>=item?'/image/release-icon3.png':'../../image/release-icon1.png'}}" data-key="class" bindtap="changeBind" data-value="{{item}}"></image>
 			</block>
 			<image src=""></image>
 		</view>

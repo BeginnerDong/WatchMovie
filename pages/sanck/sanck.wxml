@@ -4,7 +4,7 @@
 			商品名称
 		</view>
 		<view class="ilblock color1 font14">
-			爆米花
+			{{web_mainData.products[0].snap_product.title}}
 		</view>
 	</view>
 	<view class="list-info">
@@ -12,8 +12,9 @@
 			数量
 		</view>
 		<view class="ilblock color1 font14">
-			x1
+			x{{web_mainData.products[0].count}}
 		</view>
 	</view>
 	
 </view>
+<button class="btm" style="border-radius:0" bindtap="{{web_buttonCanClick?(web_mainData.transport_status==0?'orderUpdate':''):''}}">{{web_mainData.transport_status==0?'确认核销':'已核销'}}</button>

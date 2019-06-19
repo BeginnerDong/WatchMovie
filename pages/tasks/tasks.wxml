@@ -9,11 +9,11 @@
 </view>
 <view class="box-two bg1">
 	<view class="ilblock" style="width: 50%; text-align: center; border-right: solid 1rpx #F4F4F4;">
-		<view class="font15 color1">0<image src="../../image/sign-icon2.png"></image> </view>
+		<view class="font15 color1">{{web_count}}<image src="../../image/sign-icon2.png"></image> </view>
 		<view class="color3 font12" style="margin-top: 20rpx;">今日获得</view>
 	</view>
 	<view class="ilblock" style="width: 49%; text-align: center;">
-		<view class="font15 color1">0<image src="../../image/sign-icon2.png"></image> </view>
+		<view class="font15 color1">{{web_mainData.info.score}}<image src="../../image/sign-icon2.png"></image> </view>
 		<view class="color3 font12" style="margin-top: 20rpx;">我的锦秀券</view>
 	</view>
 </view>

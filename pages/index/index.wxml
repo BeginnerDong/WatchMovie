@@ -48,14 +48,14 @@
 				<image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
 			</view>
 		</view>
-		<button class="bg3 color5 font15 radiu15" style="width: 80%; height: 80rpx; margin-top: 50rpx;" bindtap="{{web_buttonCanClick?'submit':''}}">确定</button>
+		<button class="bg3 color5 font15 radiu15" style="width: 80%; height: 80rpx; margin-top: 50rpx;" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">确定</button>
 	</view>
 </view>
 
 <view class="top bg1">
 	<view class="top-top bg3">
 		<view class="topImg">
-			<image src="../../image/home-banner%20.png"></image>
+			<image src="{{web_sliderData.mainImg[0].url}}"></image>
 		</view>
 	</view>
 </view>
@@ -127,36 +127,24 @@
 	<view class="back-logo">
 		<image src="../../image/home-icon3.png" style="height: 50%; width: 32%;"></image>
 	</view>
-	<view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
-		<view class="boxleft ilblock">
-			<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
-			<view class="color2 font12 overflow2" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-				内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
-			<view style="margin: 30rpx 0rpx 0rpx;">
-				<view class="font10 color3">2019.02.23 15:09</view>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
+			<view class="boxleft ilblock">
+				<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">{{item.title}}</view>
+				<view class="color2 font12 overflow2" style="line-height: 32rpx;">
+					{{item.description}}
+				</view>
+				<view style="margin: 30rpx 0rpx 0rpx;">
+					<view class="font10 color3">{{item.create_time}}</view>
+				</view>
+			</view>
+			<view class="boxright ilblock">
+				<view class="boxright-img">
+					<image src="{{item.mainImg[0].url}}"></image>
+				</view>
 			</view>
 		</view>
-		<view class="boxright ilblock">
-			<view class="boxright-img">
-				<image src="../../image/home-img2.png"></image>
-			</view>
-		</view>
-	</view>
-	<view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
-		<view class="boxleft ilblock">
-			<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">标题标题标题标题标题</view>
-			<view class="color2 font12 overflow3" style="line-height: 32rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-				内容内容内容内容内容内容内容内容容内容</view>
-			<view style="margin: 30rpx 0rpx 0rpx;">
-				<view class="font10 color3">2019.02.23 15:09</view>
-			</view>
-		</view>
-		<view class="boxright ilblock">
-			<view class="boxright-img">
-				<image src="../../image/home-img2.png"></image>
-			</view>
-		</view>
-	</view>
+	</block>
 </view>
 
 <view style="width: 100%; height: 80rpx;"></view>

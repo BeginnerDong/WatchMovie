@@ -1,20 +1,19 @@
 <!--logs.wxml-->
-<view class="bg1" style="box-sizing: border-box; width: 100%;padding:30rpx;">
-	<view class="bg2 radiu40 search font12">
-		瞅一眼Ta的影评
-		<image class="flo-right" src="../../image/comments-icon3.png"></image>
-	</view>
+<view class="bg1" style="box-sizing: border-box; width: 100%;padding:30rpx;position: relative;">
+	<input class="bg2 radiu40 search font12" placeholder="瞅一眼Ta的影评"  data-key="title" bindblur="changeBind"  value="{{web_submitData.title}}">
+		<image class="flo-right" src="../../image/comments-icon3.png" style="position: absolute;right:22px;top:17px;width:50rpx;z-index:999;margin-top: 0;margin-right:0;overflow: initial;" bindtap="search"></image>
+	</input>	
 </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="bigbox bg1">
-		<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails">
+		<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">
 			<view>
 				<view class="ilblock itemimg radiu50 hiden">
 					<image src="{{item.user[0].headImgUrl}}"></image>
 				</view>
 				<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -6rpx;">
 					<view class="color2 font12">{{item.user[0].nickname}}</view>
-					<view class="color3 font10">哇！Ta的评分是{{item.score}}分耶！</view>
+					<view class="color3 font10">哇！Ta的评分是{{item.class}}分耶！</view>
 				</view>
 			</view>
 			<view class="color1 font13" style="margin: 18rpx 0rpx;">{{item.title}}</view>
@@ -30,7 +29,7 @@
 			</view>
 		</view>
 		<view class="boxright ilblock">
-			<view class="boxright-box" bindtap="intoPath" data-path="/pages/filmName/filmName">
+			<view class="boxright-box" bindtap="intoPath" data-path="/pages/filmName/filmName?id={{item.film[0].id}}">
 				<view class="boxright-img">
 					<image src="{{item.film[0].mainImg[0].url}}"></image>
 				</view>
@@ -40,9 +39,9 @@
 					<view>20:00</view> -->
 				</view>
 			</view>
-			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;">
-				<image src="../../image/details-icon4.png" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
-				256
+			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;" data-index="{{index}}" bindtap="{{web_buttonCanClick?(item.goodMe.length==0?'clickGood':''):''}}">
+				<image src="{{item.goodMe.length>0?'../../image/details-icon5.png':'../../image/details-icon4.png'}}" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+				{{item.good.length}}
 			</view>
 		</view>
 	</view>
@@ -54,7 +53,7 @@
 
 
 
-
+<view style="width:100%;height:110rpx"></view>
 <view class="navbar">
 		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
 			<view class="nav_img">

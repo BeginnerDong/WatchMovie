@@ -37,7 +37,7 @@ class Token {
 	        wx.removeStorageSync('threeToken');
 	        wx.removeStorageSync('threeInfo');
 	        wx.redirectTo({
-	          url: '/pages/storeLogin/storeLogin'
+	          url: '/pages/login/login'
 	        });
 	    }else{
 	        return wx.getStorageSync('threeToken');

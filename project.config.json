@@ -36,12 +36,40 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
 					"name": "发布影评",
 					"pathName": "pages/sendFilmReview/sendFilmReview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "信息",
+					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "主页",
+					"pathName": "pages/hisState/hisState",
+					"query": "user_no=U617637450011587",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "hexiao",
+					"pathName": "pages/cancel/cancel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "锦绣",
+					"pathName": "pages/jinxuiStamps/jinxuiStamps",
 					"scene": null
 				}
 			]

@@ -64,7 +64,7 @@ page{
 	height: 100rpx;
 	position: fixed;
 	right: 0rpx;
-	top: 40%;
+	top: 45%;
 }
 .comment image{
 	width: 100%;

@@ -16,6 +16,7 @@ Page({
 	data: {
 		is_show: false,
 		heartData: [],
+		mainData: [],
 		hotData: [],
 		indicatorDots: false,
 		vertical: false,
@@ -26,11 +27,12 @@ Page({
 		previousMargin: 60,
 		nextMargin: 60,
 		swiperIndex: 0,
-		isFirstLoadAllStandard: ['getHeartData', 'getHotData', 'userInfoGet'],
+		isFirstLoadAllStandard: ['getHeartData', 'getHotData', 'userInfoGet', 'getMainData','getSliderData'],
 		submitData: {
 			birthday: '',
 			birth_address: '',
 			address: '',
+			gender: ''
 		}
 	},
 
@@ -39,7 +41,9 @@ Page({
 		api.commonInit(self);
 		self.getHeartData();
 		self.getHotData();
+		self.getMainData();
 		self.userInfoGet();
+		self.getSliderData()
 	},
 
 	show(e) {
@@ -48,6 +52,27 @@ Page({
 		self.setData({
 			is_show: self.data.is_show
 		})
+	},
+
+
+	getSliderData() {
+		const self = this;
+		const postData = {};
+		postData.searchItem = {
+			thirdapp_id: getApp().globalData.thirdapp_id,
+			title:'首页轮播图'
+		};
+		const callback = (res) => {
+			api.buttonCanClick(self, true);
+			if (res.info.data.length > 0) {
+				self.data.sliderData = res.info.data[0]
+			}
+			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getSliderData', self);
+			self.setData({
+				web_sliderData: self.data.sliderData,
+			});
+		};
+		api.labelGet(postData, callback);
 	},
 
 
@@ -105,13 +130,13 @@ Page({
 		};
 		api.skuGet(postData, callback);
 	},
-	
-	select(e){
+
+	select(e) {
 		const self = this;
-		var num = api.getDataSet(e,'num');
+		var num = api.getDataSet(e, 'num');
 		self.data.submitData.gender = num;
 		self.setData({
-			web_gender:num
+			web_gender: num
 		})
 	},
 
@@ -120,6 +145,9 @@ Page({
 		const self = this;
 		const postData = {};
 		postData.tokenFuncName = 'getProjectToken';
+		postData.searchItem = {
+			user_no: wx.getStorageSync('info').user_no
+		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {
 				self.data.userInfoData = res.info.data[0];
@@ -186,13 +214,57 @@ Page({
 			if (data.solely_code == 100000) {
 				self.data.is_show = false;
 				self.setData({
-					is_show:self.data.is_show
+					is_show: self.data.is_show
 				});
 			} else {
 				api.showToast(res.msg, 'none')
 			};
 		};
 		api.userInfoUpdate(postData, callback);
+	},
+
+
+	getMainData(isNew) {
+		const self = this;
+		if (isNew) {
+			api.clearPageIndex(self)
+		};
+		const postData = {};
+		postData.paginate = api.cloneForm(self.data.paginate);
+		postData.searchItem = {
+			thirdapp_id: getApp().globalData.thirdapp_id,
+		};
+		postData.getBefore = {
+			caseData: {
+				tableName: 'Label',
+				searchItem: {
+					title: ['=', ['那些趣事']],
+				},
+				middleKey: 'menu_id',
+				key: 'id',
+				condition: 'in',
+			}
+		};
+		const callback = (res) => {
+			if (res.info.data.length > 0) {
+				self.data.mainData.push.apply(self.data.mainData, res.info.data);
+			} else {
+				self.data.isLoadAll = true;
+			};
+			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
+			self.setData({
+				web_mainData: self.data.mainData,
+			});
+		};
+		api.articleGet(postData, callback);
+	},
+
+	onReachBottom() {
+		const self = this;
+		if (!self.data.isLoadAll && self.data.buttonCanClick) {
+			self.data.paginate.currentPage++;
+			self.getMainData();
+		};
 	},
 
 	swiperChange(e) {

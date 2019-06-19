@@ -12,3 +12,14 @@
 .list-left{
 	width: 25%;
 }
+.btm{
+	width: 100%;
+	height: 80rpx;
+	position: fixed;
+	bottom: 0rpx;
+	background: #F23485;
+	/* background: linear-gradient(to right,#EF2E81,#FF5BA0); */
+	box-sizing: border-box;
+	line-height: 80rpx;
+	text-align: center;
+}

@@ -1,52 +1,15 @@
-<view class="list ilblock">
-	<view class="list-img">
-		<image src="../../image/img3_WPS图片.png"></image>
-	</view>
-	<view class="list-btm">
-		<view class="ilblock flo-left color1 font14">
-			￥9.9<text class="color2 font12">x1</text>
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="list ilblock">
+		<view class="list-img">
+			<image src="{{item.mainImg[0].url}}"></image>
 		</view>
-		<button class="flo-right color5 font10 bg3">
-			购买
-		</button>
-	</view>
-</view>
-<view class="list ilblock">
-	<view class="list-img">
-		<image src="../../image/img3_WPS图片.png"></image>
-	</view>
-	<view class="list-btm">
-		<view class="ilblock flo-left color1 font14">
-			￥9.9<text class="color2 font12">x1</text>
+		<view class="list-btm">
+			<view class="ilblock flo-left color1 font14">
+				￥{{item.price}}<text class="color2 font12">x{{item.balance}}</text>
+			</view>
+			<button class="flo-right color5 font10 bg3" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" data-index="{{index}}">
+				购买
+			</button>
 		</view>
-		<button class="flo-right color5 font10 bg3">
-			购买
-		</button>
 	</view>
-</view>
-<view class="list ilblock">
-	<view class="list-img">
-		<image src="../../image/img3_WPS图片.png"></image>
-	</view>
-	<view class="list-btm">
-		<view class="ilblock flo-left color1 font14">
-			￥9.9<text class="color2 font12">x1</text>
-		</view>
-		<button class="flo-right color5 font10 bg3">
-			购买
-		</button>
-	</view>
-</view>
-<view class="list ilblock">
-	<view class="list-img">
-		<image src="../../image/img3_WPS图片.png"></image>
-	</view>
-	<view class="list-btm">
-		<view class="ilblock flo-left color1 font14">
-			￥9.9<text class="color2 font12">x1</text>
-		</view>
-		<button class="flo-right color5 font10 bg3">
-			购买
-		</button>
-	</view>
-</view>
+</block>

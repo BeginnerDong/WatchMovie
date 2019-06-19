@@ -1,34 +1,36 @@
-<view class="box">
-	<view class="list-info">
-		<view class="font12 list-left color2 ilblock">
-			影院
+
+	<view class="box">
+		<view class="list-info">
+			<view class="font12 list-left color2 ilblock">
+				影院
+			</view>
+			<view class="ilblock color1 font14">
+				{{web_mainData.products[0].snap_product.passage1}}
+			</view>
 		</view>
-		<view class="ilblock color1 font14">
-			长安奥斯卡影院
+		<view class="list-info">
+			<view class="font12 list-left color2 ilblock">
+				电影名称
+			</view>
+			<view class="ilblock color1 font14">
+				{{web_mainData.products[0].snap_product.title}}
+			</view>
+		</view>
+		<view class="list-info">
+			<view class="font12 list-left color2 ilblock">
+				时间
+			</view>
+			<view class="ilblock color1 font14">
+				{{web_mainData.products[0].snap_product.passage3}}
+			</view>
+		</view>
+		<view class="list-info">
+			<view class="font12 list-left color2 ilblock">
+				场次
+			</view>
+			<view class="ilblock color1 font14">
+				{{web_mainData.products[0].snap_product.passage2}}
+			</view>
 		</view>
 	</view>
-	<view class="list-info">
-		<view class="font12 list-left color2 ilblock">
-			电影名称
-		</view>
-		<view class="ilblock color1 font14">
-			惊奇队长
-		</view>
-	</view>
-	<view class="list-info">
-		<view class="font12 list-left color2 ilblock">
-			时间
-		</view>
-		<view class="ilblock color1 font14">
-			2019.02.23 13:00-15:00
-		</view>
-	</view>
-	<view class="list-info">
-		<view class="font12 list-left color2 ilblock">
-			场次
-		</view>
-		<view class="ilblock color1 font14">
-			08场
-		</view>
-	</view>
-</view>
+<button class="btm" style="border-radius:0" bindtap="{{web_buttonCanClick?(web_mainData.transport_status==0?'orderUpdate':''):''}}">{{web_mainData.transport_status==0?'确认核销':'已核销'}}</button>

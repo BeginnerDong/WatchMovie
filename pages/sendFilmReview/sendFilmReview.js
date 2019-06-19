@@ -17,7 +17,7 @@ Page({
 			content:'',
 			mainImg:[],
 			class:'',
-			relation_id:''
+			relation_id:'',
 		},
 		stars: [2, 4, 6, 8, 10],
 		urlSet:[],
@@ -64,9 +64,27 @@ Page({
 			web_index: e.detail.value,
 			web_submitData: self.data.submitData
 		})
+		self.getRelation(e.detail.value)
 	},
 
-
+	getRelation(index) {
+		const self = this;
+		const postData = {};
+		postData.searchItem = {
+			relation_one:self.data.mainData[index].product_no,
+			relation_two:wx.getStorageSync('info').user_no
+		};
+		const callback = (res) => {
+			if (res.info.data.length > 0) {
+				self.data.relationData.push.apply(self.data.relationData, res.info.data)
+			};
+			console.log(self.data.relationData)
+			self.setData({
+				web_relationData: self.data.relationData,
+			});
+		};
+		api.relationGet(postData, callback);
+	},
 
 
 	getMainData() {

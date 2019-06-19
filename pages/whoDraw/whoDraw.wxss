@@ -1,5 +1,5 @@
 page{
-	background: #F2F2F2;
+	background: #fff;
 }
 .top{
 	padding-top: 50rpx;

@@ -1,95 +1,63 @@
  <view class="top bg1">
-	 <view class="top-item ilblock top-itemstar">
+	 <view class="top-item ilblock {{web_num==1?'top-itemstar':''}}" bindtap="{{web_buttonCanClick?'changeType':''}}" data-num='1'>
 		 <view class="font15">
 			 未看电影
 		 </view>
-	 </view><view class="top-item ilblock">
+	 </view>
+	 <view class="top-item ilblock {{web_num==2?'top-itemstar':''}}" bindtap="{{web_buttonCanClick?'changeType':''}}" data-num='2'>
 		 <view class="font15">
 			 已看电影
 		 </view>
 	 </view>
  </view>
- <view class="one bg1 radiu15">
-	 <view class="list-one">
-		 <view class="one-img ilblock">
-			 <image src="../../image/details-img2.png"></image>
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="one bg1 radiu15">
+		 <view class="list-one" bindtap="show">
+			 <view class="one-img ilblock">
+				 <image src="{{item.products[0].snap_product.product.mainImg[0].url}}"></image>
+			 </view>
+			  <view class="one-center ilblock">
+					<view class="one-title overflow1 color1 font14">{{item.products[0].snap_product.title}}</view> 
+					<view class="color3 font10 one-color">
+						<block wx:for="{{item.products[0].snap_product.product.description}}" wx:for-item="c_item" wx:for-index="c_index">
+							<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
+						</block>
+					</view>
+					<view class="one-time color2 font11">
+						{{item.products[0].snap_product.passage3}} 8排8号
+					</view>
+					<view class="font11 color2" style="margin-top: 24rpx;">
+						<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
+						{{item.products[0].snap_product.passage1}}
+						<view class="color5 bg3" style="float: right;border:1px solid #f2f2f2;width:55px;height:15px;line-height: 15px;padding: 0 2px;"
+						bindtap="show" data-index="{{index}}">查看二维码</view>
+					</view>
+			 </view>
+			 <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2&&item.passage1==''}}">
+				<button class="shear bg3 color5 font10" style="padding-left:0;padding-right: 0;margin-top: 0;" bindtap="onShareAppMessage" open-type="share" data-index="{{index}}">
+					<image src="../../image/icon3.png" style="width: 26rpx;height: 28rpx; position: relative; top: 8rpx;left: -10rpx;"></image>分享
+				</button>
+				<view class="color1 font11" style="margin-top: 24rpx;">
+					未绑定
+				</view>
+			 </view>
+			  <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2}}">
+				<view class="color6 font10">
+					已绑定
+				</view>
+			 </view>
 		 </view>
-		  <view class="one-center ilblock">
-		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
-				<view class="color3 font10 one-color">
-					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
-				</view>
-				<view class="one-time color2 font11">
-					2019.03.10 13:40 8排8号
-				</view>
-				<view class="font11 color2" style="margin-top: 24rpx;">
-					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
-					西安市长安区韦曲街道奥斯卡影院
-				</view>
-		 </view>
-	 </view>
-</view>
-<view class="one bg1 radiu15">
-	 <view class="list-one" bindtap="show">
-		 <view class="one-img ilblock">
-			 <image src="../../image/details-img2.png"></image>
-		 </view>
-		  <view class="one-center ilblock">
-		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
-				<view class="color3 font10 one-color">
-					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
-				</view>
-				<view class="one-time color2 font11">
-					2019.03.10 13:40 8排8号
-				</view>
-				<view class="font11 color2" style="margin-top: 24rpx;">
-					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
-					西安市长安区韦曲街道奥斯卡影院
-				</view>
-		 </view>
-		 <view class="one-right flo-right">
-			<view class="shear bg3 color5 font10">
-				<image src="../../image/icon3.png" style="width: 26rpx;height: 28rpx; position: relative; top: 8rpx;left: -10rpx;"></image>分享
-			</view>
-			<view class="color1 font11" style="margin-top: 24rpx;">
-				未绑定
-			</view>
-		 </view>
-	 </view>
-</view>
-<view class="one bg1 radiu15">
-	 <view class="list-one" bindtap="intoPath" data-path="/pages/seatMap/seatMap">
-		 <view class="one-img ilblock">
-			 <image src="../../image/details-img2.png"></image>
-		 </view>
-		  <view class="one-center ilblock">
-		 		<view class="one-title overflow1 color1 font14">惊奇队长</view> 
-				<view class="color3 font10 one-color">
-					<view class="ilblock radiu40" style="background: #FBECEE;">刺激</view>
-					<view class="ilblock radiu40" style="background: #E8FAF7;">悬疑</view>
-					<view class="ilblock radiu40" style="background: #FFEAFD;">悬疑</view>
-				</view>
-				<view class="one-time color2 font11">
-					2019.03.10 13:40 8排8号
-				</view>
-				<view class="font11 color2" style="margin-top: 24rpx;">
-					<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
-					西安市长安区韦曲街道奥斯卡影院
-				</view>
-		 </view>
-		 <view class="one-right flo-right">
-			<view class="color6 font10">
-				已绑定
-			</view>
-		 </view>
-	 </view>
-</view>
-
+	</view>
+</block>
 <view class="fixd" wx:if="{{is_show}}">
+	<view class="fixd-box">
+		<image src="{{web_url}}"></image>
+	</view>
+	<view style="text-align: center;">
+		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="close"></image>
+	</view>
+</view>
+<!-- <view class="fixd" wx:if="{{is_show}}">
 	<view class="fixd-box bg1 radiu15">
 		<view class="color1 font15" style="margin-top: 70rpx;">
 			请确认是否与<text class="color6">张三</text>共同购买兄弟场的电影票
@@ -100,4 +68,4 @@
 		</view>
 		<button class="bg3 font15" bindtap="show" bindtap="intoPathRedirect" data-path="/pages/index/index">确认</button>
 	</view>
-</view>
+</view> -->

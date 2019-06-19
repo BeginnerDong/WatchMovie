@@ -88,6 +88,30 @@ class Api extends Base {
 		};
 		this.request(allParams);
 	}
+	
+	relationGet(param, callback) {
+		var allParams = {
+			url: 'Common/Relation/get',
+			type: 'post',
+			data: param,
+			sCallback: function(data) {
+				callback && callback(data);
+			}
+		};
+		this.request(allParams);
+	}
+	
+	relationUpdate(param, callback) {
+		var allParams = {
+			url: 'Common/Relation/Update',
+			type: 'post',
+			data: param,
+			sCallback: function(data) {
+				callback && callback(data);
+			}
+		};
+		this.request(allParams);
+	}
 
 	addShop(param, callback) {
 		var allParams = {
