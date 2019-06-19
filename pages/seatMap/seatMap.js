@@ -128,7 +128,7 @@ Page({
 			for (var j = 0; j < forNum; j++) {
 				if(sepeate.indexOf((j+1).toString())==-1){
 					var findOrder = self.findSeat(data[i].line,(j-num+1));
-		            if(findOrder&&findOrder.order_no==self.order_no){
+		            if(findOrder&&findOrder.order_no==self.data.order_no){
 		              self.data.hasOne = true;
 		            };
 		            seat.push({
