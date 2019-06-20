@@ -42,7 +42,8 @@ Page({
 		if(options.user_no){
 			console.log(options);
 			self.data.user_no = options.user_no;
-			token.getProjectToken({},{refreshToken:true,parent_no:self.data.user_no})
+			const callback = (res) =>{};
+			token.getProjectToken(callback,{refreshToken:true,parent_no:self.data.user_no})
 		};
 		api.commonInit(self);
 		self.getHeartData();

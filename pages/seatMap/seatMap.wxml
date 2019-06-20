@@ -10,7 +10,7 @@
 	</view>
 </view>
 <view class="color1 font15" style="text-align: center; margin: 100rpx 0rpx;">我的座位8排8号</view>
-<view style="position: relative;overflow-x: scroll;-webkit-overflow-scrolling:touch;height:auto;padding-top:60rpx;padding-bottom:60px" bindtap="show">
+<view style="position: relative;overflow-x: scroll;-webkit-overflow-scrolling:touch;height:auto;padding-top:60rpx;padding-bottom:60px">
 
 	<view wx:for="{{web_seatData}}" wx:key="index" style="white-space:nowrap;width:auto;margin-left:30px">
 		<view class="set" wx:for="{{item.seat}}" wx:key="index" wx:for-item="c_item" data-item="{{c_item.findOrder}}" bindtap="check">
@@ -54,11 +54,11 @@
 <view class="fixd" wx:if="{{is_play}}">
 	<view class="bg1 fixd-box radiu15">
 		<view>
-			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx" bindtap="play"></image>
+			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx"></image>
 		</view>
 		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将取消一个锦秀券</view>
 		<view class="font13">
-			<button class="star"  bindtap="intoPath" data-path="/pages/hisPage/hisPage">是</button>
+			<button class="star"   open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submitThree':''}}">是</button>
 			<button bindtap="play">否</button>
 		</view>
 	</view>
