@@ -2,10 +2,10 @@
 	<view class="top-box">
 		<view class="top-img" bindtap="show">
 			<image src="../../image/sign-icon1.png"></image>
-			<view>签到</view>
+			<view bindtap="sign">签到</view>
 		</view>
 	</view>
-	<view class="color5 font12" style="text-align: center;">连续签到0天，已获得0个锦绣券</view>
+	<view class="color5 font12" style="text-align: center;">连续签到{{web_signData.count}}天，已获得{{web_signReward*web_signData.count}}个锦绣券</view>
 </view>
 <view class="box-two bg1">
 	<view class="ilblock" style="width: 50%; text-align: center; border-right: solid 1rpx #F4F4F4;">

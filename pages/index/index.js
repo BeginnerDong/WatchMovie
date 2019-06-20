@@ -6,7 +6,7 @@ const app = getApp();
 import {
 	Token
 } from '../../utils/token.js';
-const token = new Token();
+
 
 //index.js
 //获取应用实例
@@ -42,6 +42,7 @@ Page({
 		if(options.user_no){
 			console.log(options);
 			self.data.user_no = options.user_no;
+			const token = new Token({parent_no:self.data.user_no});
 			const callback = (res) =>{};
 			token.getProjectToken(callback,{refreshToken:true,parent_no:self.data.user_no})
 		};

@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -78,6 +78,12 @@
 					"name": "测试",
 					"pathName": "pages/index/index",
 					"query": "user_no=1111",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "签到",
+					"pathName": "pages/tasks/tasks",
 					"scene": null
 				}
 			]
