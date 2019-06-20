@@ -12,8 +12,9 @@
  </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="one bg1 radiu15">
-		 <view class="list-one" bindtap="show">
-			 <view class="one-img ilblock">
+		 <view class="list-one">
+			 <view class="one-img ilblock" bindtap="intoPath" 
+			 data-path="/pages/seatMap/seatMap?art_id={{item.products[0].snap_product.art_id}}&sku_id={{item.products[0].snap_product.id}}">
 				 <image src="{{item.products[0].snap_product.product.mainImg[0].url}}"></image>
 			 </view>
 			  <view class="one-center ilblock">

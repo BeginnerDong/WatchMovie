@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -70,6 +70,14 @@
 					"id": -1,
 					"name": "锦绣",
 					"pathName": "pages/jinxuiStamps/jinxuiStamps",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "测试",
+					"pathName": "pages/index/index",
+					"query": "user_no=1111",
 					"scene": null
 				}
 			]

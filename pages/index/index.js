@@ -38,6 +38,12 @@ Page({
 
 	onLoad(options) {
 		const self = this;
+		console.log(options);
+		if(options.user_no){
+			console.log(options);
+			self.data.user_no = options.user_no;
+			token.getProjectToken({},{refreshToken:true,parent_no:self.data.user_no})
+		};
 		api.commonInit(self);
 		self.getHeartData();
 		self.getHotData();

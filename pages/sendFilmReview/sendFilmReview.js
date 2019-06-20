@@ -22,6 +22,7 @@ Page({
 		stars: [2, 4, 6, 8, 10],
 		urlSet:[],
 		index:0,
+		idArray:[],
 		isFirstLoadAllStandard: ['getMainData'],
 	},
 
@@ -32,10 +33,9 @@ Page({
 
 		api.commonInit(self);
 		self.setData({
-			web_stars:self.data.stars,
-			web_index:self.data.index
+			web_stars:self.data.stars,	
 		})
-		self.getMainData();
+		self.getRelationMain();
 
 	},
 
@@ -76,12 +76,39 @@ Page({
 		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {
-				self.data.relationData.push.apply(self.data.relationData, res.info.data)
+				self.data.relationData = res.info.data[0];
+/* 				for (var i = 0; i < self.data.relationData.length; i++) {
+					if(self.data.idArray.indexOf(self.data.relationData[i].relation_one)){
+						self.data.idArray.push(self.data.relationData[i].relation_one)
+					}
+				} */
 			};
 			console.log(self.data.relationData)
+			console.log(self.data.idArray)
 			self.setData({
 				web_relationData: self.data.relationData,
 			});
+		};
+		api.relationGet(postData, callback);
+	},
+	
+	getRelationMain() {
+		const self = this;
+		const postData = {};
+		postData.searchItem = {
+			relation_two:wx.getStorageSync('info').user_no
+		};
+		const callback = (res) => {
+			if (res.info.data.length > 0) {
+				for (var i = 0; i < res.info.data.length; i++) {
+					if(self.data.idArray.indexOf(res.info.data[i].relation_one)){
+						self.data.idArray.push(res.info.data[i].relation_one)
+					}
+				}
+			};
+			console.log(self.data.relationData)
+			console.log(self.data.idArray)
+			self.getMainData()
 		};
 		api.relationGet(postData, callback);
 	},
@@ -92,12 +119,13 @@ Page({
 		const postData = {};
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
-			type:1
+			type:1,
+			product_no:['in',self.data.idArray]
 		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {
-				self.data.mainData.push.apply(self.data.mainData, res.info.data),
-				self.data.submitData.relation_id = self.data.mainData[0].id
+				self.data.mainData.push.apply(self.data.mainData, res.info.data)
+				/* self.data.submitData.relation_id = self.data.mainData[0].id */
 			};
 			console.log(self.data.mainData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
@@ -188,7 +216,7 @@ Page({
 	},
 
 
-	 delete(e) {
+	delete(e) {
 		const self = this;
 		var index = api.getDataSet(e, 'index');
 		console.log('deleteImg', index)
@@ -207,6 +235,31 @@ Page({
 		};
 		postData.data = {};
 		postData.data = api.cloneForm(self.data.submitData);
+		if(self.data.relationData.count>0){
+			postData.saveAfter = [
+				{
+					tableName:'FlowLog',
+					FuncName:'add',
+					data:{
+						count:wx.getStorageSync('info').thirdApp.custom_rule.remark,
+						user_no:wx.getStorageSync('info').user_no,
+						type:3,
+						thirdapp_id:2,
+						trade_info:'发布影评奖励'
+					}
+				},
+				{
+					tableName:'Relation',
+					FuncName:'update',
+					data:{
+						count:self.data.relationData.count-1,
+					},
+					searchItem:{
+						id:self.data.relationData.id
+					}
+				}
+			]
+		}
 		const callback = (data) => {	
 			if (data.solely_code == 100000) {
 				api.showToast('发布成功', 'none', 1000)

@@ -13,7 +13,8 @@ Page({
 		 is_show:false,
 		 is_play:false,
 		 isFirstLoadAllStandard: ['getSeatData'],
-		 seatData:[]
+		 seatData:[],
+		 checkData:{}
     },
 		
 	show(e){
@@ -33,7 +34,32 @@ Page({
 	onLoad: function (options) {
 		const self = this;
 		api.commonInit(self);
-		self.getSeatData();
+		if (options.art_id&&options.sku_id) {
+			self.data.art_id = options.art_id;
+			self.data.sku_id = options.sku_id;
+			self.getSeatData();
+		} else {
+			api.showToast('数据传递错误', 'none', 2000, function() {
+				setTimeout(function() {
+					wx.navigateBack({
+						delta: 1
+					})
+				}, 2000)
+			})
+		}
+	},
+	
+	check(e){
+		const self = this;
+		
+		var item = api.getDataSet(e,'item');
+		if(item){
+			self.data.checkData = item;
+		}else{
+			api.showToast('mmm','fail')
+		};
+		
+		console.log('self.data.checkData',self.data.checkData);
 	},
 
 	getSeatData(){
@@ -41,7 +67,7 @@ Page({
 		const postData = {};
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.searchItem = {
-			art_id: 1
+			art_id: self.data.art_id
 		};
 		postData.order = {
 			line:'asc'
@@ -52,13 +78,6 @@ Page({
 				//self.data.seatData.push.apply(self.data.seatData, res.info.data);
 				console.log('self.data.seatData',self.data.seatData);
 				self.data.orginSeatData = res.info.data;
-				/*if (self.data.seatData.length > 2) {
-					self.data.seatData = self.data.seatData.splice(0, 2)
-				};
-				for (var i = 0; i < self.data.seatData.length; i++) {
-					self.data.seatData[i].description = self.data.seatData[i].description.split(',');
-					self.data.seatData[i].end_time = api.timestampToTime(self.data.seatData[i].end_time)
-				}*/
 			};
 			console.log('self.data.seatData',self.data.seatData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getSeatData', self);
@@ -103,10 +122,11 @@ Page({
       	if(res.info.data.length>0){
       		self.data.orderData = res.info.data;
       		self.data.seatData = [];
-      		self.data.seatData = self.computeSeatMap(self.orginSeatData);
+      		self.data.seatData = self.computeSeatMap(self.data.orginSeatData);
+					console.log('self.data.seatData',self.data.seatData)
       		self.setData({
-				web_seatData: self.data.seatData,
-			});
+						web_seatData: self.data.seatData,
+					});
       	};
       };
       api.orderItemGet(postData, callback);
@@ -115,6 +135,7 @@ Page({
     },
 
 	computeSeatMap(data){
+		const self = this;
 		var max  = 0;
 		var seatData = [];
 		for (var i = 0; i < data.length; i++) {

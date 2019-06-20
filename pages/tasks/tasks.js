@@ -15,7 +15,7 @@ const token = new Token();
 Page({
 	data: {
 		mainData: {},
-		isFirstLoadAllStandard: ['getMainData','flowLogGet']
+		isFirstLoadAllStandard: ['getMainData', 'flowLogGet']
 	},
 
 
@@ -44,7 +44,7 @@ Page({
 			self.setData({
 				web_mainData: self.data.mainData
 			})
-			console.log('self.data.mainData',self.data.mainData)
+			console.log('self.data.mainData', self.data.mainData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 		};
 		api.userGet(postData, callback);
@@ -52,33 +52,64 @@ Page({
 
 	flowLogGet() {
 		const self = this;
-		var dayStart =  new Date(new Date().setHours(0, 0, 0, 0)).getTime()/1000;
-		var nowTime = (new Date()).getTime()/1000; 
+		var dayStart = new Date(new Date().setHours(0, 0, 0, 0)).getTime() / 1000;
+		var nowTime = (new Date()).getTime() / 1000;
 		const postData = {};
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
 			user_no: wx.getStorageSync('info').user_no,
-			type:3,
-			create_time:['between',[dayStart,nowTime]],
-			count:['>',0]
+			type: 3,
+			create_time: ['between', [dayStart, nowTime]],
+			count: ['>', 0]
 		};
 		postData.compute = {
-				TotalCount: [
-					'sum',
-					'count',
-				],
-			}; 
+			TotalCount: [
+				'sum',
+				'count',
+			],
+		};
 		const callback = (res) => {
 			if (res) {
 				self.data.count = res.info.compute.TotalCount;
 				self.setData({
-					web_count:self.data.count
+					web_count: self.data.count
 				});
 			};
-			
+
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'flowLogGet', self);
 		};
 		api.flowLogGet(postData, callback);
+	},
+
+	onShareAppMessage() {
+		const self = this;
+		return {
+			title: '锦绣五月',
+			path: 'pages/index/index?user_no=' + wx.getStorageSync('info').user_no,
+			success: function(res) {
+				console.log(res);
+				console.log(parentNo)
+				if (res.errMsg == 'shareAppMessage:ok') {
+					console.log('分享成功')
+					if (self.data.shareBtn) {
+						if (res.hasOwnProperty('shareTickets')) {
+							console.log(res.shareTickets[0]);
+							self.data.isshare = 1;
+						} else {
+							self.data.isshare = 0;
+						}
+					}
+				} else {
+					wx.showToast({
+						title: '分享失败',
+					})
+					self.data.isshare = 0;
+				}
+			},
+			fail: function(res) {
+				console.log(res)
+			}
+		}
 	},
 
 	intoPathRedirect(e) {
