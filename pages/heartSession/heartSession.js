@@ -35,18 +35,43 @@ Page({
 			thirdapp_id: getApp().globalData.thirdapp_id,
 			type: 1
 		};
+		postData.getAfter = {
+			heart: {
+				token:wx.getStorageSync('token'),
+				tableName: 'Log',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:1,
+					user_type:0,	
+				},
+				condition: '=',
+				compute: {
+					num: ['count', 'count', {
+						status: 1,
+						type:1,
+					}]
+				}
+			}
+		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.info.data.length > 0) {
 				self.data.mainData.push.apply(self.data.mainData, res.info.data);
-
 				for (var i = 0; i < self.data.mainData.length; i++) {
 					self.data.mainData[i].description = self.data.mainData[i].description.split(',');
-					self.data.mainData[i].end_time = api.timestampToTime(self.data.mainData[i].end_time)
-				}
-			} else {
+					self.data.mainData[i].end_time = api.timestampToTime(self.data.mainData[i].end_time);
+					var percent =  Math.ceil(self.data.mainData[i].heart.num+100/self.data.mainData[i].stock*100);
+					percent = Math.round(percent/10)*10;
+					if(percent==0){
+						percent = 1;
+					};
+					self.data.mainData[i].heart_url = "/image/cardiac-"+percent+".png"
+				};
+			}else{
 				self.data.isLoadAll = true;
-			}
+			};
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 			self.setData({
 				web_mainData: self.data.mainData,

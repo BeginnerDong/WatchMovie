@@ -86,7 +86,7 @@
 			</view>
 			<view class="one-right flo-right">
 				<view class="one-heart">
-					<image src="../../image/home-icon5.png"></image>
+					<image src="{{item.heart_url}}"></image>
 				</view>
 				<view class="font10 color6">心动值</view>
 			</view>
