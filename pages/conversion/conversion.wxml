@@ -17,12 +17,12 @@
 		</view>
 		<view class="list-btm">
 			<view class="color1 font14" style="margin: 20rpx 0rpx;">{{item.title}}<text class="color2 font10">（{{item.price}}张兑换）</text></view>
-			<view class="ilblock flo-left">
+			<!-- <view class="ilblock flo-left">
 				<image src="../../image/exchange-icon1.png" bindtap="counter" data-index="{{index}}" data-type="-"></image>
 				<view class="ilblock color2 font12">{{item.count}}</view>
 				<image src="../../image/exchange-icon2.png" bindtap="counter" data-index="{{index}}" data-type="+"></image>
-			</view>
-			<button class="flo-right color5 font10 bg3"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" data-index="{{index}}">
+			</view> -->
+			<button class="flo-left color5 font10 bg3"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" data-index="{{index}}">
 				兑换
 			</button>
 			<view style="clear: both;"></view>

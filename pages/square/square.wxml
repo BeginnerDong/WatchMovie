@@ -6,9 +6,9 @@
 </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="bigbox bg1">
-		<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">
+		<view class="boxleft ilblock" >
 			<view>
-				<view class="ilblock itemimg radiu50 hiden">
+				<view class="ilblock itemimg radiu50 hiden" bindtap="toDetail" data-index="{{index}}">
 					<image src="{{item.user[0].headImgUrl}}"></image>
 				</view>
 				<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -6rpx;">
@@ -16,15 +16,15 @@
 					<view class="color3 font10">哇！Ta的评分是{{item.class}}分耶！</view>
 				</view>
 			</view>
-			<view class="color1 font13" style="margin: 18rpx 0rpx;">{{item.title}}</view>
-			<view class="color2 font11 overflow3" style="line-height: 32rpx;">
+			<view class="color1 font13" style="margin: 18rpx 0rpx;" bindtap="intoCommentDetails"  data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">{{item.title}}</view>
+			<view class="color2 font11 overflow3" style="line-height: 32rpx;" bindtap="intoCommentDetails" data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">
 				{{item.content}}
 			</view>
 			<view style="margin: 20rpx 0rpx 10rpx;">
 				<view class="font10 color3 ilblock">{{item.create_time}}</view>
 				<view class="font10 color2 flo-right ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
-					{{item.score}}
+					{{item.message.length}}
 				</view>
 			</view>
 		</view>
@@ -51,7 +51,37 @@
 	<image src="../../image/comments-icon2.png"></image>
 </view>
 
-
+<view class="fixd" wx:if="{{is_show}}">
+	<view class="bg1 fixd-boxtwo radiu15">
+		<view>
+			<image class="flo-right" src="../../image/details-icon6.png" style="width: 40rpx;height: 40rpx" bindtap="close"></image>
+		</view>
+		<view class="font15 color1 fat-font" style="margin: 60rpx 0rpx 0rpx;">请补全您的信息</view>
+		<view style="margin-top: 40rpx;">
+			<view class="ilblock color1 font14">手机号</view>
+			<input class="ilblock color3 font12" placeholder="请输入您的手机号" data-key="phone" bindblur="changeBindTwo"  value="{{web_submitData.phone}}"/>
+		</view>
+		<view style="margin-top: 40rpx;">
+			<view class="ilblock color1 font14">微信号</view>
+			<input class="ilblock color3 font12" placeholder="请输入您的微信号" data-key="wechat" bindblur="changeBindTwo"  value="{{web_submitData.wechat}}"/>
+		</view>
+		<view class="font13">
+			<button class="star" style="width: 85%; height: 70rpx; margin-top: 80rpx;"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submitTwo':''}}">确认</button>
+		</view>
+	</view>
+</view>
+<view class="fixd" wx:if="{{is_play}}">
+	<view class="bg1 fixd-box radiu15">
+		<view>
+			<image class="flo-right" src="../../image/details-icon6.png" style="width: 36rpx;height: 36rpx" bindtap="close"></image>
+		</view>
+		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将消耗一个锦秀券</view>
+		<view class="font13">
+			<button class="star"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submitThree':''}}">是</button>
+			<button bindtap="close">否</button>
+		</view>
+	</view>
+</view>
 
 <view style="width:100%;height:110rpx"></view>
 <view class="navbar">

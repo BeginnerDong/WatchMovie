@@ -41,7 +41,7 @@
 			 <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
 				<view class="photo"  style="position:relative">
 					<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}" style="margin: 0 20%;"/>   
-					<image src="/image/details-icon1%20(2).png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
+					<image src="/image/details-icon6.png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
 				</view>
 			</block>
 			<view class="photo" bindtap="upLoadImg">

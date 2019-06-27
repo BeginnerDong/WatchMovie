@@ -23,7 +23,7 @@
 </view>
 <block wx:for="{{web_messageData}}" wx:key="id">
 	<view class="bigbox bg1">
-		<view class="boxleft ilblock" bindtap="intoPath" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">
+		<view class="boxleft ilblock" >
 			<view>
 				<view class="ilblock itemimg radiu50 hiden">
 					<image src="{{item.user[0].headImgUrl}}"></image>
@@ -33,15 +33,15 @@
 					<view class="color3 font10">哇！Ta的评分是{{item.class}}分耶！</view>
 				</view>
 			</view>
-			<view class="color1 font13" style="margin: 18rpx 0rpx;">{{item.title}}</view>
-			<view class="color2 font11 overflow3" style="line-height: 32rpx;">
+			<view class="color1 font13" style="margin: 18rpx 0rpx;" bindtap="intoCommentDetails"  data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">{{item.title}}</view>
+			<view class="color2 font11 overflow3" style="line-height: 32rpx;" bindtap="intoCommentDetails"  data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">
 				{{item.content}}
 			</view>
 			<view style="margin: 20rpx 0rpx 10rpx;">
 				<view class="font10 color3 ilblock">{{item.create_time}}</view>
 				<view class="font10 color2 flo-right ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
-					{{item.score}}
+					{{item.message.length}}
 				</view>
 			</view>
 		</view>

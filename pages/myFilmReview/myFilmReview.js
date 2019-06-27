@@ -27,7 +27,7 @@ Page({
 	onLoad(options) {
 		const self = this;
 		api.commonInit(self);
-		self.data.user_no = options.user_no;
+		
 		self.getMainData();
 	},
 
@@ -40,8 +40,7 @@ Page({
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
-			user_no:self.data.user_no,
-			user_type: 0,
+			user_no:wx.getStorageSync('info').user_no,
 			type:1
 		};
 		postData.getAfter = {

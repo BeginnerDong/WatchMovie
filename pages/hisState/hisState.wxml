@@ -28,10 +28,10 @@
 					{{c_item.content}}
 				</view>
 				<view style="margin: 20rpx 0rpx 10rpx;">
-					<view class="font10 color3 ilblock">2019.02.23 15:09</view>
+					<view class="font10 color3 ilblock">{{c_item.create_time}}</view>
 					<view class="font10 color2 flo-right ilblock boxnum-img">
 						<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
-						{{c_item.score}}
+						{{c_item.message.length}}
 					</view>
 				</view>
 			</view>

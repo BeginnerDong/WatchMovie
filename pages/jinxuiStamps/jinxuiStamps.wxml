@@ -1,5 +1,5 @@
 <view style="width: 100%;height: 400rpx;">
-	<image src="../../image/微信图片_20190516192652.png" style="width: 100%; height: 100%;"></image>
+	<image src="../../image/jinxiu_bg.png" style="width: 100%; height: 100%;"></image>
 	<view class="top-text">
 		<view>{{web_mainData.info.score}}</view>
 		<view class="font13" style="margin-top: 30rpx;">锦绣券（张）</view>

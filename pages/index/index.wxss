@@ -157,12 +157,13 @@ swiper{
   height: 650rpx;
 }
 swiper-item{
-	padding-top: 40rpx;
-	overflow: hidden;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 swiper image{
-	border-radius: 30rpx;
-	width: 500rpx;
+	border-radius: 15rpx;
+	width: 80%;
 	height: 524rpx;
 
 }
@@ -202,21 +203,21 @@ swiper image.active{
 }
 
 .btm-box{
-	position: absolute;
-	bottom: 66px;
-	left: 8.5%;
-	background: rgba(0,0,0,0.5);
-	width: 81.5%;
-	height: 180rpx;
-	box-sizing: border-box;
-	padding: 5%;
-	border-radius: 0rpx 0rpx 16rpx 16rpx;
+	position:absolute;
+	bottom:32px;
+	left:10.5%;
+	background:rgba(0,0,0,0.5);
+	width:79.6%;
+	height:180rpx;
+	box-sizing:border-box;
+	padding:5%;
+	border-radius:0px 0rpx 15rpx 15rpx;
 }
 .active1 {
- width: 93%;
- height: 180rpx;
-left: 2.6%;
-bottom: 97rpx;
+	width:91%;
+	height:180rpx;
+	left:4.6%;
+	bottom:25rpx;
 }
 .two-color{
 	padding:20rpx 0rpx 14rpx;

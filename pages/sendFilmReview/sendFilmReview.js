@@ -18,6 +18,7 @@ Page({
 			mainImg:[],
 			class:'',
 			relation_id:'',
+			product_no:''
 		},
 		stars: [2, 4, 6, 8, 10],
 		urlSet:[],
@@ -60,6 +61,7 @@ Page({
 		console.log('picker发送选择改变，携带值为', e.detail.value)
 		console.log(self.data.mainData[e.detail.value].id)
 		self.data.submitData.relation_id = self.data.mainData[e.detail.value].id;
+		self.data.submitData.product_no = self.data.mainData[e.detail.value].product_no;
 		self.setData({
 			web_index: e.detail.value,
 			web_submitData: self.data.submitData
@@ -235,6 +237,7 @@ Page({
 		};
 		postData.data = {};
 		postData.data = api.cloneForm(self.data.submitData);
+
 		if(self.data.relationData.count>0){
 			postData.saveAfter = [
 				{

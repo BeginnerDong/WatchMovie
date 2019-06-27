@@ -34,11 +34,11 @@ Page({
 	onShow() {
 
 	},
-	
+
 	submit() {
 		const self = this;
 		api.buttonCanClick(self);
-		if (parseInt(self.data.meData.score)>1) {
+		if (parseInt(self.data.meData.score) >= 1) {
 			const callback = (user, res) => {
 				self.addLogTwo();
 			};
@@ -89,16 +89,16 @@ Page({
 			user_type: 0
 		};
 		postData.getAfter = {
-			message:{
-				tableName:'Message',
-				middleKey:'user_no',
-				key:'user_no',
-				searchItem:{
-					status:1,
-					type:1,
-					mainImg:['not in',[]]
+			message: {
+				tableName: 'Message',
+				middleKey: 'user_no',
+				key: 'user_no',
+				searchItem: {
+					status: 1,
+					type: 1,
+					mainImg: ['not in', []]
 				},
-				condition:'='
+				condition: '='
 			}
 		}
 		const callback = (res) => {
@@ -111,7 +111,7 @@ Page({
 			})
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 		};
-		api.userGet(postData, callback);
+		api.commonUserGet(postData, callback);
 	},
 
 	getMeData() {
@@ -128,10 +128,41 @@ Page({
 			self.setData({
 				web_meData: self.data.meData
 			})
-			console.log('self.data.meData',self.data.meData)
+			console.log('self.data.meData', self.data.meData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMeData', self);
 		};
 		api.userInfoGet(postData, callback);
+	},
+
+	onShareAppMessage() {
+		const self = this;
+		return {
+			title: '锦绣五月',
+			path: 'pages/index/index',
+			success: function(res) {
+				console.log(res);
+				console.log(parentNo)
+				if (res.errMsg == 'shareAppMessage:ok') {
+					console.log('分享成功')
+					if (self.data.shareBtn) {
+						if (res.hasOwnProperty('shareTickets')) {
+							console.log(res.shareTickets[0]);
+							self.data.isshare = 1;
+						} else {
+							self.data.isshare = 0;
+						}
+					}
+				} else {
+					wx.showToast({
+						title: '分享失败',
+					})
+					self.data.isshare = 0;
+				}
+			},
+			fail: function(res) {
+				console.log(res)
+			}
+		}
 	},
 
 	intoPathRedirect(e) {

@@ -7,12 +7,12 @@
 	<view style="display: flex;">
 		 <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
 			<view class="photo"  style="position:relative">
-				<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}" style="margin: 0 20%;"/>   
-				<image src="/image/details-icon1%20(2).png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
+				<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"/>   
+				<image src="/image/details-icon6.png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;top:-10px;right: -10px;" data-index="{{index}}"></image>
 			</view>
 		</block>
-		<view class="photo" bindtap="upLoadImg">
-			<image src="../../image/release-icon2.png" style="margin: 0 5%;"></image>
+		<view class="photo" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
+			<image src="../../image/release-icon2.png"></image>
 		</view>
 	</view>
 </view>
@@ -61,17 +61,17 @@
 				</view>
 			</picker>
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">学院</view>
-			<input class="ilblock font11" style="height:20px;position: initial;" data-key="school" bindblur="changeBind"  value="{{web_submitData.school}}"></input>
+		<view class="info-info" style="display: flex;align-items: center;">
+			<view class="ilblock color2 font13" style="width:15%">学院</view>
+			<input class="ilblock font11" style="color:rgb(174,174,174);height:20px;position: initial;" data-key="school" bindblur="changeBind"  value="{{web_submitData.school}}"></input>
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">出生地</view>
-			<input class="ilblock font11" style="height:20px;position: initial;" data-key="birth_address" bindblur="changeBind"  value="{{web_submitData.birth_address}}"></input>
+		<view class="info-info" style="display: flex;align-items: center;">
+			<view class="ilblock color2 font13" style="width:15%">出生地</view>
+			<input class="ilblock font11" style="color:rgb(174,174,174);height:20px;position: initial;" data-key="birth_address" bindblur="changeBind"  value="{{web_submitData.birth_address}}"></input>
 		</view>
-		<view class="info-info">
-			<view class="ilblock color2 font13">现居地</view>
-			<input class="ilblock font11" style="height:20px;position: initial;" data-key="address" bindblur="changeBind"  value="{{web_submitData.address}}"></input>
+		<view class="info-info" style="display: flex;align-items: center;">
+			<view class="ilblock color2 font13" style="width:15%">现居地</view>
+			<input class="ilblock font11" style="color:rgb(174,174,174);height:20px;position: initial;" data-key="address" bindblur="changeBind"  value="{{web_submitData.address}}"></input>
 		</view>
 	</view>
 </view>

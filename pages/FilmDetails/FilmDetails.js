@@ -23,7 +23,7 @@ Page({
 		previousMargin: 0,
 		nextMargin: 0,
 		swiperIndex: 0,
-		isFirstLoadAllStandard: ['getMainData', 'getMessageData','getHeartData'],
+		isFirstLoadAllStandard: ['getMainData', 'getMessageData', 'getHeartData'],
 		messageData: [],
 		is_show: false,
 		is_play: false,
@@ -32,29 +32,30 @@ Page({
 			wechat: ''
 		},
 		logData: [],
-		heartData:[],
+		heartData: [],
 	},
 
 
 	onLoad(options) {
 		const self = this;
 		self.data.id = options.id;
-		if(options.order_no){
+		if (options.order_no) {
 			self.data.order_no
 		};
 		api.commonInit(self);
 		self.getMainData();
 		self.getUserInfoData();
 	},
-	
+
 	getHeartData() {
 		const self = this;
 		const postData = {};
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
-			type:1,
-			relation_id:self.data.mainData.product.id,
-			user_type:0
+			type: 1,
+			relation_id: self.data.mainData.id,
+			relation_table :'sku',
+			user_type: 0
 		};
 		postData.getAfter = {
 			user: {
@@ -70,7 +71,7 @@ Page({
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.info.data.length > 0) {
-				self.data.heartData.push.apply(self.data.heartData,res.info.data);
+				self.data.heartData.push.apply(self.data.heartData, res.info.data);
 			}
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getHeartData', self);
 			self.setData({
@@ -94,9 +95,9 @@ Page({
 				key: 'user_no',
 				searchItem: {
 					status: 1,
-					pay_status:1,
-					transport_status:2,
-					type:1
+					pay_status: 1,
+					transport_status: 2,
+					type: 1
 				},
 				condition: '='
 			}
@@ -144,7 +145,7 @@ Page({
 			api.showToast('请补全信息', 'none')
 		};
 	},
-	
+
 
 
 	userInfoUpdate() {
@@ -174,10 +175,7 @@ Page({
 	toDetail(e) {
 		const self = this;
 		self.data.index = api.getDataSet(e, 'index');
-		if(self.data.userInfoData.hasWatch.length==0){
-			api.showToast('至少看一部电影','none');
-			return;
-		};
+
 		if (self.data.userInfoData.phone == '' || self.data.userInfoData.wechat == '') {
 			self.data.is_show = true;
 		} else {
@@ -196,21 +194,21 @@ Page({
 			is_show: self.data.is_show
 		})
 	},
-	
-	close(){
+
+	close() {
 		const self = this;
 		self.data.is_show = false;
 		self.data.is_play = false;
 		self.setData({
-			is_show:self.dat.is_show,
-			is_play:self.data.is_play
+			is_show: self.dat.is_show,
+			is_play: self.data.is_play
 		})
 	},
-	
+
 	submitThree() {
 		const self = this;
 		api.buttonCanClick(self);
-		if (parseInt(self.data.userInfoData.score)>1) {
+		if (parseInt(self.data.userInfoData.score) > 1) {
 			const callback = (user, res) => {
 				self.addLogTwo();
 			};
@@ -220,12 +218,12 @@ Page({
 			api.showToast('锦绣劵不足', 'none')
 		};
 	},
-	
+
 
 
 	addLogTwo(index) {
 		const self = this;
-		
+
 		const postData = {};
 		postData.data = {
 			type: 2,
@@ -233,20 +231,20 @@ Page({
 		};
 		postData.tokenFuncName = 'getProjectToken';
 		postData.saveAfter = [{
-		  tableName:'FlowLog',
-		  FuncName:'add',
-		  data:{
-		    count:-1,
-				user_no:wx.getStorageSync('info').user_no,
-				type:3,
-				thirdapp_id:2,
-				trade_info:'翻牌子'
-		  }
+			tableName: 'FlowLog',
+			FuncName: 'add',
+			data: {
+				count: -1,
+				user_no: wx.getStorageSync('info').user_no,
+				type: 3,
+				thirdapp_id: 2,
+				trade_info: '翻牌子'
+			}
 		}]
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.solely_code == 100000) {
-					api.pathTo('/pages/hisPage/hisPage?user_no=' + self.data.messageData[self.data.index].user_no, 'nav')
+				api.pathTo('/pages/hisPage/hisPage?user_no=' + self.data.messageData[self.data.index].user_no, 'nav')
 			} else {
 				api.showToast(res.msg, 'none', 1000)
 			};
@@ -273,10 +271,12 @@ Page({
 			if (res.info.data.length > 0) {
 				self.data.mainData = res.info.data[0];
 				self.data.mainData.product.description = self.data.mainData.product.description.split(',');
-				self.data.mainData.product.end_time = api.timestampToTime(self.data.mainData.product.end_time);
+				self.data.mainData.end_time = api.timeto(self.data.mainData.end_time,'hm');
+				self.data.mainData.start_time = api.timeto(self.data.mainData.start_time,'ymd-hm');
 				self.data.mainData.product.content = api.wxParseReturn(res.info.data[0].product.content).nodes;
 				self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
 			}
+			console.log('self.data.mainData',self.data.mainData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 			self.getMessageData();
 			self.getHeartData();
@@ -345,7 +345,18 @@ Page({
 					type: 2
 				},
 				condition: '='
-			}
+			},
+			message: {
+				tableName: 'Message',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:2,
+					user_type:0
+				},
+				condition: '='
+			},
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -378,7 +389,7 @@ Page({
 		const postData = {};
 		postData.data = {
 			type: 4,
-			
+
 			relation_id: self.data.messageData[index].id
 		};
 
@@ -404,6 +415,14 @@ Page({
 		};
 		api.logAdd(postData, callback);
 	},
+	
+	
+	formIdAdd(e) {
+		console.log(e)
+	
+		api.WxFormIdAdd(e.detail.formId, Date.parse(new Date()) / 1000 + 7 * 86400);
+	},
+	
 
 	submit() {
 		const self = this;
@@ -429,11 +448,9 @@ Page({
 				}]
 			};
 			console.log('addOrder', self.data.addressData)
-			if(!self.data.order){
-				postData.isCombine = true
-			}else{
+			if (self.data.order) {
 				postData.data.passage1 = self.data.order_no
-			};
+			}
 			const callback = (res) => {
 				if (res && res.solely_code == 100000) {
 					self.data.order_id = res.info.id
@@ -473,10 +490,31 @@ Page({
 					api.realPay(res.info, payCallback);
 				}
 			} else {
-				api.showToast('支付失败', 'none')
+				api.buttonCanClick(self, true);
+				api.showToast(res.msg, 'none')
 			}
 		};
 		api.pay(postData, callback);
+	},
+
+	intoMap() {
+		const self = this;
+		wx.getLocation({
+			type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+			success: function(res) { //因为这里得到的是你当前位置的经纬度
+				var latitude = res.latitude
+				var longitude = res.longitude
+				wx.openLocation({ //所以这里会显示你当前的位置
+					// longitude: 109.045249,
+					// latitude: 34.325841,
+					longitude: parseFloat(self.data.mainData.longitude),
+					latitude: parseFloat(self.data.mainData.latitude),
+					name: self.data.mainData.passage1,
+					address: self.data.mainData.address,
+					scale: 28
+				})
+			}
+		})
 	},
 
 	show() {

@@ -17,7 +17,8 @@ Page({
 		mainData: {},
 		constantSignData:'',
 		signReward:0,
-		isFirstLoadAllStandard: ['getMainData', 'flowLogGet']
+		isFirstLoadAllStandard: ['getMainData', 'flowLogGet'],
+		is_show:false
 	},
 
 
@@ -37,7 +38,15 @@ Page({
 		self.flowLogGet();
 		self.initSignData()
 	},
-
+	
+	show(){
+		const self= this;
+		self.data.is_show = !self.data.is_show;		
+		self.setData({
+			is_show:self.data.is_show
+		})
+	},
+	
 	sign(){
 		const self = this;
 		if(self.data.buttonCanClick){
@@ -57,18 +66,11 @@ Page({
 			postData.tokenFuncName = 'getProjectToken';
 			const callback = (res)=>{
 				if(res.solely_code==100000){
+					console.log('666')
 					self.data.constantSignData.count++;
 					self.data.constantSignData.time = dayStart;
 					wx.setStorageSync('constantSignData',self.data.constantSignData);
-					
-					wx.showToast({
-						title: '签到成功',
-						success:function(){
-							setTimeout(function(){
-								self.init();
-							},1500)	
-						}
-					});
+					self.show()
 				}else{
 					wx.showToast({
 						title: '签到失败',
@@ -102,6 +104,8 @@ Page({
 			api.buttonCanClick(self,true)
 		}
 	},
+	
+	
 	initSignData(){
 		const self = this;
 		var dayStart = new Date(new Date().setHours(0, 0, 0, 0)).getTime() / 1000;
@@ -124,6 +128,7 @@ Page({
 					wx.setStorageSync('constantSignData',self.data.constantSignData);
 				};
 				self.setData({
+					web_isSign:self.data.isSign,
 					web_signData:self.data.constantSignData
 				});
 			}else{

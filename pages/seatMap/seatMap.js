@@ -16,9 +16,13 @@ Page({
 	data: {
 		is_show: false,
 		is_play: false,
-		isFirstLoadAllStandard: ['getSeatData','getUserInfoData'],
+		isFirstLoadAllStandard: ['getSeatData', 'getUserInfoData'],
 		seatData: [],
-		checkData: {}
+		checkData: {},
+		submitData:{
+			phone:'',
+			wechat:''
+		}
 	},
 
 	show(e) {
@@ -41,6 +45,8 @@ Page({
 		if (options.art_id && options.sku_id) {
 			self.data.art_id = options.art_id;
 			self.data.sku_id = options.sku_id;
+			self.data.discount = options.discount;
+			self.data.standard = options.standard;
 			self.getSeatData();
 			self.getUserInfoData()
 		} else {
@@ -52,6 +58,61 @@ Page({
 				}, 2000)
 			})
 		}
+		self.setData({
+			web_standard:self.data.standard,
+			web_discount:self.data.discount
+		})
+	},
+	
+	submitTwo() {
+		const self = this;
+		api.buttonCanClick(self);
+		const pass = api.checkComplete(self.data.submitData);
+		console.log('pass', pass);
+		console.log('self.data.submitData', self.data.submitData)
+		if (pass) {
+			const callback = (user, res) => {
+				self.userInfoUpdate();
+			};
+			api.getAuthSetting(callback);
+		} else {
+			api.buttonCanClick(self, true)
+			api.showToast('请补全信息', 'none')
+		};
+	},
+	
+	close() {
+		const self = this;
+		self.data.is_show = false;
+		self.data.is_play = false;
+		self.setData({
+			is_show: self.data.is_show,
+			is_play: self.data.is_play
+		})
+	},
+	
+	userInfoUpdate() {
+		const self = this;
+		const postData = {};
+		postData.tokenFuncName = 'getProjectToken';
+		postData.data = {};
+		postData.data = api.cloneForm(self.data.submitData);
+		postData.data.behavior = 0;
+		const callback = (data) => {
+			api.buttonCanClick(self, true);
+			if (data.solely_code == 100000) {
+	
+				self.data.is_show = false;
+				self.setData({
+					is_show: self.data.is_show
+				});
+				api.showToast('完善成功', 'none');
+			} else {
+				api.showToast(res.msg, 'none')
+			};
+			self.getUserInfoData()
+		};
+		api.userInfoUpdate(postData, callback);
 	},
 
 	getUserInfoData() {
@@ -75,12 +136,81 @@ Page({
 		api.userInfoGet(postData, callback);
 	},
 
+	submitThree() {
+		const self = this;
+		api.buttonCanClick(self);
+		if (parseInt(self.data.userInfoData.score) > 1) {
+			const callback = (user, res) => {
+				self.addLogTwo();
+			};
+			api.getAuthSetting(callback);
+		} else {
+			api.buttonCanClick(self, true)
+			api.showToast('锦绣劵不足', 'none')
+		};
+	},
+
+
+
+	addLogTwo(index) {
+		const self = this;
+
+		const postData = {};
+		postData.data = {
+			type: 2,
+			relation_user: self.data.checkData.user_no,
+		};
+		postData.tokenFuncName = 'getProjectToken';
+		postData.saveAfter = [{
+			tableName: 'FlowLog',
+			FuncName: 'add',
+			data: {
+				count: -1,
+				user_no: wx.getStorageSync('info').user_no,
+				type: 3,
+				thirdapp_id: 2,
+				trade_info: '翻牌子'
+			}
+		}]
+		const callback = (res) => {
+			api.buttonCanClick(self, true);
+			if (res.solely_code == 100000) {
+				api.pathTo('/pages/hisPage/hisPage?user_no=' + self.data.checkData.user_no, 'nav')
+			} else {
+				api.showToast(res.msg, 'none', 1000)
+			};
+			self.close();
+			self.data.checkData.log.push({
+				status: 1,
+				id: res.info.id
+			});
+
+		};
+		api.logAdd(postData, callback);
+	},
+
 	check(e) {
 		const self = this;
 
 		var item = api.getDataSet(e, 'item');
 		if (item) {
+			
 			self.data.checkData = item;
+			if (self.data.checkData.user_no==wx.getStorageSync('info').user_no) {
+				api.pathTo('/pages/hisPage/hisPage?user_no=' + self.data.checkData.user_no, 'nav')
+				return
+			};
+			if(self.data.userInfoData.behavior==0){
+				api.showToast('您的资料审核中','none');
+				return
+			};
+			if(self.data.userInfoData.behavior==-1){
+				self.data.is_show = true;
+				self.setData({
+					is_show: self.data.is_show
+				});
+				return
+			};
 			if (self.data.checkData.UserInfo[0].behavior == 0) {
 				api.showToast('用户资料审核中', 'none')
 			} else {
@@ -116,7 +246,7 @@ Page({
 				console.log('self.data.seatData', self.data.seatData);
 				self.data.orginSeatData = res.info.data;
 			};
-			console.log('self.data.seatData', self.data.seatData)
+			console.log('self.data.orginSeatData', self.data.orginSeatData)
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getSeatData', self);
 			self.initOrderData();
 		};

@@ -6,9 +6,9 @@
 			</swiper-item>
 		</block>
 	</swiper>
-	<view class="share bg3 font12">
+	<button class="share bg3 font12" style="padding: 0;" bindtap="onShareAppMessage" open-type="share">
 		<image src="../../image/icon3.png"></image>分享
-	</view>
+	</button>
 </view>
 <view class="info-one">
 	<view class="head ilblock">
@@ -17,8 +17,8 @@
 	<view class="head-right ilblock flo-right">
 		<view class="font14 color1 overflow1" style="margin-top: 14rpx;">{{web_mainData.nickname}}</view>
 		<view class="color3 font10 info-text hiden overflow1">
-			<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
-			<text>北京</text><text>{{web_mainData.info.birthday}}年{{web_mainData.info.constellation}}</text><text>{{web_mainData.info.education}}</text><text>{{web_mainData.info.school}}</text>
+			<image src="../../image/gender.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<text>{{web_mainData.info.email}}</text><text>{{web_mainData.info.birthday}}年{{web_mainData.info.constellation}}</text><text>{{web_mainData.info.education}}</text><text>{{web_mainData.info.school}}</text>
 		</view>
 	</view>
 </view>

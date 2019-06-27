@@ -222,7 +222,7 @@ class Api extends Base {
 			url: 'Common/WxFormId/add',
 			type: 'post',
 			data: {
-				tokenFuncName: 'getEntranceToken',
+				tokenFuncName: 'getProjectToken',
 				form_id: form_id,
 				end_time: end_time,
 			},
@@ -739,7 +739,19 @@ class Api extends Base {
 		};
 		this.request(allParams);
 	}
-
+	
+	
+	commonUserGet(param, callback) {
+		var allParams = {
+			url: 'Common/User/get',
+			type: 'post',
+			data: param,
+			sCallback: function(data) {
+				callback && callback(data);
+			}
+		};
+		this.request(allParams);
+	}
 
 	userGet(param, callback) {
 		var allParams = {

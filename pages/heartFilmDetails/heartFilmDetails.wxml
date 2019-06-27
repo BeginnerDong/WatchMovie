@@ -1,6 +1,6 @@
 <view class="color1 font15 top">提前预约，开场领礼品</view>
 <view class="top-img">
-	<swiper style="width:100%;height:400rpx" indicator-dots="{{indicatorDots}}" indicator-color="pink" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" bindchange="swiperChange">
+	<swiper style="width:100%;height:400rpx" indicator-dots="{{indicatorDots}}" indicator-color="pink" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
 	  <block wx:for="{{web_mainData.bannerImg}}" wx:key="{{index}}">
 	    <swiper-item>
 	      <image mode="aspectFit" src="{{item.url}}" class="slide-image {{swiperIndex == index? 'active' : ''}}" />

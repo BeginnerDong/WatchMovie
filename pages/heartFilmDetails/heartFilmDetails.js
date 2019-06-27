@@ -62,14 +62,29 @@ Page({
 					status: 1,
 					type:1,
 					user_type:0,	
+					relation_table:'product'
 				},
 				condition: '=',
 				compute: {
 					num: ['count', 'count', {
 						status: 1,
 						type:1,
+						relation_table:'product'
 					}]
 				}
+			},
+			heartMe: {
+				token:wx.getStorageSync('token'),
+				tableName: 'Log',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:1,
+					user_no:wx.getStorageSync('info').user_no,
+					relation_table:'product'
+				},
+				condition: '=',
 			}
 		};
 		const callback = (res) => {
@@ -93,6 +108,11 @@ Page({
 	submit() {
 		const self = this;
 		api.buttonCanClick(self);
+		if(self.data.mainData.heartMe.length>0){
+			api.buttonCanClick(self,true);
+			api.showToast('您已经心动过','none');
+			return
+		};
 		const callback = (user, res) => {
 			self.addLog();
 		};
@@ -104,17 +124,20 @@ Page({
 		const postData = {};
 		postData.data = {
 			type: 1,
-			relation_id: self.data.mainData.id
+			relation_id: self.data.mainData.id,
+			relation_table:'product'
 		};
 		postData.tokenFuncName = 'getProjectToken';
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.solely_code == 100000) {
-				self.data.mainData.heart.push({
+				api.showToast('心动成功','none')
+				self.data.mainData.heartMe.push({
 					status: 1,
 					id: res.info.id
 				});
 				self.data.mainData.heart.num += 1;
+				self.data.mainData.percent = (100/(self.data.mainData.stock+100))*(self.data.mainData.heart.num+100);
 			} else {
 				api.showToast(res.msg, 'none', 1000)
 			};

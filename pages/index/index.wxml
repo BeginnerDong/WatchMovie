@@ -28,25 +28,29 @@
 				</view>
 			</picker>
 		</view>
-		<view class="info-list bg1">
-			<view class="ilblock listimg">
-				<image src="../../image/home-icon02.png" style="width: 26rpx;"></image>
+		<view class="info-list bg1" style="display: flex;">
+			<view class="ilblock listimg" style="width: 80rpx;">
+				<image src="../../image/home-icon01.png" style="width: 32rpx;"></image>
 			</view>
-			<view class="ilblock color1 font13">出生地址</view>
-			<input class="ilblock color1 font13" data-key="birth_address" bindblur="changeBind"  value="{{web_submitData.birth_address}}"/>
-			<view class="color2 font12 flo-right" style="margin-top: 10rpx;">
-				<image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
-			</view>
+			<view class="ilblock color1 font13" style="display:flex;align-items:center;width:23%;margin-top: 6px;">现居地</view>
+			<picker class="ilblock flo-right color3 font12" mode = "region"  bindchange="bindBirthAddress"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+				<view class="color2 font12 flo-right" style="margin-top: 10rpx;">{{web_submitData.birth_address?web_submitData.birth_address:'请选择'}}
+					<image class="right" src="../../image/home-icon6.png"></image>
+				</view>
+			</picker>
 		</view>
-		<view class="info-list bg1">
-			<view class="ilblock listimg">
-				<image src="../../image/home-icon03.png"></image>
+		<view class="info-list bg1" style="display: flex;">
+			<view class="ilblock listimg" style="width: 80rpx;">
+				<image src="../../image/home-icon01.png" style="width: 32rpx;"></image>
 			</view>
-			<view class="ilblock color1 font13">现居地</view>
-			<input class="ilblock color1 font13" data-key="address" bindblur="changeBind"  value="{{web_submitData.address}}"/>
-			<view class="color2 font12 flo-right" style="margin-top: 10rpx;">
-				<image class="right" src="../../image/home-icon6.png" style="margin-left: 10rpx;"></image>
-			</view>
+			<view class="ilblock color1 font13" style="display:flex;align-items:center;width:23%;margin-top: 6px;">出生日期</view>
+			<picker class="ilblock flo-right color3 font12" mode = "region" bindchange="bindAddress"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
+				<view class="color2 font12 flo-right" style="margin-top: 10rpx;">{{web_submitData.address?web_submitData.address:'请选择'}}
+					<image class="right" src="../../image/home-icon6.png"></image>
+				</view>
+			</picker>
 		</view>
 		<button class="bg3 color5 font15 radiu15" style="width: 80%; height: 80rpx; margin-top: 50rpx;" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">确定</button>
 	</view>
@@ -75,7 +79,7 @@
 			<view class="one-center ilblock">
 				<view class="one-title overflow1 color1 font14">{{item.title}}</view>
 				<view class="color3 font10 one-color">
-					<block wx:for="{{item.description}}" wx:for-item="c_item" wx:for-index="c_index">
+					<block wx:for="{{item.description}}" wx:for-item="c_item" wx:for-index="c_index" wx:if="{{c_index<3}}">
 						<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
 					</block>
 
@@ -105,7 +109,7 @@
 	 previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" bindchange="swiperChange">
 		<block wx:for="{{web_hotData}}" wx:key="{{index}}">
 			<swiper-item>
-				<image mode="aspectFit" src="{{item.product.mainImg[0].url}}" class="slide-image {{swiperIndex == index? 'active' : ''}}"
+				<image src="{{item.product.mainImg[0].url}}" class="slide-image {{swiperIndex == index? 'active' : ''}}"
 				 bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails?id={{item.id}}" />
 				<view class="btm-box {{swiperIndex == index ? 'active1' : ''}}">
 					<view>

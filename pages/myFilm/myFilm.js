@@ -85,6 +85,8 @@ Page({
 				for (var i = 0; i < self.data.mainData.length; i++) {
 					self.data.mainData[i].products[0].snap_product.product.description = self.data.mainData[i].products[0].snap_product
 						.product.description.split(',');
+					self.data.mainData[i].products[0].snap_product.start_time = api.timeto(self.data.mainData[i].products[0].snap_product.start_time,'ymd-hm');
+					self.data.mainData[i].products[0].snap_product.end_time = api.timeto(self.data.mainData[i].products[0].snap_product.end_time,'hm')
 				}
 			} else {
 				self.data.isLoadAll = true;
@@ -164,6 +166,11 @@ Page({
 	},
 	intoPath(e) {
 		const self = this;
+		var index = api.getDataSet(e,'index');
+		if(self.data.mainData[index].standard==0||self.data.mainData[index].discount==0){
+			api.showToast('暂未分配座位','none');
+			return
+		};
 		api.pathTo(api.getDataSet(e, 'path'), 'nav');
 	}
 })

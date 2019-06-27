@@ -15,9 +15,9 @@ const token = new Token();
 Page({
 	data: {
 		mainData: [],
-		isFirstLoadAllStandard: ['getMainData'],
+		isFirstLoadAllStandard: ['getMainData','getUserInfoData'],
 		num: 1,
-		is_show:false
+		is_show: false
 	},
 
 	onLoad(options) {
@@ -27,27 +27,47 @@ Page({
 			web_num: self.data.num
 		});
 		self.getMainData();
+		self.getUserInfoData()
 	},
-	
-	show(e){
+
+	show(e) {
 		const self = this;
-		var index = api.getDataSet(e,'index');
+		var index = api.getDataSet(e, 'index');
 		self.data.url = self.data.mainData[index].url;
 		self.data.is_show = true;
 		self.setData({
-			web_url:self.data.url,
-			is_show:self.data.is_show
-		})
-	},
-	
-	close(){
-		const self = this;
-		self.data.is_show = false;
-		self.setData({
-			is_show:self.data.is_show
+			web_url: self.data.url,
+			is_show: self.data.is_show
 		})
 	},
 
+	close() {
+		const self = this;
+		self.data.is_show = false;
+		self.setData({
+			is_show: self.data.is_show
+		})
+	},
+
+
+	getUserInfoData() {
+		const self = this;
+		const postData = {};
+		postData.tokenFuncName = 'getProjectToken';
+		postData.searchItem = {
+			user_no:wx.getStorageSync('info').user_no
+		};
+		const callback = (res) => {
+			if (res.info.data.length > 0) {
+				self.data.userInfoData = res.info.data[0]
+			} 
+			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getUserInfoData', self);
+			self.setData({
+				web_userInfoData: self.data.userInfoData,
+			});
+		};
+		api.userInfoGet(postData, callback);
+	},
 
 
 	getMainData(isNew) {
@@ -91,7 +111,7 @@ Page({
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
 			type: 3,
-			pay_status:1
+			pay_status: 1
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -142,6 +162,10 @@ Page({
 
 	submit(e) {
 		const self = this;
+		if(self.data.userInfoData.count==0){
+			api.showToast('您未观看电影','none')
+			return
+		};
 		var index = api.getDataSet(e, 'index');
 		api.buttonCanClick(self);
 		const callback = (user, res) => {
@@ -187,21 +211,34 @@ Page({
 			searchItem: {
 				id: order_id,
 			},
-			score: self.data.mainData[index].price*self.data.mainData[index].count
+			score: self.data.mainData[index].price * self.data.mainData[index].count
 		};
+		postData.payAfter = [
+			{
+				tableName: 'UserInfo',
+				FuncName: 'update',
+				data: {
+					count: self.data.userInfoData.count-1,
+				},
+				searchItem:{
+					user_no:wx.getStorageSync('info').user_no
+				}
+			}
+		];
 		const callback = (res) => {
 			if (res.solely_code == 100000) {
 				api.buttonCanClick(self, true);
-				api.showToast('兑换成功','none')
+				api.showToast('兑换成功', 'none')
 				if (res.info) {
 					const payCallback = (payData) => {
 						if (payData == 1) {
-							api.showToast('兑换成功','none')
+							api.showToast('兑换成功', 'none')
 						};
 					};
 					api.realPay(res.info, payCallback);
 				}
 			} else {
+				api.buttonCanClick(self, true);
 				api.showToast(res.msg, 'none')
 			}
 		};

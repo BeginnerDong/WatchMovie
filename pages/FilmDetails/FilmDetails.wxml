@@ -14,7 +14,7 @@
 		<view>
 			<view class="font14 color1 fat-font ilblock">{{web_mainData.title}}</view>
 			<view class="color3 font10 one-color ilblock">
-				<block wx:for="{{web_mainData.product.description}}">
+				<block wx:for="{{web_mainData.product.description}}" wx:if="{{index<3}}">
 					<view class="ilblock radiu40" style="{{index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{item}}</view>
 				</block>
 			</view>
@@ -35,12 +35,12 @@
 		<view class="one-tabe radiu15 font13">
 			<view style="height: 50%; width: 100%; border-bottom: solid 1rpx #E3E3E3; padding: 30rpx 0rpx;box-sizing: border-box;">
 				<view class="ilblock" style="border-right: solid 1rpx #E1E1E1;width: 50%; text-align: center;">{{web_mainData.passage2}}</view>
-				<view class="ilblock" style="width: 49%; text-align: center;">{{web_mainData.passage1}}
+				<view class="ilblock" style="width: 49%; text-align: center;" bindtap="intoMap">{{web_mainData.passage1}}
 					<image src="../../image/details-icon2.png"></image>
 				</view>
 			</view>
 			<view style="height: 50%; line-height: 100rpx;text-align: center;">
-				<text>{{web_mainData.passage3}}</text>
+				<text>{{web_mainData.start_time}}-{{web_mainData.end_time}}</text>
 			</view>
 		</view>
 	</view>
@@ -79,7 +79,7 @@
 	<block wx:for="{{web_messageData}}" wx:key="id">
 		<view class="boxleft">
 			<view>
-				<view class="head-two ilblock" bindtap="toDetail" data-index="{{index}}">
+				<view class="head-two ilblock">
 					<image src="{{item.user[0].headImgUrl}}"></image>
 				</view>
 				<view class="font11 color2 ilblock name overflow1">{{item.user[0].nickname}}</view>
@@ -92,7 +92,7 @@
 			<view style="margin: 30rpx 0rpx 0rpx;">
 				<view class="font10 color2 ilblock boxnum-img">
 					<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
-					{{item.score}}
+					{{item.message.length}}
 				</view>
 				<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;" data-index="{{index}}" bindtap="{{web_buttonCanClick?(item.goodMe.length==0?'clickGood':''):''}}">
 					<image src="{{item.goodMe.length>0?'../../image/details-icon5.png':'../../image/details-icon4.png'}}" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
@@ -103,14 +103,16 @@
 	</block>
 </view>
 <view style="width: 100%;height: 100rpx;"></view>
-<button class="btm font15 color5" style="border-radius:0" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">
-	立即购票
-</button>
+<form bindsubmit="formIdAdd" report-submit="true">
+	<button class="btm font15 color5" style="border-radius:0" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" form-type="submit"> 
+		立即购票
+	</button>	
+</form>
 
 <view class="fixd" wx:if="{{is_show}}">
 	<view class="bg1 fixd-boxtwo radiu15">
 		<view>
-			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 40rpx;height: 40rpx" bindtap="close"></image>
+			<image class="flo-right" src="../../image/details-icon6.png" style="width: 40rpx;height: 40rpx" bindtap="close"></image>
 		</view>
 		<view class="font15 color1 fat-font" style="margin: 60rpx 0rpx 0rpx;">请补全您的信息</view>
 		<view style="margin-top: 40rpx;">
@@ -129,7 +131,7 @@
 <view class="fixd" wx:if="{{is_play}}">
 	<view class="bg1 fixd-box radiu15">
 		<view>
-			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx" bindtap="close"></image>
+			<image class="flo-right" src="../../image/details-icon6.png" style="width: 36rpx;height: 36rpx" bindtap="close"></image>
 		</view>
 		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">翻牌子将消耗一个锦秀券</view>
 		<view class="font13">

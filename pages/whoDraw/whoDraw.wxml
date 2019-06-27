@@ -9,8 +9,8 @@
 		<view class="head-right ilblock flo-right">
 			<view class="font14 color1 overflow1" style="margin-top:20rpx;">{{item.user[0].nickname}}</view>
 			<view class="color3 font10 info-text hiden">
-				<image src="../../image/微信图片_20190518112836.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
-				<text>北京</text><text>{{item.user[0].info.birthday}}年{{item.user[0].info.constellation}}</text><text>{{item.user[0].info.education}}</text><text>{{item.user[0].info.school}}</text>
+				<image src="../../image/gender.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+				<text>{{web_mainData.info.email}}</text><text>{{item.user[0].info.birthday}}年{{item.user[0].info.constellation}}</text><text>{{item.user[0].info.education}}</text><text>{{item.user[0].info.school}}</text>
 			</view>
 		</view>
 	</view>
@@ -18,7 +18,7 @@
 <view class="fixd" wx:if="{{is_show}}">
 	<view class="bg1 fixd-box radiu15">
 		<view>
-			<image class="flo-right" src="../../image/details-icon1%20(2).png" style="width: 36rpx;height: 36rpx" bindtap="show"></image>
+			<image class="flo-right" src="../../image/details-icon6.png" style="width: 36rpx;height: 36rpx" bindtap="show"></image>
 		</view>
 		<view class="font15 color1" style="text-align: center; margin: 120rpx 0rpx 0rpx;">查看将消耗一个锦绣券</view>
 		<view class="font13">

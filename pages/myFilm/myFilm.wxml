@@ -13,24 +13,24 @@
 <block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="one bg1 radiu15">
 		 <view class="list-one">
-			 <view class="one-img ilblock" bindtap="intoPath" 
-			 data-path="/pages/seatMap/seatMap?art_id={{item.products[0].snap_product.art_id}}&sku_id={{item.products[0].snap_product.id}}">
+			 <view class="one-img ilblock" bindtap="intoPath"  data-index="{{index}}"
+			 data-path="/pages/seatMap/seatMap?art_id={{item.products[0].snap_product.art_id}}&sku_id={{item.products[0].snap_product.id}}&discount={{item.discount}}&standard={{item.standard}}">
 				 <image src="{{item.products[0].snap_product.product.mainImg[0].url}}"></image>
 			 </view>
 			  <view class="one-center ilblock">
 					<view class="one-title overflow1 color1 font14">{{item.products[0].snap_product.title}}</view> 
 					<view class="color3 font10 one-color">
-						<block wx:for="{{item.products[0].snap_product.product.description}}" wx:for-item="c_item" wx:for-index="c_index">
+						<block wx:for="{{item.products[0].snap_product.product.description}}" wx:for-item="c_item" wx:for-index="c_index" wx:if="{{c_index<3}}">
 							<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
 						</block>
 					</view>
 					<view class="one-time color2 font11">
-						{{item.products[0].snap_product.passage3}} 8排8号
+						{{item.products[0].snap_product.start_time}}-{{item.products[0].snap_product.end_time}} {{item.standard&&item.discount>0?item.standard+'排'+item.discount+'号':'暂未分配座位'}}
 					</view>
 					<view class="font11 color2" style="margin-top: 24rpx;">
 						<image src="../../image/home-icon02.png" style="width: 14rpx; height: 20rpx;"></image>
 						{{item.products[0].snap_product.passage1}}
-						<view class="color5 bg3" style="float: right;border:1px solid #f2f2f2;width:55px;height:15px;line-height: 15px;padding: 0 2px;"
+						<view class="color5 bg3" style="float: right;border:1px solid #f2f2f2;height:15px;line-height: 15px;padding: 0 2px;"
 						bindtap="show" data-index="{{index}}">查看二维码</view>
 					</view>
 			 </view>
@@ -42,7 +42,7 @@
 					未绑定
 				</view>
 			 </view>
-			  <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2}}">
+			  <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2&&item.passage1!=''}}">
 				<view class="color6 font10">
 					已绑定
 				</view>

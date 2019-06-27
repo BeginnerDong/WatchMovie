@@ -44,13 +44,16 @@ Page({
 				searchItem: {
 					status: 1,
 					type:1,
-					user_type:0,	
+					user_type:0,				
+					relation_table:'product'
 				},
 				condition: '=',
 				compute: {
 					num: ['count', 'count', {
 						status: 1,
 						type:1,
+						user_type:0,	
+						relation_table:'product'
 					}]
 				}
 			}
@@ -62,7 +65,8 @@ Page({
 				for (var i = 0; i < self.data.mainData.length; i++) {
 					self.data.mainData[i].description = self.data.mainData[i].description.split(',');
 					self.data.mainData[i].end_time = api.timestampToTime(self.data.mainData[i].end_time);
-					var percent =  Math.ceil(self.data.mainData[i].heart.num+100/self.data.mainData[i].stock*100);
+					var percent =  Math.ceil(self.data.mainData[i].heart.num+100/(self.data.mainData[i].stock+100)*100);
+
 					percent = Math.round(percent/10)*10;
 					if(percent==0){
 						percent = 1;

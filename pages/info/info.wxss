@@ -40,12 +40,10 @@
 	top: 0rpx;
 }
 .photo{
-	width: 66%;
-	margin-left: 17%;
+	width: 30%;
+	margin: 0 2%;
 	height: 270rpx;
-	overflow: hidden;
 	margin-top: 30rpx;
-	border: solid 1rpx #CBCBCB;
 }
 .photo image{
 	width: 100%;

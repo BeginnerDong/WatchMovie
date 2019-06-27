@@ -53,7 +53,7 @@ Page({
 			})
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 		};
-		api.userGet(postData, callback);
+		api.commonUserGet(postData, callback);
 	},
 
 	getMessageData() {
@@ -102,6 +102,17 @@ Page({
 				searchItem: {
 					type: 4,
 					user_no: wx.getStorageSync('info').user_no
+				},
+				condition: '='
+			},
+			message: {
+				tableName: 'Message',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:2,
+					user_type:0
 				},
 				condition: '='
 			},

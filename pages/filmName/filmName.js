@@ -36,6 +36,17 @@ Page({
 		self.getMainData();
 
 	},
+	
+	intoCommentDetails(e){
+		const self = this;
+		var index = api.getDataSet(e,'index');
+		console.log(index)
+		if(self.data.messageData[index].relation.length==0){
+			api.showToast('您没有观看此电影','none')
+		}else{
+			api.pathTo(api.getDataSet(e, 'path'), 'nav');
+		}
+	},
 
 
 
@@ -108,6 +119,17 @@ Page({
 				searchItem: {
 					type: 4,
 					user_no: wx.getStorageSync('info').user_no
+				},
+				condition: '='
+			},
+			message: {
+				tableName: 'Message',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:2,
+					user_type:0
 				},
 				condition: '='
 			},
