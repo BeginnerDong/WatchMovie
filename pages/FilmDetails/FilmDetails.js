@@ -33,18 +33,25 @@ Page({
 		},
 		logData: [],
 		heartData: [],
+		is_show_notice:false
 	},
 
 
 	onLoad(options) {
 		const self = this;
-		self.data.id = options.id;
+	
 		if (options.order_no) {
-			self.data.order_no
-		};
+			self.data.id = options.sku_id;
+			self.data.order_no=options.order_no;
+			self.data.user_no = options.user_no;
+			self.getShareUserData()
+		}else{
+			self.data.id = options.id;
+		}
 		api.commonInit(self);
 		self.getMainData();
 		self.getUserInfoData();
+		
 	},
 
 	getHeartData() {
@@ -66,8 +73,9 @@ Page({
 					status: 1,
 				},
 				condition: '='
-			}
+			},
 		};
+
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.info.data.length > 0) {
@@ -100,7 +108,18 @@ Page({
 					type: 1
 				},
 				condition: '='
-			}
+			},
+			OrderItem: {
+				tableName: 'OrderItem',
+				middleKey: 'user_no',
+				key: 'user_no',
+				condition: '=',
+				searchItem: {
+					status: 1,
+					sku_id:self.data.id,
+					pay_status:1
+				},
+			},
 		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {
@@ -114,6 +133,36 @@ Page({
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 		};
 		api.userInfoGet(postData, callback);
+	},
+	
+	getShareUserData(){
+		const self = this;
+		const postData = {};
+		postData.tokenFuncName = 'getProjectToken';
+		postData.searchItem = {
+			user_no:self.data.user_no,
+			
+		};
+		const callback = (res) => {
+			api.buttonCanClick(self, true);
+			if (res.solely_code == 100000) {
+				self.data.shareUserData = res.info.data[0];
+				self.data.is_show_notice = true;
+				self.setData({
+					web_shareUserData:self.data.shareUserData,
+					is_show_notice: self.data.is_show_notice
+				});
+			}
+		};
+		api.commonUserGet(postData, callback);	
+	},
+	
+	closeNotice(){
+		const self = this;
+		self.data.is_show_notice = false;
+		self.setData({
+			is_show_notice: self.data.is_show_notice
+		});
 	},
 
 	changeBind(e) {
@@ -266,6 +315,7 @@ Page({
 		postData.searchItem = {
 			id: self.data.id
 		};
+		
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.info.data.length > 0) {
@@ -427,6 +477,28 @@ Page({
 	submit() {
 		const self = this;
 		api.buttonCanClick(self);
+		if(self.data.user_no){
+			if(self.data.mainData.behavior==1){
+				if(self.data.shareUserData.info.gender==wx.getStorageSync('info').info.gender){
+					api.buttonCanClick(self,true);
+					api.showToast('性别不符哦');
+					return
+				}
+			}else if(self.data.mainData.behavior==2){
+				if(self.data.shareUserData.info.gender!=wx.getStorageSync('info').info.gender){
+					api.buttonCanClick(self,true);
+					api.showToast('性别不符哦');
+					return
+				}
+			}
+		};
+		
+		
+		if(self.data.userInfoData.OrderItem.length>0){
+			api.buttonCanClick(self,true);
+			api.showToast('你已购买本场次');
+			return
+		}
 		const callback = (user, res) => {
 			self.addOrder();
 		};
@@ -445,12 +517,16 @@ Page({
 						count: 1
 					}],
 					type: 1,
-				}]
+				}],
+				data:{}
 			};
 			console.log('addOrder', self.data.addressData)
-			if (self.data.order) {
+			if (self.data.order_no) {
 				postData.data.passage1 = self.data.order_no
-			}
+			};
+			
+			
+			
 			const callback = (res) => {
 				if (res && res.solely_code == 100000) {
 					self.data.order_id = res.info.id
@@ -468,7 +544,7 @@ Page({
 		const self = this;
 		var order_id = self.data.order_id;
 		const postData = {
-			token: wx.getStorageSync('token'),
+			tokenFuncName: 'getProjectToken',
 			searchItem: {
 				id: order_id,
 			},
@@ -482,9 +558,22 @@ Page({
 				if (res.info) {
 					const payCallback = (payData) => {
 						if (payData == 1) {
-							setTimeout(function() {
-								api.pathTo('/pages/user/user', 'rela');
-							}, 800)
+							wx.showModal({
+								title: '温馨提示',
+								content: '您可在兑换中心以锦绣卷兑换零食饮料',
+								cancelText: '取消',
+								confirmText: '确认',
+								success(res) {
+									if (res.cancel) {
+										
+									} else if (res.confirm) {
+										setTimeout(function() {
+											api.pathTo('/pages/user/user', 'rela');
+										}, 800)
+									}
+								}
+							})
+							
 						};
 					};
 					api.realPay(res.info, payCallback);

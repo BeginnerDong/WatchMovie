@@ -79,7 +79,8 @@ Page({
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
-			type: 3
+			type: 3,
+			
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -111,7 +112,8 @@ Page({
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
 			type: 3,
-			pay_status: 1
+			pay_status: 1,
+			user_no:wx.getStorageSync('info').user_no
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -162,16 +164,29 @@ Page({
 
 	submit(e) {
 		const self = this;
-		if(self.data.userInfoData.count==0){
-			api.showToast('您未观看电影','none')
-			return
-		};
-		var index = api.getDataSet(e, 'index');
-		api.buttonCanClick(self);
-		const callback = (user, res) => {
-			self.addOrder(index);
-		};
-		api.getAuthSetting(callback);
+		wx.showModal({
+			title: '确认兑换',
+			content: '确认兑换此商品吗（仅限观影当天核销）',
+			cancelText: '取消',
+			confirmText: '确认',
+			success(res) {
+				if (res.cancel) {
+					
+				} else if (res.confirm) {
+					if(self.data.userInfoData.count==0){
+						api.showToast('您已兑换过了','none')
+						return
+					};
+					var index = api.getDataSet(e, 'index');
+					api.buttonCanClick(self);
+					const callback = (user, res) => {
+						self.addOrder(index);
+					};
+					api.getAuthSetting(callback);
+				}
+			}
+		})
+		
 	},
 
 

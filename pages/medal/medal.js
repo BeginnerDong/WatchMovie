@@ -14,14 +14,14 @@ Page({
 		 
    },
 		
-	show(e){
-		const self=this;
-		self.data.is_show=false;
+
+	onLoad(options) {
+		const self = this;
+		self.data.level = options.level;
 		self.setData({
-			is_show:self.data.is_show
+			web_level:self.data.level
 		})
-	},
-	onLoad: function (options) {
+		console.log(self.data.level)
 	},
 	
   intoPathRedirect(e){

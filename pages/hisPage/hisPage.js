@@ -37,16 +37,30 @@ Page({
 
 	submit() {
 		const self = this;
-		api.buttonCanClick(self);
-		if (parseInt(self.data.meData.score) >= 1) {
-			const callback = (user, res) => {
-				self.addLogTwo();
-			};
-			api.getAuthSetting(callback);
-		} else {
-			api.buttonCanClick(self, true)
-			api.showToast('锦绣劵不足', 'none')
-		};
+		
+		wx.showModal({
+			title: '确认支付',
+			content: '确认消耗1个锦绣券查看更多吗' ,
+			cancelText: '取消',
+			confirmText: '确认',
+			success(res) {
+				if (res.cancel) {
+					
+				} else if (res.confirm) {
+					api.buttonCanClick(self);
+					if (parseInt(self.data.meData.score) >= 1) {
+						const callback = (user, res) => {
+							self.addLogTwo();
+						};
+						api.getAuthSetting(callback);
+					} else {
+						api.buttonCanClick(self, true)
+						api.showToast('锦绣劵不足', 'none')
+					};
+				}
+			}
+		})
+		
 	},
 
 	addLogTwo(index) {
@@ -99,12 +113,21 @@ Page({
 					mainImg: ['not in', []]
 				},
 				condition: '='
+			},
+			log: {
+				tableName: 'Log',
+				middleKey: 'user_no',
+				key: 'relation_user',
+				searchItem: {
+					user_no:wx.getStorageSync('info').user_no
+				},
+				condition: '='
 			}
-		}
+		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {
 				self.data.mainData = res.info.data[0];
-				self.data.mainData.info.birthday = self.data.mainData.info.birthday.substring(2, 3);
+				self.data.mainData.info.birthday = self.data.mainData.info.birthday.substring(2, 4);
 			};
 			self.setData({
 				web_mainData: self.data.mainData
@@ -119,7 +142,7 @@ Page({
 		const postData = {};
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
-			user_no: self.data.user_no,
+			user_no:wx.getStorageSync('info').user_no
 		};
 		const callback = (res) => {
 			if (res.info.data.length > 0) {

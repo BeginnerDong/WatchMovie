@@ -21,7 +21,8 @@ Page({
 		},
 		num: 1,
 		is_show:false,
-		url:''
+		url:'',
+		
 	},
 
 	onLoad(options) {
@@ -64,20 +65,30 @@ Page({
 		postData.searchItem = api.cloneForm(self.data.searchItem);
 		postData.searchItem.type = 1;
 		postData.searchItem.pay_status = 1;
-/* 		postData.searchItem.user_no = wx.getStorageSync('info').user_no;
+		postData.searchItem.user_no = wx.getStorageSync('info').user_no
 		postData.getAfter = {
 			relation_order: {
 				tableName: 'Order',
-				middleKey: 'order_no',
-				key: 'passage1',
+				middleKey: 'passage1',
+				key: 'order_no',
 				searchItem: {
 					status: 1,
 					pay_status:1,
-					user_no:['not in',[wx.getStorageSync('info').user_no]]
+					user_type:0,
 				},
 				condition: '='
 			},
-		}; */
+			user: {
+				tableName: 'User',
+				middleKey: ['relation_order',0,'user_no'],
+				key: 'user_no',
+				searchItem: {
+					status: 1,
+				},
+				condition: '=',
+				info:['headImgUrl','nickname']
+			},
+		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
 			if (res.info.data.length > 0) {
@@ -101,10 +112,11 @@ Page({
 
 	onShareAppMessage(e) {
 		const self = this;
-		var index = api.getDataSet(e,'index');
+		console.log(e)
+		var index = e.target.dataset.index;
 		return {
 			title: '锦绣五月',
-			path: 'pages/FilmDetails/FilmDetails?order_no=' + self.data.mainData[index].order_no,
+			path: 'pages/FilmDetails/FilmDetails?order_no=' + self.data.mainData[index].order_no+'&user_no='+self.data.mainData[index].user_no+'&sku_id='+self.data.mainData[index].products[0].snap_product.id,
 			success: function(res) {
 				console.log(res);
 				console.log(parentNo)

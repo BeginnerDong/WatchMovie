@@ -21,7 +21,7 @@
 				时间
 			</view>
 			<view class="ilblock color1 font14">
-				{{web_mainData.products[0].snap_product.passage3}}
+				{{web_mainData.products[0].snap_product.start_time}}-{{web_mainData.products[0].snap_product.end_time}}
 			</view>
 		</view>
 		<view class="list-info">

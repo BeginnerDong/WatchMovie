@@ -48,6 +48,7 @@ Page({
 		var index = api.getDataSet(e,'index');
 		console.log(index)
 		if(self.data.mainData[index].relation.length==0){
+			
 			api.showToast('您没有观看此电影','none')
 		}else{
 			api.pathTo(api.getDataSet(e, 'path'), 'nav');
@@ -201,14 +202,20 @@ Page({
 	submitTwo() {
 		const self = this;
 		api.buttonCanClick(self);
+		var phone = self.data.sForm.phone;
 		const pass = api.checkComplete(self.data.sForm);
 		console.log('pass', pass);
 		console.log('self.data.sForm', self.data.sForm)
 		if (pass) {
-			const callback = (user, res) => {
-				self.userInfoUpdate();
-			};
-			api.getAuthSetting(callback);
+			if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+			  api.showToast('手机格式不正确','fail')
+			}else{
+				const callback = (user, res) => {
+					self.userInfoUpdate();
+				};
+				api.getAuthSetting(callback);
+			}
+		
 		} else {
 			api.buttonCanClick(self, true)
 			api.showToast('请补全信息', 'none')
@@ -257,10 +264,6 @@ Page({
 		self.setData({
 			web_submitData: self.data.submitData
 		})
-	},
-
-	search() {
-		const self = this;
 		if (self.data.submitData.title != '') {
 			console.log(666)
 			self.data.searchItem.title = ['LIKE', ['%' + self.data.submitData.title + '%']],
@@ -270,6 +273,11 @@ Page({
 			console.log(666)
 			self.getMainData(true)
 		}
+	},
+
+	search() {
+		const self = this;
+		
 	},
 
 

@@ -16,8 +16,8 @@ page{
 }
 .set{
 	display: inline-block;
-	width: 32rpx;
-	height: 36rpx;
+	width: 65rpx;
+	height: 65rpx;
 	margin: 20rpx 0rpx 0rpx 18rpx;
 }
 .set image{
@@ -43,6 +43,9 @@ page{
 }
 .long view{
 	margin-top: 30rpx;
+	height:64rpx;
+	line-height:68rpx;
+
 }
 
 

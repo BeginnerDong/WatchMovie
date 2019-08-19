@@ -17,7 +17,7 @@ Page({
 		mainData: {},
 		constantSignData:'',
 		signReward:0,
-		isFirstLoadAllStandard: ['getMainData', 'flowLogGet'],
+		isFirstLoadAllStandard: ['getMainData', 'flowLogGet','initSignData'],
 		is_show:false
 	},
 
@@ -67,11 +67,13 @@ Page({
 			const callback = (res)=>{
 				if(res.solely_code==100000){
 					console.log('666')
+					api.buttonCanClick(self,true)
 					self.data.constantSignData.count++;
 					self.data.constantSignData.time = dayStart;
 					wx.setStorageSync('constantSignData',self.data.constantSignData);
 					self.show()
 				}else{
+					api.buttonCanClick(self,true)
 					wx.showToast({
 						title: '签到失败',
 						success:function(){
@@ -83,7 +85,7 @@ Page({
 				};
 				
 			};
-			if(parseInt(self.data.constantSignData.count/1)*1==self.data.constantSignData.count){
+			if(parseInt((self.data.constantSignData.count+1)/7)*7==self.data.constantSignData.count){
 				postData.saveAfter = [{
 				  tableName:'FlowLog',
 				  FuncName:'add',
@@ -98,10 +100,11 @@ Page({
 			};
 			api.logAdd(postData, callback);
 		}else{
+			api.buttonCanClick(self,true)
 			wx.showToast({
 				title: '今日已经签到',
 			});
-			api.buttonCanClick(self,true)
+			
 		}
 	},
 	

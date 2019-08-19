@@ -1,8 +1,8 @@
 <view class="box">
 	<view class="list-info">
 		<view class="ilblock list-left color1 font14">
-			成就勋章
-			<image src="../../image/medal-icon4.png" style="width: 32rpx; height: 34rpx; position: relative;top: 8rpx;"></image>
+			成就勋章<span style="margin-left: 10px;" wx:if="{{web_level==0}}">无</span>
+			<image src="../../image/medal-icon{{web_level}}.png" style="width: 32rpx; height: 34rpx; position: relative;top: 8rpx;" wx:if="{{web_level>0}}"></image>
 		</view>
 	</view>
 	<view class="list-info" style="border: none; padding-bottom: 0rpx;">
@@ -80,7 +80,7 @@
 </view>
 <view class="bg2"></view>
 <view class="box" style="text-align: center; padding: 50rpx;">
-	<view class="font10 color6">注：没完成一个任务，等级就会高一级</view>
+	<view class="font10 color6">注：每完成一个任务，等级就会高一级</view>
 </view>
 
 

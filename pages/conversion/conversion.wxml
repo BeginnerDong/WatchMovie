@@ -32,7 +32,7 @@
 
 	 <view class="list-two" wx:if="{{web_num==2}}">
 		 <view class="ilblock">
-			 <view class="color1 font14">{{item.products[0].snap_product.title}}</view>
+			 <view class="color1 font14">{{item.products[0].snap_product.title}}<span style="color:red" wx:if="{{item.transport_status==2}}">(已核销)</span></view>
 			  <view class="color2 font12" style="margin-top: 16rpx;">x{{item.products[0].count}}</view>
 		 </view>
 		 <view class="ilblock flo-right">

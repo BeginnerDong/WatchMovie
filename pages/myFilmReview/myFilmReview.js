@@ -82,6 +82,17 @@ Page({
 				},
 				condition: '='
 			},
+			message: {
+				tableName: 'Message',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:2,
+					user_type:0
+				},
+				condition: '='
+			},
 		};
 		postData.order = {
 			create_time:'desc'

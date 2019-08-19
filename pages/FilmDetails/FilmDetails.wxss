@@ -149,5 +149,37 @@
 	top: 12rpx;
 	
 }
-
+.shear{
+	width: 120rpx;
+	height: 48rpx;
+	border-radius: 0rpx 14rpx 0rpx 14rpx;
+	position: absolute;
+	top: 0rpx;
+	right: 0rpx;
+	line-height: 48rpx;
+}
+.fixd1{
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0rpx;
+}
+.fixd-box1{
+	width: 92%;
+	height: 74%;
+	margin: 20% 4%;
+	box-sizing: border-box;
+	padding: 5%;
+	text-align: center;
+}
+.fixd-box1 image{
+	width: 100%;
+	height: 100%;
+}
+.fixd-box1 button{
+	width: 80%;
+	height: 70rpx;
+	line-height: 70rpx;
+}
 

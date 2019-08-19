@@ -18,7 +18,7 @@ class Base {
 	request(params) {
 		var that = this;
 		getApp().globalData.buttonClick = true;
-		var baseRestUrl = 'http://106.12.155.217/movie/public/index.php/api/v1/';
+		var baseRestUrl = 'https://www.jxmay.com/api/public/index.php/api/v1/';
 		
 		var url = baseRestUrl + params.url;
 		const callback = (res) => {
@@ -56,9 +56,15 @@ class Base {
 				var code = res.data.solely_code;
 				if (res.data.solely_code == '200000') {
 					console.log('params.data.tokenFuncName', params)
-					token[params.data.tokenFuncName](callback, {
-						refreshToken: true
-					});
+					if(token[params.data.tokenFuncName]){
+						token[params.data.tokenFuncName](callback, {
+							refreshToken: true
+						});
+					}else{
+						token.getProjectToken(callback, {
+							refreshToken: true
+						})
+					};
 				} else {
 					params.sCallback && params.sCallback(res.data);
 				};
@@ -97,7 +103,7 @@ class Base {
 			};
 		};
 		wx.uploadFile({
-			url: 'http://106.12.155.217/movie/public/index.php/api/v1/Base/FtpFile/upload',
+			url: 'https://www.jxmay.com/api/public/index.php/api/v1/Base/FtpFile/upload',
 			
 			filePath: filePath,
 			name: name,

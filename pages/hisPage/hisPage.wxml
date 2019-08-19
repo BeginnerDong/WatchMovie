@@ -17,7 +17,7 @@
 	<view class="head-right ilblock flo-right">
 		<view class="font14 color1 overflow1" style="margin-top: 14rpx;">{{web_mainData.nickname}}</view>
 		<view class="color3 font10 info-text hiden overflow1">
-			<image src="../../image/gender.png" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
+			<image src="{{web_mainData.info.gender==1?'../../image/gender.png':'../../image/gender1.png'}}" style="width: 18rpx; height: 20rpx;margin-right: 6rpx;"></image>
 			<text>{{web_mainData.info.email}}</text><text>{{web_mainData.info.birthday}}年{{web_mainData.info.constellation}}</text><text>{{web_mainData.info.education}}</text><text>{{web_mainData.info.school}}</text>
 		</view>
 	</view>
@@ -27,11 +27,11 @@
 	<view class="info-box radiu15">
 		<view class="info-list">
 			<view class="ilblock color3 font12 ilblock" style="width: 30%;"><!-- 姓名· -->手机号</view>
-			<view class="font13 color1 ilblock">{{web_meData.deadline==0?web_mainData.info.phone:'消耗锦绣劵查看'}}</view>
+			<view class="font13 color1 ilblock">{{(web_meData.deadline>0&&web_mainData.log.length!=0)||web_meData.user_no==web_mainData.user_no?web_mainData.info.phone:'消耗锦绣劵查看'}}</view>
 		</view>
 		<view class="info-list">
 			<view class="ilblock color3 font12 ilblock" style="width: 30%;">微信号</view>
-			<view class="font13 color1 ilblock">{{web_meData.deadline==0?web_mainData.info.wechat:'消耗锦绣劵查看'}}</view>
+			<view class="font13 color1 ilblock">{{(web_meData.deadline>0&&web_mainData.log.length!=0)||web_meData.user_no==web_mainData.user_no?web_mainData.info.wechat:'消耗锦绣劵查看'}}</view>
 		</view>
 	</view>
 </view>
@@ -39,13 +39,13 @@
 <view class="info-one">
 	<view class="font12" style="color: rgb(139,139,139);">Ta的个人动态</view>
 	<view class="info-boxtwo">
-		<block wx:for="{{web_mainData.message}}" wx:key="index">
+		<block wx:for="{{web_mainData.message}}" wx:key="index" wx:if="{{index<3}}">
 			<view class="info-img ilblock">
 				<image src="{{item.mainImg[0].url}}"></image>
 			</view>
 		</block>
-		<view class="ilblock flo-right" style="width: 3%;height: 188rpx;line-height: 188rpx;">
-			<image src="../../image/home-icon6.png" style="width: 14rpx; height: 20rpx;"   bindtap="intoPath" data-path="/pages/hisState/hisState?user_no={{web_mainData.user_no}}"></image>
+		<view class="ilblock flo-right" style="width: 5%;height: 188rpx;line-height: 188rpx;text-align: center;" bindtap="intoPath" data-path="/pages/hisState/hisState?user_no={{web_mainData.user_no}}">
+			<image src="../../image/home-icon6.png" style="width: 14rpx; height: 20rpx;"></image>
 		</view>
 	</view>
 </view>
@@ -78,6 +78,6 @@
 		</view>
 	</view>
 </view>
-<button class="btm font15 color5" style="border-radius:0" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" wx:if="{{web_meData.deadline>0}}">
+<button class="btm font15 color5" style="border-radius:0" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" wx:if="{{web_meData.deadline>0&&web_meData.user_no!=web_mainData.user_no&&web_mainData.log.length==0}}">
 	立即查看更多
 </button>

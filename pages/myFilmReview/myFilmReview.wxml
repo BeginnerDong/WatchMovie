@@ -20,7 +20,7 @@
 				<view class="font10 color3 ilblock">{{item.create_time}}</view>
 				<view class="font10 color2 flo-right ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
-					{{item.score}}
+					{{item.message.length}}
 				</view>
 			</view>
 		</view>

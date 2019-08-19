@@ -1,26 +1,52 @@
-import {Api} from '../../utils/api.js';
+import {
+	Api
+} from '../../utils/api.js';
 var api = new Api();
 const app = getApp();
-import {Token} from '../../utils/token.js';
+import {
+	Token
+} from '../../utils/token.js';
 const token = new Token();
 
 Page({
-  data: {
-		is_show:false
-  },
-  onLoad: function () {
-    const self=this;
-		self.data.is_show=!self.data.is_show;
-  },
-	show(e){
-		
+	
+	data: {
+		isFirstLoadAllStandard:['getMainData']
 	},
-	intoPathRedirect(e){
-	  const self = this;
-	  api.pathTo(api.getDataSet(e,'path'),'redi');
+	
+	onLoad() {
+		const self = this;
+		api.commonInit(self);
+		self.getMainData()
 	},
-	intoPath(e){
-	  const self = this;
-	  api.pathTo(api.getDataSet(e,'path'),'nav');
+
+	getMainData() {
+		const self = this;
+		const postData = {};
+		postData.tokenFuncName = 'getProjectToken';
+		postData.searchItem = {
+			user_no: wx.getStorageSync('info').user_no
+		};
+		const callback = (res) => {
+			if (res.info.data.length > 0) {
+				self.data.mainData = res.info.data[0];
+
+			};
+			console.log(self.data.mainData)
+			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
+			self.setData({
+				web_mainData: self.data.mainData,
+			});
+		};
+		api.userInfoGet(postData, callback);
+	},
+
+	intoPathRedirect(e) {
+		const self = this;
+		api.pathTo(api.getDataSet(e, 'path'), 'redi');
+	},
+	intoPath(e) {
+		const self = this;
+		api.pathTo(api.getDataSet(e, 'path'), 'nav');
 	}
 })

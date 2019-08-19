@@ -1,5 +1,5 @@
 <block wx:for="{{web_mainData}}" wx:key="id">
-	<view class="box ilblock">
+	<view class="box ilblock" bindtap="intoPath" data-path="/pages/FilmDetails/FilmDetails?id={{item.id}}">
 		<image src="{{item.product.mainImg[0].url}}"></image>
 		<view class="btm-box">
 			<view>
@@ -7,8 +7,8 @@
 				<view class="color4 font9 ilblock flo-right">￥{{item.price}}</view>
 			</view>
 			<view class="color3 font7 one-color">
-				<block wx:for="{{item.product.description}}" wx:for-item="c_item" wx:for-index="c_index">
-					<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
+				<block wx:for="{{item.product.description}}" wx:for-item="c_item" wx:for-index="c_index" >
+					<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};" wx:if="{{c_index<4}}">{{c_item}}</view>
 				</block>
 			</view>
 			<view class="color5 font7">下架时间：{{item.product.end_time}}</view>

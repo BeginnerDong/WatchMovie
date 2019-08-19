@@ -31,7 +31,7 @@
 		<view class="ilblock list-left color1 font14">
 			内容
 		</view>
-		<input class="font12 color3" placeholder="请输入内容" data-key="content" bindblur="changeBind"  value="{{web_submitData.content}}"/>
+		<input class="font12 color3" placeholder="请输入内容" data-key="content" bindblur="changeBind" maxlength="300"  value="{{web_submitData.content}}"/>
 	</view>
 	<view class="list-info">
 		<view class="color1 font14">
@@ -40,12 +40,12 @@
 		<view style="display: flex;">
 			 <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
 				<view class="photo"  style="position:relative">
-					<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}" style="margin: 0 20%;"/>   
-					<image src="/image/details-icon6.png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;" data-index="{{index}}"></image>
+					<image src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"/>   
+					<image src="/image/deleteImg.png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;position: absolute;top:-10px;right:-10px" data-index="{{index}}"></image>
 				</view>
 			</block>
-			<view class="photo" bindtap="upLoadImg">
-				<image src="../../image/release-icon2.png" style="margin: 0 5%;"></image>
+			<view class="photo" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
+				<image src="../../image/release-icon2.png"></image>
 			</view>
 		</view>
 	</view>

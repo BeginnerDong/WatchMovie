@@ -15,8 +15,8 @@
 	<view wx:for="{{web_seatData}}" wx:key="index" style="white-space:nowrap;width:auto;margin-left:30px">
 		<view class="set" wx:for="{{item.seat}}" wx:key="index" wx:for-item="c_item" data-item="{{c_item.findOrder}}" bindtap="check">
 			<image wx-if="{{c_item.seat&&!c_item.findOrder}}" src="../../image/seat-icon.png"></image>
-			<image wx-if="{{c_item.seat&&c_item.findOrder&&c_item.findOrder.UserInfo[0].gender==1}}" src="../../image/home-img04.png"></image>
-			<image wx-if="{{c_item.seat&&c_item.findOrder&&c_item.findOrder.UserInfo[0].gender==2}}" src="../../image/home-img02.png"></image>
+			<image wx-if="{{c_item.seat&&c_item.findOrder&&c_item.findOrder.UserInfo[0].gender==1}}" src="../../image/home-img01.png"></image>
+			<image wx-if="{{c_item.seat&&c_item.findOrder&&c_item.findOrder.UserInfo[0].gender==2}}" src="../../image/home-img04.png"></image>
 		</view>
 	</view>
 	<!--<view class="set man">

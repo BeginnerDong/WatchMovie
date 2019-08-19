@@ -34,7 +34,7 @@
 						bindtap="show" data-index="{{index}}">查看二维码</view>
 					</view>
 			 </view>
-			 <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2&&item.passage1==''}}">
+			 <view class="one-right flo-right" wx:if="{{(item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2)&&item.combine==0}}">
 				<button class="shear bg3 color5 font10" style="padding-left:0;padding-right: 0;margin-top: 0;" bindtap="onShareAppMessage" open-type="share" data-index="{{index}}">
 					<image src="../../image/icon3.png" style="width: 26rpx;height: 28rpx; position: relative; top: 8rpx;left: -10rpx;"></image>分享
 				</button>
@@ -42,10 +42,20 @@
 					未绑定
 				</view>
 			 </view>
-			  <view class="one-right flo-right" wx:if="{{item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2&&item.passage1!=''}}">
+			  <view class="one-right flo-right" wx:if="{{(item.products[0].snap_product.behavior==1||item.products[0].snap_product.behavior==2)&&item.combine==1}}">
 				<view class="color6 font10">
 					已绑定
 				</view>
+		
+			 </view>
+			 <view style="height:50px;width:100%;display: flex;line-height: 50px;" wx:if="{{item.user.length!=0}}">
+				 <view style="color: #333333;font-size:14px;width:24%">绑定对象:</view>
+				  <view style="display: flex;width:76%;">
+					  <view style="width:30%;display: flex;align-items: center;justify-content: center;">
+						  <image src="{{item.user.headImgUrl}}" style="width: 40px;height: 40px;border-radius: 50%;"></image>
+					  </view>
+					  <view style="color: #333333;font-size:12px">{{item.user.nickname}}</view>
+				  </view>
 			 </view>
 		 </view>
 	</view>
@@ -58,15 +68,3 @@
 		<image src="../../image/icon1.png" style="width: 40rpx;height: 40rpx;" bindtap="close"></image>
 	</view>
 </view>
-<!-- <view class="fixd" wx:if="{{is_show}}">
-	<view class="fixd-box bg1 radiu15">
-		<view class="color1 font15" style="margin-top: 70rpx;">
-			请确认是否与<text class="color6">张三</text>共同购买兄弟场的电影票
-		</view>
-		<view class="color1 font15" style="margin-top: 40rpx;">购买成功后，一起观影</view>
-		<view style="width: 60%;margin: 100rpx 20%; height: 300rpx;">
-			<image src="../../image/img.png"></image>
-		</view>
-		<button class="bg3 font15" bindtap="show" bindtap="intoPathRedirect" data-path="/pages/index/index">确认</button>
-	</view>
-</view> -->

@@ -9,7 +9,8 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
@@ -36,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -84,6 +85,20 @@
 					"id": -1,
 					"name": "签到",
 					"pathName": "pages/tasks/tasks",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "分享",
+					"pathName": "pages/FilmDetails/FilmDetails",
+					"query": "order_no=21515&user_no=U622718905798249",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wode",
+					"pathName": "pages/user/user",
 					"scene": null
 				}
 			]

@@ -14,7 +14,7 @@
 	</view>
 	<view class="ilblock" style="width: 49%; text-align: center;">
 		<view class="font15 color1">{{web_mainData.info.score}}<image src="../../image/sign-icon2.png"></image> </view>
-		<view class="color3 font12" style="margin-top: 20rpx;">我的锦秀券</view>
+		<view class="color3 font12" style="margin-top: 20rpx;">我的锦绣券</view>
 	</view>
 </view>
 <view class="bg1 line-box">
@@ -25,10 +25,10 @@
 		完善个人资料
 	</view>
 	<view class="ilblock list-color color6 font9 radiu40">
-		<image src="../../image/sign-icon2.png"></image>+3
+		<image src="../../image/sign-icon2.png"></image>+{{web_mainData.ThirdInfo[0].custom_rule.info}}
 	</view>
 	<view class="flo-right radiu40 font12" bindtap="intoPath" data-path="/pages/info/info">
-		去完善
+		{{web_mainData.info.passage1!=''?'已完善':'去完善'}}
 	</view>
 </view>
 <view class="bg1 list-info">
@@ -36,7 +36,7 @@
 		发布影评
 	</view>
 	<view class="ilblock list-color color6 font9 radiu40">
-		<image src="../../image/sign-icon2.png"></image>+3
+		<image src="../../image/sign-icon2.png"></image>+{{web_mainData.ThirdInfo[0].custom_rule.remark}}
 	</view>
 	<view class="flo-right radiu40 font12" bindtap="intoPath" data-path="/pages/sendFilmReview/sendFilmReview">
 		去发布
@@ -50,9 +50,9 @@
 		分享好友
 	</view>
 	<view class="ilblock list-color color6 font9 radiu40">
-		<image src="../../image/sign-icon2.png"></image>+3
+		<image src="../../image/sign-icon2.png"></image>+{{web_mainData.ThirdInfo[0].custom_rule.share}}
 	</view>
-	<button class="flo-right radiu40 font12" style="background: #fff;" bindtap="onShareAppMessage" open-type="share">
+	<button class="flo-right radiu40 font12" style="background: #fff;padding: 0;" bindtap="onShareAppMessage" open-type="share">
 		分享
 	</button>
 </view>
@@ -61,7 +61,7 @@
 		签到
 	</view>
 	<view class="ilblock list-color color6 font9 radiu40">
-		<image src="../../image/sign-icon2.png"></image>+3
+		<image src="../../image/sign-icon2.png"></image>+{{web_mainData.ThirdInfo[0].custom_rule.sign}}
 	</view>
 	<view class="flo-right radiu40 font12" bindtap="show">
 		{{web_isSign?'已签':'签到'}}
@@ -74,7 +74,7 @@
 		<view class="font14 color6 text">您已连续签到{{web_signData.count}}天啦！</view>
 	</view>
 	<view style="text-align: center;">
-		<image src="../../image/icon1.png" style="width: 40rpx; height: 40rpx;" bindtap="sign"></image>
+		<image src="../../image/icon1.png" style="width: 40rpx; height: 40rpx;" bindtap="show"></image>
 	</view>
 	
 </view>

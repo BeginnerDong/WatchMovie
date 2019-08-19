@@ -23,7 +23,7 @@
 			<image class="list-img" src="../../image/basic-icon2.png" style="width: 24rpx;height: 34rpx;top: 8rpx;"></image>
 			成就勋章
 		</view>
-		<view class="ilblock flo-right color3 font12"style="margin-top: 8rpx;" bindtap="intoPath" data-path="/pages/medal/medal">
+		<view class="ilblock flo-right color3 font12"style="margin-top: 8rpx;" bindtap="intoPath" data-path="/pages/medal/medal?level={{web_mainData.level}}">
 			<image src="../../image/medal-icon4.png" style="width: 32rpx; height: 34rpx;"></image>
 			<image src="../../image/home-icon6.png" style="top: -8rpx;"></image>
 		</view>

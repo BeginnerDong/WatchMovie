@@ -72,37 +72,50 @@ Page({
 
 	orderUpdate() {
 		const self = this;
-		api.buttonCanClick(self);
-		const postData = {};
-		postData.tokenFuncName = 'getThreeToken';
-		postData.searchItem = {
-			order_no: self.data.order_no,
-			user_no:self.data.mainData.user_no,
-			user_type: 0
-		};
-		postData.data = {
-			transport_status:2,
-			order_step:3
-		};
-		const callback = (res) => {
-			api.buttonCanClick(self, true);
-			if (res.solely_code==100000) {
-				api.showToast('核销成功', 'none', 2000, function() {
-					setTimeout(function() {
-						wx.navigateBack({
-							delta: 1
-						})
-					}, 2000)
-				})
-			} else {
-				api.showToast(res.msg,'none')
+		wx.showModal({
+			title: '确认核销',
+			content: '确认核销此二维码吗',
+			cancelText: '取消',
+			confirmText: '确认',
+			success(res) {
+				if (res.cancel) {
+					
+				} else if (res.confirm) {
+					api.buttonCanClick(self);
+					const postData = {};
+					postData.tokenFuncName = 'getThreeToken';
+					postData.searchItem = {
+						order_no: self.data.order_no,
+						user_no:self.data.mainData.user_no,
+						user_type: 0
+					};
+					postData.data = {
+						transport_status:2,
+						order_step:3
+					};
+					const callback = (res) => {
+						api.buttonCanClick(self, true);
+						if (res.solely_code==100000) {
+							api.showToast('核销成功', 'none', 2000, function() {
+								setTimeout(function() {
+									wx.navigateBack({
+										delta: 1
+									})
+								}, 2000)
+							})
+						} else {
+							api.showToast(res.msg,'none')
+						}
+						api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
+						self.setData({
+							web_show: self.data.show,
+						});
+					};
+					api.orderUpdate(postData, callback);
+				}
 			}
-			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
-			self.setData({
-				web_show: self.data.show,
-			});
-		};
-		api.orderUpdate(postData, callback);
+		})
+		
 	},
 
 	intoPathRedirect(e) {

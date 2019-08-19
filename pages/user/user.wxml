@@ -8,15 +8,25 @@
 		</view>
 	</view>
 	<view class="head radiu50 hiden">
-		<view class="user_img">
+		<view class="user_img" style="position: relative;">
 		  <open-data type="userAvatarUrl"></open-data>
+		  
 		</view>
 	</view>
+	<image src="../../image/medal-icon{{web_mainData.level}}.png" style="width: 32rpx; height: 34rpx; position: absolute;top:50%;right:42%;" wx:if="{{web_mainData.level>0}}"></image>
 	<view style="line-height: 40rpx;">
 		<view class="color1 font14" style="text-align: center;"><open-data type="userNickName"></open-data></view>
-		<view class="color3 font8" style="text-align: center;margin-top:10rpx; line-height:24rpx ;">
-			<view class="ilblock radiu40" style="background: #FBECEE;width:60rpx;height: 24rpx; margin-right: 14rpx;">刺激</view>
-			<view class="ilblock radiu40" style="background: #E8FAF7;width:60rpx;height: 24rpx;">刺激</view>
+		<view class="color3 font8" style="text-align: center;margin-top:10rpx; line-height:24rpx ;display: flex;justify-content: center;">
+			<view style="width:60%">
+				<view class="ilblock radiu40" style="background: #FBECEE;width:60rpx;height: 24rpx; margin-right: 14rpx;" wx:if="{{web_mainData.hobby_label[0]}}">{{web_mainData.hobby_label[0]}}</view>
+				<view class="ilblock radiu40" style="background: #FBECEE;width:60rpx;height: 24rpx; margin-right: 14rpx;" wx:if="{{web_mainData.hobby_label[1]}}">{{web_mainData.hobby_label[1]}}</view>
+				<view class="ilblock radiu40" style="background: #FBECEE;width:60rpx;height: 24rpx; margin-right: 14rpx;" wx:if="{{web_mainData.hobby_label[2]}}">{{web_mainData.hobby_label[2]}}</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;width:60rpx;height: 24rpx;" wx:if="{{web_mainData.movie_label[0]}}">{{web_mainData.movie_label[0]}}</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;width:60rpx;height: 24rpx;" wx:if="{{web_mainData.movie_label[1]}}">{{web_mainData.movie_label[1]}}</view>
+				<view class="ilblock radiu40" style="background: #E8FAF7;width:60rpx;height: 24rpx;" wx:if="{{web_mainData.movie_label[2]}}">{{web_mainData.movie_label[2]}}</view>
+				
+			</view>
+			
 		</view>
 	</view>
 </view>

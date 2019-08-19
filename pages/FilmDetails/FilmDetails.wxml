@@ -9,15 +9,18 @@
 	</swiper>
 </view>
 <view class="introduce">
-	<view class="color1 font15 line-red fat-font">影片介绍</view>
+	<view style="display: flex;justify-content: space-between;">
+		<view class="color1 font15 line-red fat-font">影片介绍</view>
+		<view class="color3 font10 one-color ilblock" style="display: flex;justify-content: flex-end;">
+			<block wx:for="{{web_mainData.product.description}}" wx:if="{{index<3}}">
+				<view class="ilblock radiu40" style="{{index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{item}}</view>
+			</block>
+		</view>
+	</view>
 	<view style="box-sizing: border-box;padding: 30rpx 30rpx 0rpx;">
 		<view>
 			<view class="font14 color1 fat-font ilblock">{{web_mainData.title}}</view>
-			<view class="color3 font10 one-color ilblock">
-				<block wx:for="{{web_mainData.product.description}}" wx:if="{{index<3}}">
-					<view class="ilblock radiu40" style="{{index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{item}}</view>
-				</block>
-			</view>
+			
 			<view class="ilblock color4 font14 flo-right" style="margin-top: 10rpx;">￥{{web_mainData.price}}</view>
 		</view>
 		<view class="font12 color2 textone">
@@ -138,5 +141,17 @@
 			<button class="star"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submitThree':''}}">是</button>
 			<button bindtap="close">否</button>
 		</view>
+	</view>
+</view>
+<view class="fixd1" wx:if="{{is_show_notice}}">
+	<view class="fixd-box1 bg1 radiu15">
+		<view class="color1 font15" style="margin-top: 70rpx;">
+			请确认是否与<text class="color6">{{web_shareUserData.nickname}}</text>共同购买{{web_mainData.behavior==1?'情侣场':'兄弟场'}}的电影票
+		</view>
+		<view class="color1 font15" style="margin-top: 40rpx;">购买成功后，一起观影</view>
+		<view style="width: 60%;margin: 100rpx 20%; height: 300rpx;">
+			<image src="../../image/img.png"></image>
+		</view>
+		<button class="bg3 font15" bindtap="closeNotice">确认</button>
 	</view>
 </view>

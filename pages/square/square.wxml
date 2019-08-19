@@ -1,20 +1,23 @@
 <!--logs.wxml-->
 <view class="bg1" style="box-sizing: border-box; width: 100%;padding:30rpx;position: relative;">
-	<input class="bg2 radiu40 search font12" placeholder="瞅一眼Ta的影评"  data-key="title" bindblur="changeBind"  value="{{web_submitData.title}}">
-		<image class="flo-right" src="../../image/comments-icon3.png" style="position: absolute;right:22px;top:17px;width:50rpx;z-index:999;margin-top: 0;margin-right:0;overflow: initial;" bindtap="search"></image>
+	<input class="bg2 radiu40 search font12" placeholder="瞅一眼Ta的影评"  data-key="title" bindconfirm="changeBind"  value="{{web_submitData.title}}">
+		<!-- <image class="flo-right" src="../../image/comments-icon3.png" style="position: absolute;right:22px;top:17px;width:50rpx;z-index:999;margin-top: 0;margin-right:0;overflow: initial;" bindtap="search"></image> -->
 	</input>	
 </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="bigbox bg1">
 		<view class="boxleft ilblock" >
-			<view>
-				<view class="ilblock itemimg radiu50 hiden" bindtap="toDetail" data-index="{{index}}">
+			<view style="position:relative;">
+				<view class="ilblock itemimg radiu50 hiden"  bindtap="toDetail" data-index="{{index}}">
 					<image src="{{item.user[0].headImgUrl}}"></image>
+					
 				</view>
 				<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -6rpx;">
 					<view class="color2 font12">{{item.user[0].nickname}}</view>
 					<view class="color3 font10">哇！Ta的评分是{{item.class}}分耶！</view>
 				</view>
+				<image src="../../image/medal-icon{{item.user[0].info.level}}.png" 
+				style="width: 24rpx; height: 24rpx; position: absolute;top:56%;right:10%;" wx:if="{{item.user[0].info.level>0}}"></image>
 			</view>
 			<view class="color1 font13" style="margin: 18rpx 0rpx;" bindtap="intoCommentDetails"  data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">{{item.title}}</view>
 			<view class="color2 font11 overflow3" style="line-height: 32rpx;" bindtap="intoCommentDetails" data-index="{{index}}" data-path="/pages/commentDetails/commentDetails?id={{item.id}}">

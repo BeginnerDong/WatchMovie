@@ -28,9 +28,9 @@ page{
 }
 
 .img-box{
-	width: 35%;
-	height: 270rpx;
-	margin-right: 30rpx;
+	width: 30%;
+	height: 206rpx;
+	margin-right: 3%;
 }
 .img-box image{
 	width: 100%;

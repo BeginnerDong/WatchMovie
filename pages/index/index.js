@@ -44,9 +44,17 @@ Page({
 			console.log(options);
 			self.data.user_no = options.user_no;
 			const token = new Token({parent_no:self.data.user_no});
-			const callback = (res) =>{};
+			const callback = (res) =>{
+				self.getHeartData();
+			};
 			token.getProjectToken(callback,{refreshToken:true,parent_no:self.data.user_no})
-		};
+		}else{
+			const token = new Token({});
+			const callback = (res) =>{
+				self.getHeartData();
+			};
+			token.getProjectToken(callback,{refreshToken:true})
+		}
 		api.commonInit(self);
 /* 		if(!wx.getStorageSync('token')){
 			const token = new Token({});
@@ -57,9 +65,10 @@ Page({
 		}else{
 			self.getHeartData();
 		} */
-		self.getHeartData();
+		
 		self.getHotData();
 		self.getMainData();
+		
 		self.userInfoGet();
 		self.getSliderData()
 	},
@@ -157,6 +166,8 @@ Page({
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
+			stock:['>',0],
+			on_shelf:1
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -275,6 +286,19 @@ Page({
 		postData.tokenFuncName = 'getProjectToken';
 		postData.data = {};
 		postData.data = api.cloneForm(self.data.submitData);
+		/* if(self.data.user_no){
+			postData.saveAfter = [{
+				tableName: 'FlowLog',
+				FuncName: 'add',
+				data: {
+					count: 1,
+					user_no: self.data.user_no,
+					type: 3,
+					thirdapp_id: 2,
+					trade_info: '分享奖励'
+				}
+			}]
+		}; */
 		const callback = (data) => {
 			api.buttonCanClick(self, true);
 			if (data.solely_code == 100000) {

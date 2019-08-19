@@ -118,7 +118,7 @@
 					</view>
 					<view class="color3 font9 two-color">
 						<block wx:for="{{item.product.description}}" wx:for-item="c_item" wx:for-index="c_index">
-							<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};">{{c_item}}</view>
+							<view class="ilblock radiu40" style="{{c_index%2 ==0?'background: #FBECEE':'background: #E8FAF7'}};" wx:if="{{c_index<4}}">{{c_item}}</view>
 						</block>
 					</view>
 					<view class="color5 font10" style="margin-top: 10rpx;">下架时间：{{item.product.end_time}}</view>
@@ -132,7 +132,7 @@
 		<image src="../../image/home-icon3.png" style="height: 50%; width: 32%;"></image>
 	</view>
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails">
+		<view class="bigbox" bindtap="intoPath" data-path="/pages/informationDetails/informationDetails?id={{item.id}}">
 			<view class="boxleft ilblock">
 				<view class="color1 font14 overflow1" style="margin:0rpx 0rpx 20rpx;">{{item.title}}</view>
 				<view class="color2 font12 overflow2" style="line-height: 32rpx;">

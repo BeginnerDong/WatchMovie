@@ -323,5 +323,10 @@ Page({
 		api.userInfoUpdate(postData, callback);
 	},
 
-
+	
+	intoPath(e) {
+		const self = this;
+		api.pathTo(api.getDataSet(e, 'path'), 'nav');
+	}
+	
 })
