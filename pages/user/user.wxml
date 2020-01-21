@@ -85,7 +85,15 @@
 	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
 	 </view>
 </view>
-
+<view class="info bg1" bindtap="intoPath" data-path="/pages/plateDetail/plateDetail">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon8.png"></image>
+	</view>
+	<view class="ilblock color3 font13">平台说明</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/home-icon6.png" style="width: 12rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
 <view style="width: 100%; height: 90rpx;"></view>
 
 

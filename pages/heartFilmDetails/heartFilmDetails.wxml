@@ -1,3 +1,6 @@
+<viwe style="width: 100%;overflow-x: hidden;">
+	
+
 <view class="color1 font15 top">提前预约，开场领礼品</view>
 <view class="top-img">
 	<swiper style="width:100%;height:400rpx" indicator-dots="{{indicatorDots}}" indicator-color="pink" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
@@ -53,7 +56,7 @@
 <view class="bg2"></view>
 <view class="introduce">
 	<view class="color1 font15 line-red fat-font">往期观影活动照片</view>
-	<view style="margin: 30rpx 0rpx 0rpx;width: 200%; flex-wrap: nowrap;">
+	<view style="margin: 30rpx 0rpx 0rpx;width: 100%; flex-wrap: nowrap;">
 		<block wx:for="{{web_mainData.activityImg}}" wx:key="id">
 			<view class="img-two">
 				<image src="{{item.url}}"></image>
@@ -76,3 +79,4 @@
 	<progress class="ilblock" backgroundColor="#fff" color="pink" percent="{{web_mainData.percent}}" stroke-width="10" border-radius="5" style="width: 75%;"/>
 	<image class="flo-right" src="../../image/details-icon1.png" style="width: 38rpx; height: 46rpx;margin-top: 16rpx;" bindtap="{{web_buttonCanClick?'submit':''}}"></image>
 </view>
+</viwe>

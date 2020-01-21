@@ -75,7 +75,8 @@
 <view class="introduce" style="padding-bottom: 0rpx;">
 	<view>
 		<view class="color1 font15 line-red fat-font ilblock">影评</view>
-		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;" bindtap="intoPath" data-path="/pages/filmReview/filmReview">更多
+		<view class="font11 color3 ilblock flo-right" style="margin-top: 10rpx;" bindtap="intoPath" 
+		data-path="/pages/filmReview/filmReview?id={{web_mainData.product.id}}">更多
 			<image src="../../image/home-icon6.png" style="width: 12rpx;height: 18rpx;margin-left: 20rpx;"></image>
 		</view>
 	</view>

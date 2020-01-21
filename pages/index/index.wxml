@@ -44,13 +44,25 @@
 			<view class="ilblock listimg" style="width: 80rpx;">
 				<image src="../../image/home-icon01.png" style="width: 32rpx;"></image>
 			</view>
-			<view class="ilblock color1 font13" style="display:flex;align-items:center;width:23%;margin-top: 6px;">出生日期</view>
+			<view class="ilblock color1 font13" style="display:flex;align-items:center;width:23%;margin-top: 6px;">出生地址</view>
 			<picker class="ilblock flo-right color3 font12" mode = "region" bindchange="bindAddress"
 			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;">
 				<view class="color2 font12 flo-right" style="margin-top: 10rpx;">{{web_submitData.address?web_submitData.address:'请选择'}}
 					<image class="right" src="../../image/home-icon6.png"></image>
 				</view>
 			</picker>
+		</view>
+		<view class="info-list bg1" style="display: flex;">
+			<view class="ilblock listimg" style="width: 80rpx;">
+				<image src="../../image/home-icon01.png" style="width: 32rpx;"></image>
+			</view>
+			<view class="ilblock color1 font13" style="display:flex;align-items:center;width:23%;margin-top: 6px;">联系方式</view>
+			<button class="ilblock flo-right color3 font12" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"
+			 style="width:100%;display:flex;align-items:center;justify-content:flex-end;background-color: #fff;	border-radius:0;margin-top: 0;line-height: 0;padding: 0;">
+				<view class="color2 font12 flo-right" style="margin-top: 10rpx;">{{web_submitData.phone?web_submitData.phone:'请点击'}}
+					<image class="right" src="../../image/home-icon6.png"></image>
+				</view>
+			</button>
 		</view>
 		<button class="bg3 color5 font15 radiu15" style="width: 80%; height: 80rpx; margin-top: 50rpx;" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">确定</button>
 	</view>

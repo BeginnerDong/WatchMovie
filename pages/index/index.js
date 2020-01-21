@@ -27,48 +27,56 @@ Page({
 		previousMargin: 60,
 		nextMargin: 60,
 		swiperIndex: 0,
-		isFirstLoadAllStandard: ['getHeartData', 'getHotData', 'userInfoGet', 'getMainData','getSliderData'],
+		isFirstLoadAllStandard: ['getHeartData', 'getHotData', 'userInfoGet', 'getMainData', 'getSliderData'],
 		submitData: {
 			birthday: '',
 			birth_address: '',
 			address: '',
 			gender: '',
-			email:''
+			email: '',
+			phone: ''
 		}
 	},
 
 	onLoad(options) {
 		const self = this;
 		console.log(options);
-		if(options.user_no){
+		if (options.user_no) {
 			console.log(options);
 			self.data.user_no = options.user_no;
-			const token = new Token({parent_no:self.data.user_no});
-			const callback = (res) =>{
+			const token = new Token({
+				parent_no: self.data.user_no
+			});
+			const callback = (res) => {
 				self.getHeartData();
 			};
-			token.getProjectToken(callback,{refreshToken:true,parent_no:self.data.user_no})
-		}else{
+			token.getProjectToken(callback, {
+				refreshToken: true,
+				parent_no: self.data.user_no
+			})
+		} else {
 			const token = new Token({});
-			const callback = (res) =>{
+			const callback = (res) => {
 				self.getHeartData();
 			};
-			token.getProjectToken(callback,{refreshToken:true})
+			token.getProjectToken(callback, {
+				refreshToken: true
+			})
 		}
 		api.commonInit(self);
-/* 		if(!wx.getStorageSync('token')){
-			const token = new Token({});
-			const callback = (res) =>{
+		/* 		if(!wx.getStorageSync('token')){
+					const token = new Token({});
+					const callback = (res) =>{
+							self.getHeartData();
+					};
+					token.getProjectToken(callback,{refreshToken:true})
+				}else{
 					self.getHeartData();
-			};
-			token.getProjectToken(callback,{refreshToken:true})
-		}else{
-			self.getHeartData();
-		} */
-		
+				} */
+
 		self.getHotData();
 		self.getMainData();
-		
+
 		self.userInfoGet();
 		self.getSliderData()
 	},
@@ -81,13 +89,37 @@ Page({
 		})
 	},
 
+	getPhoneNumber(e) {
+		const self = this;
+		console.log('e', e);
+		if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+			return
+		};
+		const postData = {
+			appid: wx.getStorageSync('info').thirdApp.appid,
+			tokenFuncName: 'getProjectToken',
+			encryptedData: e.detail.encryptedData,
+			iv: e.detail.iv
+		};
+		const callback = (res) => {
+			if (res.solely_code == 100000) {
+				self.data.submitData.phone = res.info.phoneNumber;
+				console.log(res)
+			}
+			self.setData({
+				web_submitData: self.data.submitData
+			})
+		}
+		api.decryptWxInfo(postData, callback)
+	},
+
 
 	getSliderData() {
 		const self = this;
 		const postData = {};
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
-			title:'首页轮播图'
+			title: '首页轮播图'
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -105,7 +137,7 @@ Page({
 
 	getHeartData() {
 		const self = this;
-		
+
 		const postData = {};
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.searchItem = {
@@ -114,22 +146,22 @@ Page({
 		};
 		postData.getAfter = {
 			heart: {
-				token:wx.getStorageSync('token'),
+				token: wx.getStorageSync('token'),
 				tableName: 'Log',
 				middleKey: 'id',
 				key: 'relation_id',
 				searchItem: {
 					status: 1,
-					type:1,
-					user_type:0,	
-					relation_table:'product'
+					type: 1,
+					user_type: 0,
+					relation_table: 'product'
 				},
 				condition: '=',
 				compute: {
 					num: ['count', 'count', {
 						status: 1,
-						type:1,
-						relation_table:'product'
+						type: 1,
+						relation_table: 'product'
 					}]
 				}
 			}
@@ -144,12 +176,12 @@ Page({
 				for (var i = 0; i < self.data.heartData.length; i++) {
 					self.data.heartData[i].description = self.data.heartData[i].description.split(',');
 					self.data.heartData[i].end_time = api.timestampToTime(self.data.heartData[i].end_time);
-					var percent =  Math.ceil(self.data.heartData[i].heart.num+100/(self.data.heartData[i].stock+100)*100);
-					percent = Math.round(percent/10)*10;
-					if(percent==0){
+					var percent = Math.ceil(self.data.heartData[i].heart.num + 100 / (self.data.heartData[i].stock + 100) * 100);
+					percent = Math.round(percent / 10) * 10;
+					if (percent == 0) {
 						percent = 1;
 					};
-					self.data.heartData[i].heart_url = "/image/cardiac-"+percent+".png"
+					self.data.heartData[i].heart_url = "/image/cardiac-" + percent + ".png"
 				};
 			}
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getHeartData', self);
@@ -166,8 +198,8 @@ Page({
 		postData.paginate = api.cloneForm(self.data.paginate);
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
-			stock:['>',0],
-			on_shelf:1
+			stock: ['>', 0],
+			on_shelf: 1
 		};
 		const callback = (res) => {
 			api.buttonCanClick(self, true);
@@ -188,22 +220,22 @@ Page({
 		};
 		api.skuGet(postData, callback);
 	},
-	
-	bindBirthAddress(e){
+
+	bindBirthAddress(e) {
 		const self = this;
-		self.data.submitData.birth_address = e.detail.value[0]+e.detail.value[1]+e.detail.value[2];
+		self.data.submitData.birth_address = e.detail.value[0] + e.detail.value[1] + e.detail.value[2];
 		self.data.submitData.email = e.detail.value[0];
 		self.setData({
-			web_submitData:self.data.submitData
+			web_submitData: self.data.submitData
 		})
 		console.log(e)
 	},
-	
-	bindAddress(e){
+
+	bindAddress(e) {
 		const self = this;
-		self.data.submitData.address = e.detail.value[0]+e.detail.value[1]+e.detail.value[2];
+		self.data.submitData.address = e.detail.value[0] + e.detail.value[1] + e.detail.value[2];
 		self.setData({
-			web_submitData:self.data.submitData
+			web_submitData: self.data.submitData
 		})
 		console.log(e)
 	},
@@ -265,7 +297,9 @@ Page({
 	submit() {
 		const self = this;
 		api.buttonCanClick(self);
-		const pass = api.checkComplete(self.data.submitData);
+		var newObject = api.cloneForm(self.data.submitData);
+		delete newObject.phone;
+		const pass = api.checkComplete(newObject);
 		console.log('pass', pass);
 		console.log('self.data.submitData', self.data.submitData)
 		if (pass) {

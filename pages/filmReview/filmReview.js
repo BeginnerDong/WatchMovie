@@ -21,6 +21,7 @@ Page({
 
 	onLoad(options) {
 		const self = this;
+		self.data.id = options.id;
 		api.commonInit(self);
 		self.getMainData();
 	},
@@ -34,6 +35,7 @@ Page({
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
 			thirdapp_id: getApp().globalData.thirdapp_id,
+			relation_id: self.data.id,
 			type: 1,
 			user_type: 0
 		};
@@ -73,6 +75,27 @@ Page({
 				searchItem: {
 					type: 4,
 					user_no: wx.getStorageSync('info').user_no
+				},
+				condition: '='
+			},
+			log: {
+				tableName: 'Log',
+				middleKey: 'user_no',
+				key: 'relation_user',
+				searchItem: {
+					status: 1,
+					type: 2
+				},
+				condition: '='
+			},
+			message: {
+				tableName: 'Message',
+				middleKey: 'id',
+				key: 'relation_id',
+				searchItem: {
+					status: 1,
+					type:2,
+					user_type:0
 				},
 				condition: '='
 			},

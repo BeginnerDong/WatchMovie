@@ -208,6 +208,7 @@ Page({
 		console.log('self.data.sForm', self.data.sForm)
 		if (pass) {
 			if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+				api.buttonCanClick(self, true)
 			  api.showToast('手机格式不正确','fail')
 			}else{
 				const callback = (user, res) => {
@@ -369,6 +370,8 @@ Page({
 			} else {
 				self.data.isLoadAll = true;
 			}
+			wx.hideNavigationBarLoading();
+			wx.stopPullDownRefresh();
 			api.checkLoadAll(self.data.isFirstLoadAllStandard, 'getMainData', self);
 			self.setData({
 				web_mainData: self.data.mainData,

@@ -345,7 +345,8 @@ Page({
 		postData.tokenFuncName = 'getProjectToken';
 		postData.searchItem = {
 			relation_id: self.data.mainData.product.id,
-			user_type: 0
+			user_type: 0,
+			type:1
 		};
 		postData.getAfter = {
 			film: {
@@ -496,7 +497,7 @@ Page({
 		
 		if(self.data.userInfoData.OrderItem.length>0){
 			api.buttonCanClick(self,true);
-			api.showToast('你已购买本场次');
+			api.showToast('你已购买过本场次');
 			return
 		}
 		const callback = (user, res) => {
@@ -552,6 +553,16 @@ Page({
 				price: self.data.mainData.price
 			}
 		};
+		postData.payAfter = [{
+			tableName: 'UserInfo',
+			FuncName: 'update',
+			data: {
+				count: parseInt(self.data.userInfoData.count) + 1
+			},
+			searchItem: {
+				user_no: wx.getStorageSync('info').user_no
+			}
+		}];
 		const callback = (res) => {
 			if (res.solely_code == 100000) {
 				api.buttonCanClick(self, true);

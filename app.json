@@ -33,7 +33,8 @@
     "pages/tasks/tasks",
     "pages/buy/buy",
     "pages/conversion/conversion",
-    "pages/seatMap/seatMap"
+    "pages/seatMap/seatMap",
+	"pages/plateDetail/plateDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

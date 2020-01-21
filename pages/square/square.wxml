@@ -25,10 +25,15 @@
 			</view>
 			<view style="margin: 20rpx 0rpx 10rpx;">
 				<view class="font10 color3 ilblock">{{item.create_time}}</view>
+				<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;" data-index="{{index}}" bindtap="{{web_buttonCanClick?(item.goodMe.length==0?'clickGood':''):''}}">
+					<image src="{{item.goodMe.length>0?'../../image/details-icon5.png':'../../image/details-icon4.png'}}" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
+					{{item.good.length}}
+				</view>
 				<view class="font10 color2 flo-right ilblock boxnum-img">
 				<image src="../../image/details-icon3.png" style="width: 30rpx;height: 34rpx;margin-right: 14rpx;position: relative;top: 10rpx;"></image>
 					{{item.message.length}}
 				</view>
+				
 			</view>
 		</view>
 		<view class="boxright ilblock">
@@ -36,15 +41,10 @@
 				<view class="boxright-img">
 					<image src="{{item.film[0].mainImg[0].url}}"></image>
 				</view>
-				<view class="font10 color3 boxtext" style="line-height:20rpx;">
-					<view style="margin:12rpx 0rpx;">{{item.film[0].title}}</view>
-	<!-- 				<view>2019.02.22</view>
-					<view>20:00</view> -->
-				</view>
+				
 			</view>
-			<view class="font10 color2 flo-right ilblock" style="margin-right: 32rpx;" data-index="{{index}}" bindtap="{{web_buttonCanClick?(item.goodMe.length==0?'clickGood':''):''}}">
-				<image src="{{item.goodMe.length>0?'../../image/details-icon5.png':'../../image/details-icon4.png'}}" style="width: 34rpx;height: 36rpx;margin-right: 14rpx;position: relative;top: 6rpx;"></image>
-				{{item.good.length}}
+			<view class="font10 color3 boxtext" style="line-height:20rpx;">
+				<view style="margin:12rpx 0rpx;">{{item.film[0].title}}</view>
 			</view>
 		</view>
 	</view>

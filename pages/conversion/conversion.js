@@ -174,7 +174,7 @@ Page({
 					
 				} else if (res.confirm) {
 					if(self.data.userInfoData.count==0){
-						api.showToast('您已兑换过了','none')
+						api.showToast('您已兑换过了或尚未购买影票','none')
 						return
 					};
 					var index = api.getDataSet(e, 'index');

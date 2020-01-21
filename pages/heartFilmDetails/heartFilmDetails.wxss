@@ -15,7 +15,7 @@
 }
 
 .introduce{
-	width: 100%;
+	
 	box-sizing: border-box;
 	padding:50rpx 30rpx 30rpx;
 }
@@ -65,7 +65,7 @@
 	height: 84rpx;
 }
 .img-two{
-	width: 19%;
+	width: 30%;
 	height: 190rpx;
 	overflow: hidden;
 	display: inline-block;
@@ -84,6 +84,10 @@
 	box-sizing: border-box;
 	padding:0rpx 30rpx;
 	line-height: 80rpx;
+}
+page{
+	width: 100%;
+	overflow-x: hidden
 }
 
 
